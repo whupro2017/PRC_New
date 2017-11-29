@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:sec="http://www.springframework.org/schema/security"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-4.1.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security-4.0.xsd
+            http://www.springframework.org/schema/mvc  
+            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+  <!--auto scan -->
+  <context:component-scan base-package="com.whu.pro" />
+   <!--@value useage -->
+   <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">  
+           <property name="locations">  
+               <list>  
+                   	<value>classpath:upload.properties</value>
+               </list>  
+           </property>  
+        </bean>  
+   <bean id="javaPropertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">  
+         <property name="properties" ref="configProperties" />  
+   </bean>  
+   
+  <!-- import config file -->
+  <bean id="propertyConfigurer"
+    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+    	<list>
+    		<value>classpath:jdbc.properties</value>
+    	</list>
+    </property>
+  </bean>
+  
+  
+  	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+        <property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true" />  
+        <property name="username" value="root" />  
+        <property name="password" value="xcy1994" />  
+        <!-- 初始化连接大小 -->  
+        <property name="initialSize" value="0"></property>  
+        <!-- 连接池最大数量 -->  
+        <property name="maxActive" value="20"></property>  
+        <!-- 连接池最大空闲 -->  
+        <property name="maxIdle" value="20"></property>  
+        <!-- 连接池最小空闲 -->  
+        <property name="minIdle" value="1"></property>  
+        <!-- 获取连接最大等待时间 -->  
+        <property name="maxWait" value="60000"></property>  
+    </bean> 
+  <!-- spring and mybatis -->
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <!-- auto scan mapping.xml files-->
+    <property name="mapperLocations" value="classpath:com/whu/pro/mapping/*.xml"></property>
+	
+  </bean>
+  <!-- DAO interface  auto scan -->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.whu.pro.dao" />
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+  </bean>
+  <!-- transaction manager, use JtaTransactionManager for global tx -->
+  <bean id="transactionManager"
+    class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+
+  <!--static resource -->
+    
+   <!--spring security -->
+	<sec:http use-expressions="true" auto-config="true" authentication-manager-ref="authManager">
+        <sec:csrf disabled="true" />
+        <sec:intercept-url pattern="/commons/**" access="permitAll()" />
+        <sec:intercept-url pattern="/css/**" access="permitAll()" />
+        <sec:intercept-url pattern="/js/**" access="permitAll()" />
+        <sec:intercept-url pattern="/auth/**" access="permitAll()" />
+        <sec:intercept-url pattern="/images/**" access="permitAll()" />
+        <sec:intercept-url pattern="/**" access="isAuthenticated()" />
+        <sec:form-login login-page="/auth/loginPageCtrl"
+            always-use-default-target="true" default-target-url="/indexCtrl"
+            authentication-failure-url="/auth/loginFailedCtrl" login-processing-url="/spring_security_check"
+            password-parameter="password" username-parameter="username" />
+        <sec:logout invalidate-session="true" logout-success-url="/auth/loginPageCtrl"
+            logout-url="/logout" />
+            
+        <sec:headers>
+            <sec:frame-options policy="SAMEORIGIN"/>
+        </sec:headers>
+    </sec:http>
+    <sec:authentication-manager id="authManager">
+        <sec:authentication-provider
+            user-service-ref="userDetailsService"></sec:authentication-provider>
+    </sec:authentication-manager> 
+</beans>

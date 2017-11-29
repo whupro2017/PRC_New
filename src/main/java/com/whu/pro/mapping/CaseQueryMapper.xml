@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- author lyx; date 2016.09.28 -->
+<mapper namespace="com.whu.pro.dao.CaseQueryDao">
+	<select id="selectAllCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time		
+		between #{beginTime} and #{endTime}) and 
+		((#{pro}='全部') or (case_province=#{pro} and case_city=#{city} and case_district=#{dis})) ;
+	</select>
+	
+	<select id="selectBurnCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time		
+		between #{beginTime} and #{endTime}) and 
+		( (#{pro}='全部') or (case_province=#{pro} and case_city=#{city} and case_district=#{dis})) and ( case_type='放火') ;
+	</select>
+	
+	<select id="selectBomCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time		
+		between #{beginTime} and #{endTime}) and 
+		( (#{pro}='全部') or (case_province=#{pro} and case_city=#{city} and case_district=#{dis})) and ( case_type='爆炸') ;
+	</select>
+	
+	<select id="selectGrabCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time		
+		between #{beginTime} and #{endTime}) and 
+		( (#{pro}='全部') or (case_province=#{pro} and case_city=#{city} and case_district=#{dis})) and ( case_type='抢盗') ;
+	</select>
+	
+	<select id="selectKillCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time		
+		between #{beginTime} and #{endTime}) and 
+		( (#{pro}='全部') or (case_province=#{pro} and case_city=#{city} and case_district=#{dis})) and ( case_type='碰撞') ;
+	</select>
+	
+	<select id="IdIsExsit" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id from case_t where case_id=#{id};
+	</select>
+	
+	<select id="InsertCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		insert into case_t values( #{id}, #{beginTime}, #{pro}, #{city}, #{dis}, #{des}, #{type} );
+	</select>
+		
+</mapper>
