@@ -128,7 +128,27 @@
 		                });
 		            });         
 		        // house
-		        mtl = new THREE.MTLLoader();
+		            mtl = new THREE.MTLLoader();
+		            mtl.setPath('../3dshow/doc/small/');
+		            mtl.load('house_big.mtl',function(mater){
+		                loader = new THREE.OBJLoader();
+		                loader.setPath('../3dshow/doc/small/');
+		                loader.load('house_big_1.obj',function (hObject) {
+		                	hObject.traverse( function ( child ) {
+                                if ( child instanceof THREE.Mesh ) {
+                                    child.material.map = texture;
+                                }
+                    		} );
+		                	hObject.children[0].geometry.computeBoundingBox();
+		                	hObject.children[0].geometry.center();
+		                	hObject.scale.set(0.5,0.5,0.5);
+		                	hObject.position.y=10;
+				            meshhouse = hObject;
+				          //  scene.add(meshhouse);
+		                });
+		            }); 
+		            
+		          /*  mtl = new THREE.MTLLoader();
 		            mtl.setPath('../3dshow/doc/small/');
 		            mtl.load('house.mtl',function(mater){
 		                mater.preload();
@@ -141,6 +161,7 @@
                                     child.material.map = texture;
                                 }
                     		} );
+
 		                	hObject.scale.set(0.25,0.25,0.25);
 				        	hObject.position.y=0;
 				        	hObject.position.x=0;
@@ -148,8 +169,8 @@
 				            meshhouse = hObject;
 				          //  scene.add(meshhouse);
 		                });
-		            });
-
+		            }); */
+		            		            
 		        // Skybox
 		        //scene.background = new THREE.CubeTextureLoader()
 		        //   .setPath( '../3dshow/pisa/' )
@@ -161,8 +182,8 @@
 		        scene.add(new THREE.AmbientLight(0x333333));
 		
 		        camera = new THREE.PerspectiveCamera(40,800/600,1,2000);
-		        camera.position.set(200,200,200);
-		        camera.lookAt(scene.position);
+		        camera.position.set(300,400,200);
+		        camera.lookAt(0,0,1);
 		
 		        renderer = new THREE.WebGLRenderer();
 		        renderer.setSize(586,450);
