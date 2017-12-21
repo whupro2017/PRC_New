@@ -24,9 +24,9 @@
 		var zNodes =[
 			{ id:1, pId:0, name:"物体", open:false},
 			{ id:11, pId:1, name:"狗",checked:false},
-			{ id:12, pId:1, name:"盒子1"},
+			{ id:12, pId:1, name:"盒子"},
 			{ id:13, pId:1, name:"房子"},
-			{ id:14, pId:1, name:"盒子2", checked:false},			
+			{ id:14, pId:1, name:"场景", checked:false},			
 		];
 		
 		var code, log, className = "dark";
@@ -47,11 +47,11 @@
 					show_dog();
 					show_box1();
 					show_house();
-					show_box2();
+					show_c2();
 				}else{
 					delete_dog();
 					delete_box1();
-					delete_box2();
+					delete_c2();
 					delete_house();
 				}
 			}
@@ -82,9 +82,9 @@
 			
 			if(treeNode.id == 14){
 				if(treeNode.checked){
-					show_box2();
+					show_c2();
 				}else{
-					delete_box2();
+					delete_c2();
 				}
 			}
 			

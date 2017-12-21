@@ -27,7 +27,7 @@
 	        var controls;
 	        var geometry;
 	        var mesh_box1;
-	        var mesh_box2;
+	        var mesh_c2;
 	        var meshdog;
 	        var meshhouse;
 	        var run1 = null;
@@ -52,11 +52,11 @@
 	        function delete_box1(){
 	        	scene.remove(mesh_box1);
 	        }
-	        function show_box2(){
-	        	scene.add(mesh_box2);
+	        function show_c2(){
+	        	scene.add(mesh_c2);
 	        }	        
-	        function delete_box2(){
-	        	scene.remove(mesh_box2);
+	        function delete_c2(){
+	        	scene.remove(mesh_c2);
 	        }
 	        function show_house(){
 	        	scene.add(meshhouse);
@@ -82,23 +82,17 @@
 			function init(){
 				scene = new THREE.Scene();
 				//3d
-				geometry = new THREE.BoxGeometry(30,30,30);
+				geometry = new THREE.BoxGeometry(10,10,10);
 	            var material = new THREE.MeshLambertMaterial({
 	                color:0xff0000
 	            });
 	            mesh_box1 = new THREE.Mesh(geometry,material);
-	            mesh_box1.position.x = -100;
-	            mesh_box1.position.y = 15;
+	            mesh_box1.position.x = -60;
+	            mesh_box1.position.y = -20;
 	            mesh_box1.position.z = 0;
 	            mesh_box1.name = 'box1';
 	           // scene.add(mesh_box1);
 	            
-	            mesh_box2 = new THREE.Mesh(geometry,material);
-	            mesh_box2.position.x = 100;
-	            mesh_box2.position.y = 15;
-	            mesh_box2.position.z = 0;
-	            mesh_box2.name = 'box2';
-	          //  scene.add(mesh_box2);
 				//texture
 	            var manager = new THREE.LoadingManager();
 	            manager.onProgress = function ( item, loaded, total ) {
@@ -119,10 +113,11 @@
 		                loader.setMaterials(mater);
 		                loader.setPath('../3dshow/doc/');
 		                loader.load('dog.obj',function (dogObject) {
-		                	dogObject.scale.set(0.2,0.2,0.2);
-				            dogObject.position.y=0;
-				            dogObject.position.x=0;
-				            dogObject.position.z=80;
+		                	dogObject.scale.set(0.008,0.008,0.008);
+		                	dogObject.rotation.y = THREE.Math.degToRad( -15 );
+				            dogObject.position.y=-20;
+				            dogObject.position.x=60;
+				            dogObject.position.z=26;
 				            meshdog = dogObject;
 				          //  scene.add(meshdog);
 		                });
@@ -134,42 +129,38 @@
 		                loader = new THREE.OBJLoader();
 		                loader.setPath('../3dshow/doc/small/');
 		                loader.load('house_big_1.obj',function (hObject) {
-		                	hObject.traverse( function ( child ) {
-                                if ( child instanceof THREE.Mesh ) {
-                                    child.material.map = texture;
-                                }
-                    		} );
 		                	hObject.children[0].geometry.computeBoundingBox();
+		                	hObject.rotation.x = THREE.Math.degToRad( -90 );
 		                	hObject.children[0].geometry.center();
-		                	hObject.scale.set(0.5,0.5,0.5);
+		                	hObject.scale.set(0.7,0.7,0.7);
 		                	hObject.position.y=10;
-				            meshhouse = hObject;
-				          //  scene.add(meshhouse);
+				            mesh_c2= hObject;
+				           // scene.add(mesh_c2);
 		                });
 		            }); 
 		            
-		          /*  mtl = new THREE.MTLLoader();
+		            mtl = new THREE.MTLLoader();
 		            mtl.setPath('../3dshow/doc/small/');
 		            mtl.load('house.mtl',function(mater){
 		                mater.preload();
 		                loader = new THREE.OBJLoader();
 		                loader.setMaterials(mater);
 		                loader.setPath('../3dshow/doc/small/');
-		                loader.load('house.obj',function (hObject) {
-		                	hObject.traverse( function ( child ) {
+		                loader.load('house.obj',function (hObject1) {
+		                	hObject1.traverse( function ( child ) {
                                 if ( child instanceof THREE.Mesh ) {
                                     child.material.map = texture;
                                 }
                     		} );
-
-		                	hObject.scale.set(0.25,0.25,0.25);
-				        	hObject.position.y=0;
-				        	hObject.position.x=0;
-				        	hObject.position.z=0;
-				            meshhouse = hObject;
-				          //  scene.add(meshhouse);
+		                	hObject1.rotation.y = THREE.Math.degToRad( -15 );
+		                	hObject1.scale.set(0.015,0.015,0.015);
+				        	hObject1.position.y=-20;
+				        	hObject1.position.x=60;
+				        	hObject1.position.z=30;
+				        	meshhouse = hObject1;
+				            //scene.add(meshhouse);
 		                });
-		            }); */
+		            }); 
 		            		            
 		        // Skybox
 		        //scene.background = new THREE.CubeTextureLoader()
@@ -183,7 +174,7 @@
 		
 		        camera = new THREE.PerspectiveCamera(40,800/600,1,2000);
 		        camera.position.set(300,400,200);
-		        camera.lookAt(0,0,1);
+		        camera.lookAt(scene.position);
 		
 		        renderer = new THREE.WebGLRenderer();
 		        renderer.setSize(586,450);
@@ -214,13 +205,13 @@
 	        function animate(){
 	            requestAnimationFrame(animate);	 
 	            if(run1==true){
-	            	mesh_box1.rotation.x+=0.01;
-	 	            mesh_box1.rotation.y+=0.01;
-	 	            mesh_box1.position.x -=0.4;
+	            	//mesh_box1.rotation.x+=0.0001;
+	 	           // mesh_box1.rotation.y+=0.0001;
+	 	           // mesh_box1.position.x -=0.004;
 	 	            
-	 	            window.arg = (window.arg || 0) + 0.06;
-	 	            meshdog.position.y =10+(10 * Math.cos(window.arg));
-	 	            meshdog.position.x -=0.4;
+	 	            window.arg = (window.arg || 0) + 0.006;
+	 	            meshdog.position.y = -20 +(1 * Math.cos(window.arg));
+	 	            meshdog.position.x -=0.04;
 	            }
 	           
 	            juli();
