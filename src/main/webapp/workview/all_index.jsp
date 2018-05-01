@@ -56,20 +56,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            clearBtn: true,//清除按钮
 		            format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
 		        });
-		    });
-		    
-			jQuery(function ($) {
-		        $(".to").datepicker({
-		            language: "zh-CN",
-		            autoclose: true,//选中之后自动隐藏日期选择框
-		            clearBtn: true,//清除按钮
-		            format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		        });
-		    });
-		    
+		    });		    		    
 		</script>
 	</head>
-
 
 	<body>
 		<div class="navbar navbar-default" id="navbar">
@@ -103,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</script>
 
 					<ul class="nav nav-list">
-						<li >
+						<li>
 							<a href="welcom.jsp">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 首页 </span>
@@ -145,6 +134,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						</li>
 						
+						<li>
+							<a href="points.jsp">
+								<i class="icon-spinner"></i>
+								<span class="menu-text"> 点云展示 </span>
+							</a>
+						</li>
+						
+						<li>
+							<a href="colorpoints.jsp">
+								<i class="icon-star"></i>
+								<span class="menu-text"> color点云展示 </span>
+							</a>
+						</li>
+						
 					</ul><!-- /.nav-list -->
 
 					<div class="sidebar-collapse" id="sidebar-collapse">
@@ -157,7 +160,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 
 				<div class="main-content">
-					<div class="page-content">											
+					<div class="page-content">	
+															
 						<div style="width:45%;float: left;">
 							<div class = "tab1"  style="height:60%; border:solid 1px; float:top; overflow:auto">								
 								<ul id="myTab" class="nav nav-tabs">
@@ -205,9 +209,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									
 									<div class="tab-pane fade" id="material">
 										<button id="material_load" style= "height:25px;width:65px" onClick="load_m()">Load</button>	
-									<!--  	<button id="show_dog" style= "height:25px;width:65px" onClick="show_dog()">显示狗</button>
-										<button id="delete_dog" style= "height:25px;width:65px" onClick="delete_dog()">隐藏狗</button>																																																			
-										-->
 										<div class="zTreeDemoBackground left">
 											<ul id="treeDemo" class="ztree"></ul>
 										</div>
@@ -223,7 +224,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
 																										 
 							</div>
-							
+						
 						
 							<div class = "tab2" style="float:bottom;"  >
 								<div align="center" style="float:top; padding-top:1px border-top:solid 1px;border-left:solid 1px;border-right:solid 1px;border-bottom:solid 1px">
@@ -257,11 +258,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<button id="showBotton3"  onclick="acc()"  >加速</button>		
 								<button id="showBotton4"  onclick="stoprun()"  >停止</button>																
 							</div>
-							
-							<div>
-							
-							</div>
-							
+														
 							<div id = "3dshow">																
 							</div>
 										

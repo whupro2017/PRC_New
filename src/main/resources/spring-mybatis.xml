@@ -44,7 +44,7 @@
   
   	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
-        <property name="url" value="jdbc:mysql://localhost:3306/test?useUnicode=true" />  
+        <property name="url" value="jdbc:mysql://localhost:3306/pointcloud?useUnicode=true" />  
         <property name="username" value="root" />  
         <property name="password" value="xcy1994" />  
         <!-- 初始化连接大小 -->  

@@ -2,6 +2,7 @@
  * 
  */
 var jq = jQuery.noConflict();
+
 function luru(){	
 	var id = jq('#c_id').val();
 	var time = jq(".date").val();
@@ -53,7 +54,6 @@ function luru(){
 	}	
 }
 
-
 function load_m(){
 	var id = jq('#check_id').val();
 	if(id==""){
@@ -72,20 +72,11 @@ function load_t(){
 		alert("load 案件 " + id + " 的移动轨迹");
 	}
 }
-//
+
 function show3d(){
-//	jq("#3dshow").load(
-//	"/pro/3dshow/all_3d.jsp");
 	jq("#3dshow").load(
 	"/pro/3dshow/all_3d.jsp");
 	jq("#showBotton1").attr("disabled", true);
-//	jq("#3dshow").load(
-//	"/pro/workview/treeview.jsp");
 }
 
-//
-//function TestShow3d(){
-//	jq("#3dtest").load(
-//	"/pro/3dshow/all_3d.jsp");
-//}
 	

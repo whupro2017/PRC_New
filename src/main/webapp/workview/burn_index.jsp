@@ -145,6 +145,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						</li>
 						
+						<li>
+							<a href="points.jsp">
+								<i class="icon-spinner"></i>
+								<span class="menu-text"> 点云展示 </span>
+							</a>
+						</li>
+						
+						<li>
+							<a href="colorpoints.jsp">
+								<i class="icon-star"></i>
+								<span class="menu-text"> color点云展示 </span>
+							</a>
+						</li>
+						
 					</ul><!-- /.nav-list -->
 
 					<div class="sidebar-collapse" id="sidebar-collapse">

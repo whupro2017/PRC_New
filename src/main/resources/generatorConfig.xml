@@ -17,7 +17,7 @@
           
         <!-- jdbc连接 -->  <!-- 暂时这样链接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
-            connectionURL="jdbc:mysql://localhost:3306/test?useUnicode=true" userId="root"  
+            connectionURL="jdbc:mysql://localhost:3306/pointcloud?useUnicode=true" userId="root"  
             password="xcy1994" />
         <!-- 
         <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"  
@@ -48,7 +48,7 @@
         </sqlMapGenerator>  
           
         <!-- 生成mapxml对应client，也就是接口dao -->      
-        <javaClientGenerator targetPackage="com.whu.p290.dao"
+        <javaClientGenerator targetPackage="com.whu.pro.dao"
             targetProject="${project}" type="XMLMAPPER" >  
             <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->  
             <property name="enableSubPackages" value="false" />  

@@ -3,7 +3,7 @@
 <%@ include file="/commons/include/taglibs.jsp" %>
 <html ng-app="myIndex">
   <head>
-    <title>主页</title>
+    <title>案事件现场勘验综合展示系统</title>
 	<meta http-equiv="contentType" content="application/x-javascript; charset=UTF-8">
 	<%@ include file="/commons/include/css.jsp" %>
 	<style type="text/css">
