@@ -247,6 +247,20 @@
         </exclusion>
     </exclusions>
 </dependency> 
+<dependency>
+<groupId>javax.servlet</groupId> 
+   <artifactId>javax.servlet-api</artifactId> 
+   <version>3.0.1</version> 
+   <scope>provided</scope>
+</dependency>
+
+
+<dependency> 
+   <groupId>javax.servlet.jsp</groupId> 
+   <artifactId>jsp-api</artifactId> 
+   <version>2.1</version> 
+   <scope>provided</scope>
+</dependency>
 	
 <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
 	
@@ -269,4 +283,18 @@
   <build>
     <finalName>pro</finalName>
   </build>
+  <profiles>
+    <profile>
+        <id>jdk-1.8</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+            <jdk>1.8</jdk>
+        </activation>
+        <properties>
+            <maven.compiler.source>1.8</maven.compiler.source>
+            <maven.compiler.target>1.8</maven.compiler.target>
+            <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        </properties>
+    </profile>
+  </profiles>
 </project>

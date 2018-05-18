@@ -8,6 +8,12 @@ public class ColorPointResult {
     private int g;
     private int b;
 
+    public ColorPointResult(float x, float y, float z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+    
     public ColorPointResult(float x, float y, float z, int r, int g, int b) {
         this.x = x;
         this.y = y;

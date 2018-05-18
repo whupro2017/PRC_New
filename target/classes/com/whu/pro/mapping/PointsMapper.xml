@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.whu.pro.dao.PointsDao">
+	<resultMap id="pointResult" type="com.whu.pro.mapper.result.PointResult">
+    <result column="Data" jdbcType="BLOB" property="Data" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+    </resultMap>
+
+	<select id="selectAllPoints1" parameterType="com.whu.pro.mapper.param.PointsParam1"
+		resultType="String">
+		select Data from info where (Hcode=#{equalHcode} and Lcode between #{minLcode} and #{maxLcode}) ;
+	</select>
+	
+	<select id="selectAllPoints" parameterType="com.whu.pro.mapper.param.PointsParam"
+		resultType="String">
+		select Data from info where ((Hcode=#{minHcode} and Lcode&gt;=#{minLcode})
+			or (Hcode&gt;#{minHcode} and Hcode&lt;#{maxHcode})
+			or (Hcode=#{maxHcode} and Lcode&lt;=#{maxLcode})
+			) ;
+	</select>
+	
+	<select id="selectAllColorPoints1" parameterType="com.whu.pro.mapper.param.PointsParam1"
+		resultMap="pointResult">
+		select Data from binarycolor where (Hcode=#{equalHcode} and Lcode between #{minLcode} and #{maxLcode}) ;
+	</select>
+	
+	<select id="selectAllColorPoints" parameterType="com.whu.pro.mapper.param.PointsParam"
+		resultMap="pointResult">
+		select Data from binarycolor where ((Hcode=#{minHcode} and Lcode&gt;=#{minLcode})
+			or (Hcode&gt;#{minHcode} and Hcode&lt;#{maxHcode})
+			or (Hcode=#{maxHcode} and Lcode&lt;=#{maxLcode})
+			) ;
+	</select>
+</mapper>

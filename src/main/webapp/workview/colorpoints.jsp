@@ -108,16 +108,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							class="menu-text"> 抢盗 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-spinner"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
 							class="menu-text"> 碰撞 </span>
 					</a></li>
 
-					<li><a href="points.jsp"> <i class="icon-star"></i> <span
+					<li><a href="points.jsp"> <i class="icon-spinner"></i> <span
 							class="menu-text"> 点云展示 </span>
 					</a></li>
 
 					<li class="active"><a href="colorpoints.jsp"> <i
-							class="icon-tint"></i> <span class="menu-text"> color点云展示
+							class="icon-star"></i> <span class="menu-text"> color点云展示
 						</span>
 					</a></li>
 

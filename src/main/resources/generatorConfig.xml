@@ -18,7 +18,8 @@
         <!-- jdbc连接 -->  <!-- 暂时这样链接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
             connectionURL="jdbc:mysql://localhost:3306/pointcloud?useUnicode=true" userId="root"  
-            password="xcy1994" />
+            password="xcy1994"
+            />
         <!-- 
         <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"  
             connectionURL="${jdbc_url}" userId="${jdbc_user}"  
