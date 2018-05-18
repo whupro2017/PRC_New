@@ -106,40 +106,40 @@ public class PointsController {
         //		Point center = new Point(500000, 500000, 300000);
         Point leftBottom = new Point(Double.parseDouble(minx), Double.parseDouble(miny), Double.parseDouble(minz));
         Point rightTop = new Point(Double.parseDouble(maxx), Double.parseDouble(maxy), Double.parseDouble(maxz));
-        ArrayList<ColorPointResult> center=new ArrayList<ColorPointResult>();
-        float mx=Float.parseFloat(minx);
-        float my=Float.parseFloat(miny);
-        float mz=Float.parseFloat(minz);
-        
-        int split=8;
-        
-        float xx=(Float.parseFloat(maxx)-mx)/split;
-        float yy=(Float.parseFloat(maxy)-my)/split;
-        float zz=(Float.parseFloat(maxz)-mz)/split;
-        
-        float[] cenx=new float[split];
-        float[] ceny=new float[split];
-        float[] cenz=new float[split];
-        mx+=xx/2;
-        my+=yy/2;
-        mz+=zz/2;
-        for(int i=0;i<split;i++){
-        	cenx[i]=mx;
-        	ceny[i]=my;
-        	cenz[i]=mz;
-        	mx+=xx;
-        	my+=yy;
-        	mz+=zz;
+        ArrayList<ColorPointResult> center = new ArrayList<ColorPointResult>();
+        float mx = Float.parseFloat(minx);
+        float my = Float.parseFloat(miny);
+        float mz = Float.parseFloat(minz);
+
+        int split = 8;
+
+        float xx = (Float.parseFloat(maxx) - mx) / split;
+        float yy = (Float.parseFloat(maxy) - my) / split;
+        float zz = (Float.parseFloat(maxz) - mz) / split;
+
+        float[] cenx = new float[split];
+        float[] ceny = new float[split];
+        float[] cenz = new float[split];
+        mx += xx / 2;
+        my += yy / 2;
+        mz += zz / 2;
+        for (int i = 0; i < split; i++) {
+            cenx[i] = mx;
+            ceny[i] = my;
+            cenz[i] = mz;
+            mx += xx;
+            my += yy;
+            mz += zz;
         }
-        
-        for(int i=0;i<split;i++){
-        	for(int j=0;j<split;j++){
-        		for(int k=0;k<split;k++){
-        			center.add(new ColorPointResult(cenx[i],ceny[j],cenz[k]));
-        		}
-        	}
+
+        for (int i = 0; i < split; i++) {
+            for (int j = 0; j < split; j++) {
+                for (int k = 0; k < split; k++) {
+                    center.add(new ColorPointResult(cenx[i], ceny[j], cenz[k]));
+                }
+            }
         }
-        
+
         //		Hilbert hilbert = new Hilbert(center, 500000, 22);
         long begin = System.currentTimeMillis();
         List<Range> rangeList = Hilbert.getRange(Integer.parseInt(level), leftBottom, rightTop);
@@ -235,7 +235,7 @@ public class PointsController {
         System.out.println(
                 "++++++++++++++++Color Points:" + res.size() + " dbaccess: " + (System.currentTimeMillis() - begin));
         System.out.println("++++++++++++++++Color Points count:" + count);
-        
+
         center.addAll(res);
         return center;
         //        int FLOAT_LENGTH = Float.BYTES;
