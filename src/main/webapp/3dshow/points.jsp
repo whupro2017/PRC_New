@@ -19,16 +19,18 @@
 		<script type="text/javascript">
 			var count_max = 50000;
 			var step_level = 1.1;
-			var judge_num = 512;
+			var judge_num = 27;
 			var container, camera, scene, renderer;
 			var particles,particles_judge, particles_minmax;
 			var geometry, geometry_judge, geometry_minmax;
 			var vec_judge;
 			var material, i, h, color, sprite, size;
 			var mesh_f, loader, mtlloader;
-			
-			var width = window.innerWidth;
-			var height = 900;
+			var axisHelper;
+			var judge_01 = 0, obj_01 = 0;
+			// var width = window.innerWidth;
+			var width = 1900;
+			var height = 1700;
 			
 			var windowHalfX = width / 2;
 			var windowHalfY = height / 2;
@@ -104,6 +106,7 @@
 								geometry_judge.vertices.push(vertex);
 								geometry_judge.colors.push(color_judge);
 							}
+							
 							old_cx = x/judge_num; old_cy = y/judge_num; old_cz = z/judge_num;
 							new_cx = old_cx; new_cy = old_cy; new_cz = old_cz;						
 							true_cx = old_cx; true_cy = old_cy; true_cz = old_cz;																			
@@ -118,16 +121,18 @@
 								geometry.vertices.push(vertex);
 								geometry.colors.push(color);
 							}					
-							addPoint(cenx, ceny, cenz,level);
+							addPoint(cenx, ceny, cenz,level);							
 						}
 					})
 				});
 				
 				$('#ShowObj').on('click', function() {
+					obj_01 = 1;
 					show_obj();					
 				});
 				
 				$('#HideObj').on('click', function() {
+					obj_01 = 0;
 					remove_obj();
 				});				
 
@@ -136,10 +141,12 @@
 				});
 
 				$('#showlayout').on('click', function() {
+					judge_01 = 1;
 					show_layout();				
 				});
 
 				$('#deletelayout').on('click', function() {
+					judge_01 = 0;
 					remove_layout();				
 				});
 				
@@ -154,7 +161,7 @@
                 light.position.set(300, 400, 200);
                 scene.add(light);
                 scene.add(new THREE.AmbientLight(0x333333));
-               
+				//在网页上显示坐标系，其中坐标系的长度为6               
                 camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 20000);//相机
                 camera.position.set(0, 0, 500);
                 camera.lookAt(0, 0, 1);               				
@@ -182,14 +189,18 @@
 				scene.remove(particles_judge);
 				scene.remove(particles_minmax);
 				scene.remove(mesh_f);
-				// scene.remove(par_true);
-				// scene.remove(par_old);
-				// scene.remove(par_new);
+				scene.remove(par_true);
+			 	scene.remove(par_old);
+				scene.remove(par_new);
+				scene.remove(axisHelper)
 				render();
 				animate();
 			}
 
 			function addPoint(x,y,z,level){
+				var lenaxis = Math.max(len_x,len_y);
+				lenaxis = Math.max(lenaxis,len_z);
+		        axisHelper =new THREE.AxisHelper(lenaxis);
 				// point:
 				material = new THREE.PointsMaterial({
 					size: 3,
@@ -213,7 +224,7 @@
 					transparent: true
 				});
 				particles_judge = new THREE.Points(geometry_judge, material_judge);
-				scene.add(particles_judge);
+				
 
 				//bound
 				var material_minmax = new THREE.PointsMaterial({
@@ -224,8 +235,15 @@
 					transparent: true
 				});								
 				particles_minmax = new THREE.Points(geometry_minmax, material_minmax);
-				scene.add(particles_minmax);
-
+				
+				if(judge_01==1){
+					scene.add(particles_judge);
+					scene.add(particles_minmax);
+					scene.add(axisHelper);
+				}				
+				axisHelper.position.x = minx-cenx;
+				axisHelper.position.y = miny-ceny;
+				axisHelper.position.z = minz-cenz;
 				// obj
 				var level_o = level;
 				if(level<13)
@@ -235,7 +253,13 @@
 				var pathf = '../3dshow/doc/';
 	            var pathm = 'house.mtl';
 	            var path = 'steps-' + level_o + '.obj';
-	            load_obj(pathf,pathm,path, 1,0,x,y,z);
+	            
+	            if(obj_01=1){
+	            	 load_obj(pathf,pathm,path, 1,0,x,y,z);
+	            }else{
+	            	 scene.remove(mesh_f);
+	            }
+	           
 	            render();
 	            animate();
 			}
@@ -253,12 +277,14 @@
 	        function show_layout(){
 				scene.add(particles_judge);
 				scene.add(particles_minmax);
+				scene.add(axisHelper)
 				animate();
 	        }
 
 	        function remove_layout(){
 	        	scene.remove(particles_judge);
 				scene.remove(particles_minmax);
+				scene.remove(axisHelper)
 				animate();
 	        }
 
@@ -311,11 +337,11 @@
 	                document.getElementById('level').value=level;
 
 	                le = level;
-	                clearScence();
-					jQuery(function($) {
-						$('#ShowPoints').trigger('click');
-						console.log("button click")						
-					});
+	      //          clearScence();
+			//		jQuery(function($) {
+				//		$('#ShowPoints').trigger('click');
+					//	console.log("button click")						
+					//});
 					
 	            }
 	        }
@@ -378,7 +404,7 @@
 
 	            var j_x = Math.abs(true_cx - old_cx),	j_y = Math.abs(true_cy - old_cy),	j_z =Math.abs(true_cy - old_cy);
 	            if(j_x>0 || j_y>0 || j_z>0){
-	            	alert("矫正：" + j_x + ";" + j_y + ";" + j_z)
+	            	//alert("矫正：" + j_x + ";" + j_y + ";" + j_z)
 
 		            var material1 = new THREE.PointsMaterial({
 		                size: 10,

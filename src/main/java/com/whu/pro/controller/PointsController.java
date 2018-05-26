@@ -111,7 +111,11 @@ public class PointsController {
         float my = Float.parseFloat(miny);
         float mz = Float.parseFloat(minz);
 
+<<<<<<< HEAD
         int split = 8;
+=======
+        int split = 3;
+>>>>>>> update the layout of point.jsp
 
         float xx = (Float.parseFloat(maxx) - mx) / split;
         float yy = (Float.parseFloat(maxy) - my) / split;

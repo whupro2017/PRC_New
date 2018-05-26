@@ -259,7 +259,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<button id="showBotton4"  onclick="stoprun()"  >停止</button>																
 							</div>
 														
-							<div id = "3dshow">																
+							<div id = "3dshow">															
 							</div>
 										
 						</div><!-- part of right -->

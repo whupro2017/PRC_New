@@ -79,4 +79,10 @@ function show3d(){
 	jq("#showBotton1").attr("disabled", true);
 }
 
+function showplant(){
+	jq("#plantshow").load(
+	"/pro/3dshow/points.jsp");
+	jq("#Showpant").attr("disabled", true);
+}
+
 	

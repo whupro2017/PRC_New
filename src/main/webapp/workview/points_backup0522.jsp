@@ -137,103 +137,77 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			<div class="main-content">
 				<div class="page-content" style="height: 100%">
-				
-					<div style="width:60%;float:left;">
-						<div align="center">
-							<p>素材展示区</p>
+					<div style="height: 10%; width: 100%; float: top;">
+						<div style="background-color: transparent;">
+							<table style="background-color: transparent;">
+								<tr>
+									<td class="tdTwo" rowspan="2" style="padding-left: 0px;">
+										<button id="ShowObj" style="height: 30px; width: 80px">显示OBJ</button>
+									</td>
+									<td class="tdTwo" rowspan="2" style="padding-left: 4px;">
+										<button id="HideObj" style="height: 30px; width: 80px">隐藏OBJ</button>
+									</td>
+									<td style="padding-left: 5px">leftbottom</td>
+									<td style="padding-left: 4px"><input type="text"
+										style="height: 20px; width: 90px;" id="minx" class="minx"
+										placeholder="x" value="610970.9"> <input type="text"
+										style="height: 20px; width: 90px;" id="miny" class="miny"
+										placeholder="y" value="104542.53"> <input type="text"
+										style="height: 20px; width: 90px;" id="maxz" class="maxz"
+										placeholder="z" value="90.195"></td>
+									<td style="padding-left: 5px">righttop</td>
+									<td style="padding-left: 4px"><input type="text"
+										style="height: 20px; width: 90px;" id="maxx" class="maxx"
+										placeholder="x" value="611297.9"> <input type="text"
+										style="height: 20px; width: 90px;" id="maxy" class="maxy"
+										placeholder="y" value="104868.46"> <input type="text"
+										style="height: 20px; width: 90px;" id="minz" class="minz"										
+										placeholder="z" value="10.841"></td>
+									<td style="padding-left: 5px">center</td>
+									<td style="padding-left: 4px"><input type="text"
+										style="height: 20px; width: 90px;" id="cenx" class="cenx"
+										placeholder="x" value="611150"> <input type="text"
+										style="height: 20px; width: 90px;" id="ceny" class="ceny"
+										placeholder="y" value="104710"> <input type="text"
+										style="height: 20px; width: 90px;" id="cenz" class="cenz"
+										placeholder="z" value="60"></td>
+									<td style="padding-left: 5px">level</td>
+									<td style="padding-left: 4px">
+										<input type="text" style="height: 30px; width: 50px;" id="level" value="10">
+									</td>
+									<td class="tdTwo" rowspan="2" style="padding-left: 4px;">
+										<button id="ShowPoints" style="height: 30px; width: 50px">显示</button>
+									</td>
+									
+									<td class="tdTwo" rowspan="2" style="padding-left: 4px;">
+										<button id="Clear" style="height: 30px; width: 50px">清空</button>
+									</td>
+									
+									<td class="tdTwo" rowspan="2" style="padding-left: 4px;">
+										<button id="showlayout" style="height: 30px; width: 70px">显示网格</button>
+									</td>
+									
+									<td class="tdTwo" rowspan="2" style="padding-left: 4px;">
+										<button id="deletelayout" style="height: 30px; width: 70px">隐藏网格</button>
+									</td>
+									
+								</tr>
+							</table>
 						</div>
-						<div id = "plantshow"></div>									
-					</div><!-- part of right -->
-					
-					<div style="width:40%;float:right;border:1px #000000   solid" align="center">
-						<table style="background-color: transparent;">
-							<tr>
-								<td style="padding-left: 5px">leftbottom</td>
-								<td style="padding-left: 5px"><input type="text"
-									style="height: 20px; width: 90px;" id="minx" class="minx"
-									placeholder="x" value="610970.9"> <input type="text"
-									style="height: 20px; width: 90px;" id="miny" class="miny"
-									placeholder="y" value="104542.53"> <input type="text"
-									style="height: 20px; width: 90px;" id="maxz" class="maxz"
-									placeholder="z" value="90.195"></td>
-								<td style="padding-left: 5px">righttop</td>
-								<td style="padding-left: 5px"><input type="text"
-									style="height: 20px; width: 90px;" id="maxx" class="maxx"
-									placeholder="x" value="611297.9"> <input type="text"
-									style="height: 20px; width: 90px;" id="maxy" class="maxy"
-									placeholder="y" value="104868.46"> <input type="text"
-									style="height: 20px; width: 90px;" id="minz" class="minz"										
-									placeholder="z" value="10.841"></td>
-								<td style="padding-left: 5px">center</td>
-								<td style="padding-left: 5px"><input type="text"
-									style="height: 20px; width: 90px;" id="cenx" class="cenx"
-									placeholder="x" value="611150"> <input type="text"
-									style="height: 20px; width: 90px;" id="ceny" class="ceny"
-									placeholder="y" value="104710"> <input type="text"
-									style="height: 20px; width: 90px;" id="cenz" class="cenz"
-									placeholder="z" value="60"></td>
-								<td style="padding-left: 5px">level</td>
-								<td style="padding-left: 5px">
-									<input type="text" style="height: 30px; width: 40px;" id="level" value="10">
-								</td>																		
-							</tr>
-						</table>
-						<table style="background-color: transparent;">
-							<tr>
-								<td class="tdTwo" rowspan="2">
-									<button id="Showpant" style="height: 30px; width: 85px"
-									 onclick="showplant()"  >展示素材</button>
-								</td>
-								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="ShowPoints" style="height: 30px; width: 85px">显示</button>
-								</td>
-								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="ShowObj" style="height: 30px; width: 85px">显示OBJ</button>
-								</td>
-								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="HideObj" style="height: 30px; width: 85px">隐藏OBJ</button>
-								</td>								
-								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="Clear" style="height: 30px; width: 85px">清空</button>
-								</td>
-								
-								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="showlayout" style="height: 30px; width: 85px">显示网格</button>
-								</td>
-								
-								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="deletelayout" style="height: 30px; width: 85px">隐藏网格</button>
-								</td>
-							</tr>
-						</table>
-						<table style="background-color: transparent;padding-top: 80px">
-
-						<tr style="padding-left: 8px">
-							<td style="padding-left: 5px">Message 1</td>
-							<td>
-								<textarea id = "correlation" rows="15" cols="80"></textarea>
-							</td>
-						</tr>
-						<tr style="padding-left: 8px">
-							<td style="padding-left: 5px">Message 2</td>
-							<td>
-								<textarea id = "correlation" rows="15" cols="80"></textarea>
-							</td>
-						</tr>
-						<tr style="padding-left: 8px">
-							<td style="padding-left: 5px">Message 3</td>
-							<td>
-								<textarea id = "correlation" rows="15" cols="80"></textarea>
-							</td>
-						</tr>
-						</table>
-					</div> <!-- page-left -->
-					
-					
-						
-				</div> <!-- /page-content -->
+					</div>
+					<!-- part of right -->
+					<div id="pointsShow"
+						style="height: 90%; width: 100%; float: bottom">
+						<div id="pointsDIV" align="center">
+							<%@include file="../3dshow/points.jsp"%>
+						</div>
+						<div id="point_left" align="center">
+							hhhh
+						</div>
+					</div>
+				</div>
+				<!-- /page-content -->
 			</div>
-			
 			<!-- /.main-content -->
 		</div>
 		<!-- /.main-container-inner -->

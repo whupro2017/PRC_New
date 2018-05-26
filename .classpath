@@ -35,9 +35,6 @@
 	<classpathentry kind="var" path="M2_REPO/org/mybatis/mybatis/3.2.8/mybatis-3.2.8.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/mybatis/mybatis-spring/1.2.2/mybatis-spring-1.2.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/alibaba/druid/1.0.16/druid-1.0.16.jar"/>
-	<classpathentry kind="lib" path="/usr/local/java/jdk1.8.0_171/lib/jconsole.jar"/>
-	<classpathentry kind="lib" path="/usr/local/java/jdk1.8.0_171/lib/tools.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/model/SpatialCoding.jar"/>
 	<classpathentry kind="var" path="M2_REPO/taglibs/standard/1.1.2/standard-1.1.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar"/>
@@ -53,5 +50,20 @@
 	<classpathentry kind="var" path="M2_REPO/org/glassfish/web/jstl-impl/1.2/jstl-impl-1.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.4/gson-2.4.jar"/>
 	<classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.22/mysql-connector-java-5.1.22.jar"/>
+	<classpathentry kind="lib" path="E:/Java_Programs/Whu_Git_Pro/PRC_New/src/main/webapp/model/Gonganbu.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/Java_Programs/Whu_Git_Pro/PRC_New/src/main/webapp/model/ModelRebuild.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="E:/Java_Programs/Whu_Git_Pro/PRC_New/src/main/webapp/model/SpatialCoding.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
