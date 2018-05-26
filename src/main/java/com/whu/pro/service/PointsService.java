@@ -14,4 +14,8 @@ public interface PointsService {
     ArrayList<PointResult> getAllColorPoints(PointsParam params);
 
     ArrayList<PointResult> getAllColorPoints1(PointsParam1 params);
+
+    Integer getCountColorPoints(PointsParam params);
+
+    Integer getCountColorPoints1(PointsParam1 params);
 }

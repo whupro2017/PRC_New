@@ -17,12 +17,15 @@
 
 	<div>
 		<script type="text/javascript">
-			var count_max = 50000;
+			var count_max = 5000000;
 			var step_level = 1.1;
-			var judge_num = 27;
+			var judge_num = 125;
 			var container, camera, scene, renderer;
-			var particles,particles_judge, particles_minmax;
-			var geometry, geometry_judge, geometry_minmax;
+			var particles, particles_minmax;
+			var geometry, geometry_minmax;
+
+			var judge_arr = new Array();
+
 			var vec_judge;
 			var material, i, h, color, sprite, size;
 			var mesh_f, loader, mtlloader;
@@ -35,7 +38,7 @@
 			var windowHalfX = width / 2;
 			var windowHalfY = height / 2;
 			
-			var dis_ori, dis_now, dis_step;
+			var dis_ori, dis_now, dis_step, dis_step_new;
 			var min_level = 10; max_level = 17;			
 			
 			var minx, miny,  maxz,maxx, maxy,minz, cenx, ceny, cenz, level;
@@ -95,16 +98,27 @@
 							geometry_minmax.vertices.push(vertex1);
 							geometry_minmax.colors.push(new THREE.Color(255/255, 0/255, 0/255));
 
+							var geometrypoint = new THREE.BoxGeometry(1,1,1);
+							var materialpoint = new THREE.MeshLambertMaterial({
+				                color:0xff0000
+				            });
+            				
+
 							vec_judge = new Array();							
 							var color_judge = new THREE.Color(0/255, 255/255, 0/255);
 							var x = 0, y = 0, z = 0;
 							for(var i=0; i<judge_num;i++){
 								var row = data[i];
+								var point_box = new THREE.Mesh(geometrypoint,materialpoint);
+		                        point_box.position.x = data[i].x-cenx;
+		                        point_box.position.y = data[i].y-ceny;
+		                        point_box.position.z = data[i].z-cenz;
+								point_box.name = i;
+								judge_arr.push(point_box);
+
 								var vertex = new THREE.Vector3(data[i].x-cenx, data[i].y-ceny, data[i].z-cenz);
 								x+=data[i].x-cenx; y+=data[i].y-ceny; z+=data[i].z-cenz;			
 								vec_judge.push(vertex);
-								geometry_judge.vertices.push(vertex);
-								geometry_judge.colors.push(color_judge);
 							}
 							
 							old_cx = x/judge_num; old_cy = y/judge_num; old_cz = z/judge_num;
@@ -161,11 +175,15 @@
                 light.position.set(300, 400, 200);
                 scene.add(light);
                 scene.add(new THREE.AmbientLight(0x333333));
-				//在网页上显示坐标系，其中坐标系的长度为6               
+				              
                 camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 20000);//相机
                 camera.position.set(0, 0, 500);
-                camera.lookAt(0, 0, 1);               				
-									            
+                camera.lookAt(0, 0, 1);  
+           				
+					
+                var helper = new THREE.CameraHelper( camera );
+                scene.add( helper );
+                
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize(width / 2, height / 2);
@@ -184,23 +202,35 @@
 				animate();
 			}
 
+
 			function clearScence(){
 				scene.remove(particles);
-				scene.remove(particles_judge);
 				scene.remove(particles_minmax);
 				scene.remove(mesh_f);
 				scene.remove(par_true);
 			 	scene.remove(par_old);
 				scene.remove(par_new);
 				scene.remove(axisHelper)
+
+				for(var i=0;i<judge_arr.length;i++){
+					scene.remove(judge_arr[i]);
+				}
+
 				render();
 				animate();
 			}
 
 			function addPoint(x,y,z,level){
+
+				//axisHelper
 				var lenaxis = Math.max(len_x,len_y);
 				lenaxis = Math.max(lenaxis,len_z);
 		        axisHelper =new THREE.AxisHelper(lenaxis);
+
+				axisHelper.position.x = minx-cenx;
+				axisHelper.position.y = miny-ceny;
+				axisHelper.position.z = minz-cenz;
+
 				// point:
 				material = new THREE.PointsMaterial({
 					size: 3,
@@ -215,17 +245,7 @@
 				particles.position.z -= parseFloat(z);
 				scene.add(particles);
 
-				// judge:
-				var material_judge = new THREE.PointsMaterial({
-					size: 1,
-					vertexColors: THREE.VertexColors,
-					sizeAttenuation: false,
-					alphaTest: 0.5,
-					transparent: true
-				});
-				particles_judge = new THREE.Points(geometry_judge, material_judge);
-				
-
+			
 				//bound
 				var material_minmax = new THREE.PointsMaterial({
 					size: 5,
@@ -235,15 +255,16 @@
 					transparent: true
 				});								
 				particles_minmax = new THREE.Points(geometry_minmax, material_minmax);
-				
+
 				if(judge_01==1){
-					scene.add(particles_judge);
+					
 					scene.add(particles_minmax);
 					scene.add(axisHelper);
-				}				
-				axisHelper.position.x = minx-cenx;
-				axisHelper.position.y = miny-ceny;
-				axisHelper.position.z = minz-cenz;
+
+					for(var i=0;i<judge_arr.length;i++){
+						scene.add(judge_arr[i]);
+					}
+				}
 				// obj
 				var level_o = level;
 				if(level<13)
@@ -275,16 +296,20 @@
 	        }
 
 	        function show_layout(){
-				scene.add(particles_judge);
 				scene.add(particles_minmax);
 				scene.add(axisHelper)
+				for(var i=0;i<judge_arr.length;i++){
+					scene.add(judge_arr[i]);
+				}
 				animate();
 	        }
 
 	        function remove_layout(){
-	        	scene.remove(particles_judge);
 				scene.remove(particles_minmax);
-				scene.remove(axisHelper)
+				scene.remove(axisHelper);
+				for(var i=0;i<judge_arr.length;i++){
+					scene.remove(judge_arr[i]);
+				}
 				animate();
 	        }
 
@@ -307,15 +332,18 @@
 	        }	
 
 			function juli(){
-	            dis_now = Math.pow((camera.position.x*camera.position.x +
-	                camera.position.y*camera.position.y +
-	                camera.position.z*camera.position.z) , 1/2);
+				var mx = camera.position.x;
+				var my = camera.position.y;
+				var mz = camera.position.z;
+	            dis_now = Math.pow((mx * mx + my * my + mz * mz) , 1/2);
 	        }
 			
 			function update_level(){
-	            juli();
+	            juli();	           
 	            var le = document.getElementById('level').value;	            
-	            var K = (dis_ori-dis_now) / dis_step ;
+	            dis_step_new = dis_step * (1 - 0.05*(le-10));
+	            var K = (dis_ori-dis_now) / dis_step_new ;
+	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step_new + " K: " + K
 	            level = 10 + Math.floor(K);
 	            if(level > 17)
 	            		level = 17;
@@ -337,13 +365,14 @@
 	                document.getElementById('level').value=level;
 
 	                le = level;
-	      //          clearScence();
-			//		jQuery(function($) {
-				//		$('#ShowPoints').trigger('click');
-					//	console.log("button click")						
-					//});
+	                clearScence();
+					jQuery(function($) {
+						$('#ShowPoints').trigger('click');
+						console.log("button click")						
+					});
 					
 	            }
+
 	        }
 			
 			function updateText(){
@@ -396,16 +425,12 @@
 	                    vector_in_view.push(vec_judge[j]);	count += 1;
 	                }
 	            }
-	            //alert("视野中点的数量:" +count +" of " +  num);
+	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step
+	            + "\n" + "视野中点的数量:" +count +" of " +  judge_num ;
 	            compute_centor(vector_in_view);
-	            //alert("原来中心点的位置：" + old_cx + ";" + old_cy + ";" + old_cz);
-	            //alert("新的中心点的位置：" + new_cx + ";" + new_cy + ";" + new_cz);
-	            //alert("校正中心点的位置：" + true_cx + ";" + true_cy + ";" + true_cz);
 
 	            var j_x = Math.abs(true_cx - old_cx),	j_y = Math.abs(true_cy - old_cy),	j_z =Math.abs(true_cy - old_cy);
-	            if(j_x>0 || j_y>0 || j_z>0){
-	            	//alert("矫正：" + j_x + ";" + j_y + ";" + j_z)
-
+	            if(count < judge_num*0.5 && ( j_x>0 || j_y>0 || j_z>0)){
 		            var material1 = new THREE.PointsMaterial({
 		                size: 10,
 		                vertexColors: THREE.VertexColors,
@@ -418,21 +443,21 @@
 		            geo_old.vertices.push(vec);
 		            geo_old.colors.push(new THREE.Color(255/255, 255/255, 0/255)); //yellow
 		            par_old = new THREE.Points(geo_old, material1);
-		            scene.add(par_old);
+		            //scene.add(par_old);
 
 		            vec = new THREE.Vector3(new_cx,new_cy,new_cz)
 		            geo_new = new THREE.Geometry();
 		            geo_new.vertices.push(vec);
 		            geo_new.colors.push(new THREE.Color(0/255, 255/255, 0/255)); // green
 		            par_new = new THREE.Points(geo_new, material1);
-		            scene.add(par_new);
+		           // scene.add(par_new);
 
 		            vec = new THREE.Vector3(true_cx,true_cy,true_cz)
 		            geo_true = new THREE.Geometry();
 		            geo_true.vertices.push(vec);
 		            geo_true.colors.push(new THREE.Color(255/255, 0/255, 0/255)); //red
 		            par_true = new THREE.Points(geo_true, material1);
-		            scene.add(par_true);
+		           // scene.add(par_true);
 
 					old_cx = true_cx; old_cy = true_cy; old_cz = true_cz;
 					updateText();		            
@@ -454,13 +479,13 @@
 						
 
 			function onDocumentMouseWheel(e) {
-				e.preventDefault();				
-				update_level();				
+				e.preventDefault();	
+				update_level();			
 	            animate();            
 	        }
 
 	        function onDocumentMouseUp( event ) {
-	        	event.preventDefault();
+	        	event.preventDefault();	        	
 	        	CountInAndPrint();	        	
 	            
         	}

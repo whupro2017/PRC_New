@@ -211,19 +211,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tr style="padding-left: 8px">
 							<td style="padding-left: 5px">Message 1</td>
 							<td>
-								<textarea id = "correlation" rows="15" cols="80"></textarea>
+								<textarea id = "me1" rows="15" cols="80"></textarea>
 							</td>
 						</tr>
 						<tr style="padding-left: 8px">
 							<td style="padding-left: 5px">Message 2</td>
 							<td>
-								<textarea id = "correlation" rows="15" cols="80"></textarea>
+								<textarea id = "me2" rows="15" cols="80"></textarea>
 							</td>
 						</tr>
 						<tr style="padding-left: 8px">
 							<td style="padding-left: 5px">Message 3</td>
 							<td>
-								<textarea id = "correlation" rows="15" cols="80"></textarea>
+								<textarea id = "me3" rows="15" cols="80"></textarea>
 							</td>
 						</tr>
 						</table>

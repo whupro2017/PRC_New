@@ -40,4 +40,22 @@ public class PointsImpl implements PointsService {
         ArrayList<PointResult> list = pd.selectAllColorPoints1(params);
         return list;
     }
+
+    public Integer getCountColorPoints(PointsParam params) {
+        // TODO Auto-generated method stub
+        int num = 0;
+        if (null != pd.selectCountColorPoints(params)) {
+            num = pd.selectCountColorPoints(params);
+        }
+        return num;
+    }
+
+    public Integer getCountColorPoints1(PointsParam1 params) {
+        // TODO Auto-generated method stub
+        int num = 0;
+        if (null != pd.selectCountColorPoints1(params)) {
+            num = pd.selectCountColorPoints1(params);
+        }
+        return num;
+    }
 }

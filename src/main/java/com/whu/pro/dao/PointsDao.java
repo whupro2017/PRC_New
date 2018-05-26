@@ -14,4 +14,8 @@ public interface PointsDao {
     ArrayList<PointResult> selectAllColorPoints(PointsParam params);
 
     ArrayList<PointResult> selectAllColorPoints1(PointsParam1 params);
+
+    Integer selectCountColorPoints(PointsParam params);
+
+    Integer selectCountColorPoints1(PointsParam1 params);
 }

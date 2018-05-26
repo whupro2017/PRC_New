@@ -17,6 +17,7 @@ import com.whu.pro.mapper.param.PointsParam;
 import com.whu.pro.mapper.param.PointsParam1;
 import com.whu.pro.mapper.result.ColorPointResult;
 import com.whu.pro.mapper.result.PointResult;
+import com.whu.pro.misc.BernoulliSampler;
 import com.whu.pro.service.PointsService;
 
 import algorithm.Hilbert;
@@ -111,11 +112,7 @@ public class PointsController {
         float my = Float.parseFloat(miny);
         float mz = Float.parseFloat(minz);
 
-<<<<<<< HEAD
-        int split = 8;
-=======
-        int split = 3;
->>>>>>> update the layout of point.jsp
+        int split = 5;
 
         float xx = (Float.parseFloat(maxx) - mx) / split;
         float yy = (Float.parseFloat(maxy) - my) / split;
@@ -157,6 +154,41 @@ public class PointsController {
         int DATA_LENGTH = FLOAT_LENGTH * 4 + SHORT_LENGTH * 3;
         System.out.println("++++++++++++++++Color Points Range:" + rangeList.size());
         int count = 0;
+        int num = 0;
+
+        for (int i = 0; i < rangeList.size(); i++) {
+            Range r = rangeList.get(i);
+            long beginHcode = r.getBegin().getHigh();
+            long beginLcode = r.getBegin().getLow();
+            long endHcode = r.getEnd().getHigh();
+            long endLcode = r.getEnd().getLow();
+            //System.out.println(i + ":" + beginHcode + "-" + endHcode + ":" + beginLcode + "-" + endLcode);
+            if (beginHcode == endHcode) {
+                PointsParam1 pp = new PointsParam1();
+                pp.setEqualHcode(beginHcode);
+                pp.setMinLcode(beginLcode);
+                pp.setMaxLcode(endLcode);
+                num += pointsService.getCountColorPoints1(pp);
+            } else {
+                PointsParam pp = new PointsParam();
+                pp.setMinHcode(beginHcode);
+                pp.setMinLcode(beginLcode);
+                pp.setMaxHcode(endHcode);
+                pp.setMaxLcode(endLcode);
+                num += pointsService.getCountColorPoints(pp);
+            }
+        }
+
+        double perf = (double) 19999999 / num;
+        if (num < 500000) {
+            perf = 1;
+        } else if (num > 3000000) {
+            perf *= 3;
+        }
+        perf = Math.min(perf, 1.0);
+        System.out.println("++++++++++++++++num point is: " + num + " and perf is" + perf);
+
+        BernoulliSampler bsa = new BernoulliSampler(perf);
         for (int i = 0; i < rangeList.size(); i++) {
             Range r = rangeList.get(i);
             long beginHcode = r.getBegin().getHigh();
@@ -178,7 +210,7 @@ public class PointsController {
                     while (iter.hasNext()) {
                         //Blob a = iter.next();
                         PointResult a = iter.next();
-                        if (a != null) {
+                        if (a != null && bsa.check()) {
                             byte[] bs = a.getData(); //a.getBytes(1, (int) a.length());
                             int cc = bs.length / DATA_LENGTH;
                             count += cc;
@@ -213,7 +245,7 @@ public class PointsController {
                     Iterator<PointResult> iter = arr.iterator();
                     while (iter.hasNext()) {
                         PointResult a = iter.next();
-                        if (a != null) {
+                        if (a != null && bsa.check()) {
                             byte[] bs = a.getData(); //a.getBytes(1, (int) a.length());
                             int cc = bs.length / DATA_LENGTH;
                             count += cc;

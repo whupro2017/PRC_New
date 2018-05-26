@@ -26,9 +26,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select Data from binarycolor where (Hcode=#{equalHcode} and Lcode between #{minLcode} and #{maxLcode}) ;
 	</select>
 	
+	<select id="selectCountColorPoints1" parameterType="com.whu.pro.mapper.param.PointsParam1"
+		resultType="int">
+		select sum(length(Data)) from binarycolor where (Hcode=#{equalHcode} and Lcode between #{minLcode} and #{maxLcode}) ;
+	</select>
+	
 	<select id="selectAllColorPoints" parameterType="com.whu.pro.mapper.param.PointsParam"
 		resultMap="pointResult">
 		select Data from binarycolor where ((Hcode=#{minHcode} and Lcode&gt;=#{minLcode})
+			or (Hcode&gt;#{minHcode} and Hcode&lt;#{maxHcode})
+			or (Hcode=#{maxHcode} and Lcode&lt;=#{maxLcode})
+			) ;
+	</select>
+	
+	<select id="selectCountColorPoints" parameterType="com.whu.pro.mapper.param.PointsParam"
+		resultType="int">
+		select sum(length(Data)) from binarycolor where ((Hcode=#{minHcode} and Lcode&gt;=#{minLcode})
 			or (Hcode&gt;#{minHcode} and Hcode&lt;#{maxHcode})
 			or (Hcode=#{maxHcode} and Lcode&lt;=#{maxLcode})
 			) ;
