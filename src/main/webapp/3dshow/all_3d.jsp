@@ -32,7 +32,7 @@
 	        var meshhouse;
 	        var run1 = null;
 	        
-	        var width = 900,height = 900;
+	        var width = 900,height = 800;
 	        
 	        var dis_ori;
 	        var dis_now;

@@ -182,7 +182,7 @@ public class PointsController {
         double perf = (double) 19999999 / num;
         if (num < 500000) {
             perf = 1;
-        } else if (num > 300000) {
+        } else if (num > 3000000) {
             perf *= 3;
         }
         perf = Math.min(perf, 1.0);
