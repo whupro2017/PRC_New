@@ -17,7 +17,7 @@
 
 	<div>
 		<script type="text/javascript">
-			var count_max = 5000000;
+			var count_max = 50000;
 			var step_level = 1.1;
 			var judge_num = 125;
 			var container, camera, scene, renderer;
@@ -255,7 +255,7 @@
 					transparent: true
 				});								
 				particles_minmax = new THREE.Points(geometry_minmax, material_minmax);
-
+				scene.add(axisHelper);
 				if(judge_01==1){
 					
 					scene.add(particles_minmax);

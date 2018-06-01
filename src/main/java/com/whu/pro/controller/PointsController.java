@@ -168,21 +168,21 @@ public class PointsController {
                 pp.setEqualHcode(beginHcode);
                 pp.setMinLcode(beginLcode);
                 pp.setMaxLcode(endLcode);
-                num += pointsService.getCountColorPoints1(pp);
+                num += pointsService.getCountColorPoints1(pp) / DATA_LENGTH;
             } else {
                 PointsParam pp = new PointsParam();
                 pp.setMinHcode(beginHcode);
                 pp.setMinLcode(beginLcode);
                 pp.setMaxHcode(endHcode);
                 pp.setMaxLcode(endLcode);
-                num += pointsService.getCountColorPoints(pp);
+                num += pointsService.getCountColorPoints(pp) / DATA_LENGTH;
             }
         }
 
         double perf = (double) 19999999 / num;
         if (num < 500000) {
             perf = 1;
-        } else if (num > 3000000) {
+        } else if (num > 300000) {
             perf *= 3;
         }
         perf = Math.min(perf, 1.0);
