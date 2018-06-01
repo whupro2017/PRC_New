@@ -120,8 +120,7 @@
 
 				<div class="main-content">
 					<div class="page-content">
-						<img src="images/logo_bg.png"/>
-					
+						<img src="images/logo_bg.png"/>					
 					</div> <!-- /page-content -->
 				</div><!-- /.main-content -->					
 			</div><!-- /.main-container-inner -->

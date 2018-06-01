@@ -243,14 +243,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<div class = "tab2.1" style="width:50%;float:left;border-left:solid 1px;border-right:solid 1px" align="center">
 										<text>关联信息:</text>
 										<p>
-											<textarea id = "correlation" rows="10" cols="27"></textarea>
+											<textarea id = "correlation" rows="20" cols="27"></textarea>
 										</p>
 										
 									</div>
 									<div class = "tab2.2" style="width:50%;float:right;border-right:solid 1px;"  align="center">
 										<text>外联信息:</text>
 										<p>
-											<textarea id = "e-correlation" rows="10" cols="27"></textarea>
+											<textarea id = "e-correlation" rows="20" cols="27"></textarea>
 										</p>
 									</div>
 								</div>

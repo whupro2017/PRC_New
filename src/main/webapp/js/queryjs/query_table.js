@@ -35,7 +35,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -101,7 +101,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -158,7 +158,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -218,7 +218,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -278,7 +278,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -336,7 +336,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -398,7 +398,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -464,7 +464,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -521,7 +521,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -581,7 +581,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},
@@ -641,7 +641,7 @@ jQuery(function($) {
 		datatype: "json",
 		mtype: 'POST',	
 		
-		height: 180,
+		height: 320,
 		colNames:[ '案件编号','案件时间', '案件地点', '案件描述'],
 		colModel:[
 			{name:'case_id',index:'case_id', width:35, sorttype:"int", editable: false},

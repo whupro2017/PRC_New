@@ -32,6 +32,8 @@
 	        var meshhouse;
 	        var run1 = null;
 	        
+	        var width = 900,height = 900;
+	        
 	        var dis_ori;
 	        var dis_now;
 	        
@@ -177,7 +179,7 @@
 		        camera.lookAt(scene.position);
 		
 		        renderer = new THREE.WebGLRenderer();
-		        renderer.setSize(586,450);
+		        renderer.setSize(width,height);
 		        document.body.appendChild(renderer.domElement);
 		        
 		        controls = new THREE.OrbitControls(camera);
