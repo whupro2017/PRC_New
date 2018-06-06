@@ -17,23 +17,24 @@
 
 	<div>
 		<script type="text/javascript">
-			var count_max = 50000;
-			var step_level = 1.1;
+			var count_max = 50000000;
+			var step_level = 1.15;
 			var judge_num = 125;
 			var container, camera, scene, renderer;
 			var particles, particles_minmax;
 			var geometry, geometry_minmax;
 
-			var judge_arr = new Array();
+			var judge_arr = new Array(judge_num);
+			var geometrypoint, materialpoint;
 
 			var vec_judge;
 			var material, i, h, color, sprite, size;
 			var mesh_f, loader, mtlloader;
 			var axisHelper;
-			var judge_01 = 0, obj_01 = 0;
+			var judge_01 = 1, obj_01 = 0;
 			// var width = window.innerWidth;
-			var width = 1900;
-			var height = 1700;
+			var width = 950;
+			var height = 850;
 			
 			var windowHalfX = width / 2;
 			var windowHalfY = height / 2;
@@ -48,6 +49,8 @@
 
 			var geo_old, geo_new, geo_true;
 	        var par_old, par_new, par_true;
+
+	        var event_flag = true, event_flag1 = true;
 
 	        initScence();   						
 						
@@ -97,24 +100,16 @@
 							vertex1 = new THREE.Vector3(maxx-cenx, maxy-ceny, minz-cenz);
 							geometry_minmax.vertices.push(vertex1);
 							geometry_minmax.colors.push(new THREE.Color(255/255, 0/255, 0/255));
-
-							var geometrypoint = new THREE.BoxGeometry(1,1,1);
-							var materialpoint = new THREE.MeshLambertMaterial({
-				                color:0xff0000
-				            });
-            				
-
+          				
 							vec_judge = new Array();							
 							var color_judge = new THREE.Color(0/255, 255/255, 0/255);
 							var x = 0, y = 0, z = 0;
+
 							for(var i=0; i<judge_num;i++){
 								var row = data[i];
-								var point_box = new THREE.Mesh(geometrypoint,materialpoint);
-		                        point_box.position.x = data[i].x-cenx;
-		                        point_box.position.y = data[i].y-ceny;
-		                        point_box.position.z = data[i].z-cenz;
-								point_box.name = i;
-								judge_arr.push(point_box);
+								judge_arr[i].position.x = data[i].x-cenx;
+								judge_arr[i].position.y = data[i].y-ceny;
+								judge_arr[i].position.z = data[i].z-cenz;
 
 								var vertex = new THREE.Vector3(data[i].x-cenx, data[i].y-ceny, data[i].z-cenz);
 								x+=data[i].x-cenx; y+=data[i].y-ceny; z+=data[i].z-cenz;			
@@ -135,7 +130,9 @@
 								geometry.vertices.push(vertex);
 								geometry.colors.push(color);
 							}					
-							addPoint(cenx, ceny, cenz,level);							
+							addPoint(cenx, ceny, cenz,level);	
+							event_flag1 = true;	
+							event_flag = true;					
 						}
 					})
 				});
@@ -180,13 +177,20 @@
                 camera.position.set(0, 0, 500);
                 camera.lookAt(0, 0, 1);  
            				
-					
-                var helper = new THREE.CameraHelper( camera );
-                scene.add( helper );
+           		var size = 5;
+				geometrypoint = new THREE.BoxGeometry(size,size,size);
+				materialpoint = new THREE.MeshLambertMaterial({
+	                color:0xff0000
+	            });	
+				
+	            for(var i=0; i<judge_num;i++){
+					judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
+					judge_arr[i].name = i;
+				}
                 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize(width / 2, height / 2);
+				renderer.setSize(width, height);
 				container.appendChild( renderer.domElement );
 						
 				dis_ori = Math.pow((camera.position.x*camera.position.x +
@@ -259,8 +263,7 @@
 				if(judge_01==1){
 					
 					scene.add(particles_minmax);
-					scene.add(axisHelper);
-
+					//scene.add(axisHelper);
 					for(var i=0;i<judge_arr.length;i++){
 						scene.add(judge_arr[i]);
 					}
@@ -364,13 +367,23 @@
 	                updateText();
 	                document.getElementById('level').value=level;
 
+	                var size = 10 - 0.5 * level ;
+					geometrypoint = new THREE.BoxGeometry(size,size,size);
+					
+		            for(var i=0; i<judge_num;i++){
+		            	scene.remove(judge_arr[i]);
+						judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
+						judge_arr[i].name = i;
+					}
+		            
 	                le = level;
 	                clearScence();
 					jQuery(function($) {
 						$('#ShowPoints').trigger('click');
 						console.log("button click")						
-					});
-					
+					});				
+	            }else{
+	            	event_flag = true;	
 	            }
 
 	        }
@@ -378,17 +391,20 @@
 			function updateText(){
 				new_minx = parseFloat(old_cx) - parseFloat(len_x/2) + parseFloat(cenx);
 				new_miny = parseFloat(old_cy) - parseFloat(len_y/2) + parseFloat(ceny);
-				new_minz = parseFloat(old_cz) - parseFloat(len_z/2) + parseFloat(cenz);
+				//new_minz = parseFloat(old_cz) - parseFloat(len_z/2) + parseFloat(cenz);
+				// new_minz = parseFloat(old_cz);
+				
 				new_maxx = parseFloat(old_cx) + parseFloat(len_x/2) + parseFloat(cenx);
 				new_maxy = parseFloat(old_cy) + parseFloat(len_y/2) + parseFloat(ceny);
 				new_maxz = parseFloat(old_cz) + parseFloat(len_z/2) + parseFloat(cenz);
 				
 	            document.getElementById('minx').value=new_minx ;
 	            document.getElementById('miny').value=new_miny ;
-	            document.getElementById('maxz').value=new_maxz ;	            
+	            document.getElementById('maxz').value=new_maxz ;
+	            
 	            document.getElementById('maxx').value=new_maxx ;
 	            document.getElementById('maxy').value=new_maxy ;
-	            document.getElementById('minz').value=new_minz ;
+	            // document.getElementById('minz').value=new_minz ;
 			}
 
 			function isInView(vector){
@@ -430,7 +446,7 @@
 	            compute_centor(vector_in_view);
 
 	            var j_x = Math.abs(true_cx - old_cx),	j_y = Math.abs(true_cy - old_cy),	j_z =Math.abs(true_cy - old_cy);
-	            if(count < judge_num*0.5 && ( j_x>0 || j_y>0 || j_z>0)){
+	            if(count < judge_num*0.3 && ( j_x>0 || j_y>0 || j_z>0)){
 		            var material1 = new THREE.PointsMaterial({
 		                size: 10,
 		                vertexColors: THREE.VertexColors,
@@ -466,6 +482,8 @@
 						$('#ShowPoints').trigger('click');
 						console.log("button click")						
 					});
+	            }else{
+	            	event_flag1 = true;		
 	            }	            	            
 			}
 
@@ -480,14 +498,33 @@
 
 			function onDocumentMouseWheel(e) {
 				e.preventDefault();	
-				update_level();			
+				console.log(event_flag + ";" + event_flag1)
+				if(event_flag){
+					event_flag = false;
+					update_level();		
+				}					
 	            animate();            
 	        }
 
 	        function onDocumentMouseUp( event ) {
-	        	event.preventDefault();	        	
-	        	CountInAndPrint();	        	
-	            
+	        	event.preventDefault();	 
+	        	console.log(event_flag + ";" + event_flag1) 
+        	 	document.getElementById('me3').value=event.clientX + ";" + event.clientY;
+        	 	var vector = new THREE.Vector3();//三维坐标对象
+	            vector.set(
+	                ( (event.clientX-190)/ width) * 2 - 1,
+	                -( (event.clientY-107)/ height ) * 2 + 1,
+	                0.5);
+	            vector.unproject(camera);
+	            var raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
+	            var intersects = raycaster.intersectObjects(scene.children,true);
+	            if (intersects.length > 0) {
+
+	            	document.getElementById('me2').value= "click the " + intersects[0].object.name + "\n x: "
+	            	+( parseFloat(intersects[0].object.position.x) +  parseFloat(cenx) ) + " ; y: "
+	            	+( parseFloat(intersects[0].object.position.y) +  parseFloat(ceny) ) + " ; z: "
+	            	+( parseFloat(intersects[0].object.position.z) +  parseFloat(cenz) )
+		        }	            
         	}
 			
 			function animate() {

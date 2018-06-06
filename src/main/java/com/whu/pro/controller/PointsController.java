@@ -179,16 +179,19 @@ public class PointsController {
             }
         }
 
-        double perf = (double) 19999999 / num;
+        double perf = (double) 1999999 / (num + 1);
+        //        System.out.println("ori ++++++++++++++++num point is: " + num + " and perf is" + perf);
         if (num < 500000) {
             perf = 1;
-        } else if (num > 3000000) {
-            perf *= 3;
         }
+        //        else if (num > 3000000) {
+        //            perf *= 3;
+        //        }
         perf = Math.min(perf, 1.0);
         System.out.println("++++++++++++++++num point is: " + num + " and perf is" + perf);
 
         BernoulliSampler bsa = new BernoulliSampler(perf);
+
         for (int i = 0; i < rangeList.size(); i++) {
             Range r = rangeList.get(i);
             long beginHcode = r.getBegin().getHigh();
@@ -210,7 +213,7 @@ public class PointsController {
                     while (iter.hasNext()) {
                         //Blob a = iter.next();
                         PointResult a = iter.next();
-                        if (a != null && bsa.check()) {
+                        if (a != null && bsa.next()) {
                             byte[] bs = a.getData(); //a.getBytes(1, (int) a.length());
                             int cc = bs.length / DATA_LENGTH;
                             count += cc;
@@ -245,7 +248,7 @@ public class PointsController {
                     Iterator<PointResult> iter = arr.iterator();
                     while (iter.hasNext()) {
                         PointResult a = iter.next();
-                        if (a != null && bsa.check()) {
+                        if (a != null && bsa.next()) {
                             byte[] bs = a.getData(); //a.getBytes(1, (int) a.length());
                             int cc = bs.length / DATA_LENGTH;
                             count += cc;
