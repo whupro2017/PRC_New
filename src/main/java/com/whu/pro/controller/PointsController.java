@@ -179,7 +179,7 @@ public class PointsController {
             }
         }
 
-        double perf = (double) 1999999 / (num + 1);
+        double perf = (double) 1499999 / (num + 1);
         //        System.out.println("ori ++++++++++++++++num point is: " + num + " and perf is" + perf);
         if (num < 500000) {
             perf = 1;
