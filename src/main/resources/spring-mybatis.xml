@@ -46,7 +46,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
         <property name="url" value="jdbc:mysql://localhost:3306/pointcloud?useUnicode=true" />  
         <property name="username" value="root" />  
-        <property name="password" value="xcy1994" />   
+        <property name="password" value="lwh791209" />   
         <!--<property name="password" value= ""/>  -->
         <!-- 初始化连接大小 -->  
         <property name="initialSize" value="0"></property>  

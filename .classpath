@@ -238,17 +238,9 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="E:/Java_Programs/Whu_Git_Pro/PRC_New/src/main/webapp/model/Gonganbu.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="E:/Java_Programs/Whu_Git_Pro/PRC_New/src/main/webapp/model/ModelRebuild.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="E:/Java_Programs/Whu_Git_Pro/PRC_New/src/main/webapp/model/SpatialCoding.jar">
+	<classpathentry kind="lib" path="E:/Michael/Work/yl/Code/stable-v1/PRC_New/src/main/webapp/model/Gonganbu.jar"/>
+	<classpathentry kind="lib" path="E:/Michael/Work/yl/Code/stable-v1/PRC_New/src/main/webapp/model/ModelRebuild.jar"/>
+	<classpathentry kind="lib" path="E:/Michael/Work/yl/Code/stable-v1/PRC_New/src/main/webapp/model/SpatialCoding.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
