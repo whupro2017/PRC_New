@@ -199,7 +199,7 @@
 				axisHelper.position.x = minx-cenx;
 				axisHelper.position.y = miny-ceny;
 				axisHelper.position.z = minz-cenz;
-				scene.add(axisHelper);
+				
 				// point:
 				material = new THREE.PointsMaterial({
 					size: 3, sizeAttenuation: false,
@@ -212,7 +212,8 @@
 				particles.position.z -= parseFloat(z);
 				scene.add(particles);
 				// judge box 
-				if(judge_01==1){					
+				if(judge_01==1){
+					scene.add(axisHelper);
 					for(var i=0;i<judge_arr.length;i++){
 						scene.add(judge_arr[i]);
 					}
@@ -256,7 +257,7 @@
 	        }
 
 	        function remove_layout(){
-				//scene.remove(axisHelper);
+				scene.remove(axisHelper);
 				for(var i=0;i<judge_arr.length;i++){
 					scene.remove(judge_arr[i]);
 				}
