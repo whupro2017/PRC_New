@@ -1,5 +1,7 @@
 package com.whu.pro.controller;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.nio.ByteBuffer;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ import storage.Range;
 @Controller
 @RequestMapping("PointsController")
 public class PointsController {
+    public static final boolean DBG_INFO = false;
     @Resource
     private PointsService pointsService;
 
@@ -190,6 +193,9 @@ public class PointsController {
         perf = Math.min(perf, 1.0);
         System.out.println("++++++++++++++++num point is: " + num + " and perf is" + perf);
 
+        BufferedWriter writer = null;
+        if (DBG_INFO)
+            writer = new BufferedWriter(new FileWriter("D://temp.asc"));
         BernoulliSampler bsa = new BernoulliSampler(perf);
 
         for (int i = 0; i < rangeList.size(); i++) {
@@ -213,11 +219,14 @@ public class PointsController {
                     while (iter.hasNext()) {
                         //Blob a = iter.next();
                         PointResult a = iter.next();
-                        if (a != null && bsa.next()) {
+                        if (a != null) {
                             byte[] bs = a.getData(); //a.getBytes(1, (int) a.length());
                             int cc = bs.length / DATA_LENGTH;
-                            count += cc;
                             for (int j = 0; j < cc; j++) {
+                                if (!bsa.next()) {
+                                    continue;
+                                }
+                                count++;
                                 float x = ByteBuffer.wrap(bs, j * DATA_LENGTH, FLOAT_LENGTH).getFloat();
                                 float y = ByteBuffer.wrap(bs, j * DATA_LENGTH + 4, FLOAT_LENGTH).getFloat();
                                 float z = ByteBuffer.wrap(bs, j * DATA_LENGTH + 8, FLOAT_LENGTH).getFloat();
@@ -225,6 +234,10 @@ public class PointsController {
                                 int cg = ByteBuffer.wrap(bs, j * DATA_LENGTH + 18, SHORT_LENGTH).getShort();
                                 int cb = ByteBuffer.wrap(bs, j * DATA_LENGTH + 20, SHORT_LENGTH).getShort();
                                 ColorPointResult rr = new ColorPointResult(x, y, z, cr, cg, cb);
+                                String pos = x + " " + y + " " + z + " " + (float) cr / 255 + " " + (float) cg / 255
+                                        + " " + (float) cb / 255 + "\n";
+                                if (DBG_INFO)
+                                    writer.write(pos);
                                 res.add(rr);
                             }
                             //                            res.add(bs);
@@ -248,11 +261,14 @@ public class PointsController {
                     Iterator<PointResult> iter = arr.iterator();
                     while (iter.hasNext()) {
                         PointResult a = iter.next();
-                        if (a != null && bsa.next()) {
+                        if (a != null) {
                             byte[] bs = a.getData(); //a.getBytes(1, (int) a.length());
                             int cc = bs.length / DATA_LENGTH;
-                            count += cc;
                             for (int j = 0; j < cc; j++) {
+                                if (!bsa.next()) {
+                                    continue;
+                                }
+                                count++;
                                 float x = ByteBuffer.wrap(bs, j * DATA_LENGTH, FLOAT_LENGTH).getFloat();
                                 float y = ByteBuffer.wrap(bs, j * DATA_LENGTH + 4, FLOAT_LENGTH).getFloat();
                                 float z = ByteBuffer.wrap(bs, j * DATA_LENGTH + 8, FLOAT_LENGTH).getFloat();
@@ -260,6 +276,10 @@ public class PointsController {
                                 int cg = ByteBuffer.wrap(bs, j * DATA_LENGTH + 18, SHORT_LENGTH).getShort();
                                 int cb = ByteBuffer.wrap(bs, j * DATA_LENGTH + 20, SHORT_LENGTH).getShort();
                                 ColorPointResult rr = new ColorPointResult(x, y, z, cr, cg, cb);
+                                String pos = x + " " + y + " " + z + " " + (float) cr / 255 + " " + (float) cg / 255
+                                        + " " + (float) cb / 255 + "\n";
+                                if (DBG_INFO)
+                                    writer.write(pos);
                                 res.add(rr);
                             }
                             //                            res.add(bs);
@@ -271,6 +291,9 @@ public class PointsController {
                 }
             }
         }
+        if (DBG_INFO)
+            writer.close();
+        bsa.close();
         System.out.println(
                 "++++++++++++++++Color Points:" + res.size() + " dbaccess: " + (System.currentTimeMillis() - begin));
         System.out.println("++++++++++++++++Color Points count:" + count);
