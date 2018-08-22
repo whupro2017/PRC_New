@@ -116,10 +116,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							class="menu-text"> 点云展示 </span>
 					</a></li>
 
-					<li><a href="colorpoints.jsp"> <i
+					<!--li><a href="colorpoints.jsp"> <i
 							class="icon-star"></i> <span class="menu-text"> color点云展示
 						</span>
-					</a></li>
+					</a></li-->
 
 				</ul>
 				<!-- /.nav-list -->
@@ -185,24 +185,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									 onclick="showplant()"  >展示素材</button>
 								</td>
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="ShowPoints" style="height: 30px; width: 85px">显示</button>
+									<button id="ShowPoints" style="height: 30px; width: 75px">显示</button>
 								</td>
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="ShowObj" style="height: 30px; width: 85px">显示OBJ</button>
+									<button id="ShowObj" style="height: 30px; width: 75px">显示模型</button>
 								</td>
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="HideObj" style="height: 30px; width: 85px">隐藏OBJ</button>
+									<button id="HideObj" style="height: 30px; width: 75px">隐藏模型</button>
 								</td>								
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="Clear" style="height: 30px; width: 85px">清空</button>
+									<button id="Clear" style="height: 30px; width: 45px">清空</button>
 								</td>
-								
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="showlayout" style="height: 30px; width: 85px">显示网格</button>
+									<button id="showlayout" style="height: 30px; width: 75px">显示网格</button>
 								</td>
-								
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="deletelayout" style="height: 30px; width: 85px">隐藏网格</button>
+									<button id="deletelayout" style="height: 30px; width: 75px">隐藏网格</button>
+								</td>
+								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
+									<button id="lockPoints" style="height: 30px; width: 75px">锁定场景</button>
 								</td>
 							</tr>
 						</table>

@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</a>
 						</li>
 						
-						<li>
+						<!--li>
 							<a href="points.jsp">
 								<i class="icon-spinner"></i>
 								<span class="menu-text"> 点云展示 </span>
@@ -149,7 +149,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<i class="icon-star"></i>
 								<span class="menu-text"> color点云展示 </span>
 							</a>
-						</li>
+						</li-->
 						
 					</ul><!-- /.nav-list -->
 

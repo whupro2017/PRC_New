@@ -202,7 +202,7 @@
 				
 				// point:
 				material = new THREE.PointsMaterial({
-					size: 3, sizeAttenuation: false,
+					size: 4, sizeAttenuation: false,
 					vertexColors: THREE.VertexColors,					
 					alphaTest: 0.5,transparent: true
 				});												

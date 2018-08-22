@@ -132,7 +132,7 @@
 		        //camera.lookAt(scene.position);
 
 				material = new THREE.PointsMaterial({
-					size: 2,
+					size: 4,
 					// map: sprite,
 					vertexColors: THREE.VertexColors,
 					sizeAttenuation: false,

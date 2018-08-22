@@ -93,7 +93,7 @@
 							</a>
 						</li>
 						
-						<li>
+						<!--li>
 							<a href="workview/points.jsp">
 								<i class="icon-spinner"></i>
 								<span class="menu-text"> 点云展示 </span>
@@ -105,7 +105,7 @@
 								<i class="icon-star"></i>
 								<span class="menu-text"> color点云展示 </span>
 							</a>
-						</li>
+						</li-->
 						
 					</ul><!-- /.nav-list -->
 
