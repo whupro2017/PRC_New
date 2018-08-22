@@ -41,7 +41,7 @@
 			var old_cx, old_cy, old_cz,new_cx, new_cy, new_cz,true_cx, true_cy, true_cz;
 	        var new_minx, new_miny, new_maxz,new_maxz,new_maxy,new_minz;	
 	        var len_x, len_y,len_z;
-
+			var sceneLock = false;
 	        var event_flag = true, event_flag1 = true;
 
 	        var old_camex = 0, old_camey = 0, old_camez = 500;
@@ -135,7 +135,12 @@
 					judge_01 = 0;
 					remove_layout();				
 				});
-				
+
+				$('#lockPoints').on('click', function() {
+					sceneLock = !sceneLock;
+					alert("Lock: " + sceneLock);
+					document.getElementById('lockPoints').value = sceneLock;
+				});
 			});
 				
 			function initScence() {
@@ -202,7 +207,7 @@
 				
 				// point:
 				material = new THREE.PointsMaterial({
-					size: 4, sizeAttenuation: false,
+					size: 5, sizeAttenuation: false,
 					vertexColors: THREE.VertexColors,					
 					alphaTest: 0.5,transparent: true
 				});												
@@ -324,13 +329,14 @@
 						judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
 						judge_arr[i].name = i;
 					}
-		            
-	                clearScence();
-					jQuery(function($) {
-						$('#ShowPoints').trigger('click');
-						console.log("button click")						
-					});				
-	            }else{
+		            if (!sceneLock) {
+		                clearScence();
+						jQuery(function($) {
+							$('#ShowPoints').trigger('click');
+							console.log("button click")						
+						});
+	            	}		
+	            } else {
 	            	event_flag = true;	
 	            }
 	        }
@@ -392,7 +398,7 @@
 	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step
 	            + "\n" + "视野中点的数量:" +count +" of " +  judge_num ;
 
-	            if(count < judge_num*0.3){
+	            if(!sceneLock && count < judge_num*0.3){
 		            compute_centor(vector_in_view);		            
 					old_cx = true_cx; old_cy = true_cy; old_cz = true_cz;
 					updateText();		            

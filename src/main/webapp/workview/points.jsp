@@ -132,12 +132,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 				<script type="text/javascript">
 						try{ace.settings.check('sidebar')}catch(e){}
-					</script>
+				</script>
 			</div>
 
 			<div class="main-content">
 				<div class="page-content" style="height: 100%">
-				
 					<div style="width:60%;float:left;">
 						<div align="center">
 							<p>素材展示区</p>
@@ -148,7 +147,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div style="width:40%;float:right;border:1px #000000   solid" align="center">
 						<table style="background-color: transparent;">
 							<tr>
-								<td style="padding-left: 5px">leftbottom</td>
+								<td style="padding-left: 25px">leftbottom</td>
 								<td style="padding-left: 5px"><input type="text"
 									style="height: 20px; width: 90px;" id="minx" class="minx"
 									placeholder="x" value="610970.9"> <input type="text"
@@ -172,20 +171,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									placeholder="y" value="104710"> <input type="text"
 									style="height: 20px; width: 90px;" id="cenz" class="cenz"
 									placeholder="z" value="60"></td>
-								<td style="padding-left: 5px">level</td>
-								<td style="padding-left: 5px">
-									<input type="text" style="height: 30px; width: 40px;" id="level" value="10">
-								</td>																		
+								<td style="padding-right: 25px">
+									<div style="width:40%;float:left;border:0px #000000   solid" align="left">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">level</td>
+												<td style="padding-left: 5px">
+													<input type="text" style="height: 20px; width: 30px;" id="level" value="10">
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">locked</td>
+												<td style="padding-left: 5px">
+													<input type="text" style="height: 20px; width: 30px;" id="locked" value="0">
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">invalid</td>
+												<td style="padding-left: 5px">
+													<input type="text" style="height: 20px; width: 30px;" id="invalid" value="0">
+												</td>
+											</tr>
+										</table>
+									</div>
+								</td>
 							</tr>
 						</table>
-						<table style="background-color: transparent;">
+						<table style="background-color: transparent">
 							<tr>
 								<td class="tdTwo" rowspan="2">
 									<button id="Showpant" style="height: 30px; width: 85px"
-									 onclick="showplant()"  >展示素材</button>
+									 onclick="showplant()">展示素材</button>
 								</td>
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="ShowPoints" style="height: 30px; width: 75px">显示</button>
+									<button id="ShowPoints" style="height: 30px; width: 50px">显示</button>
 								</td>
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
 									<button id="ShowObj" style="height: 30px; width: 75px">显示模型</button>
@@ -194,7 +213,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<button id="HideObj" style="height: 30px; width: 75px">隐藏模型</button>
 								</td>								
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
-									<button id="Clear" style="height: 30px; width: 45px">清空</button>
+									<button id="Clear" style="height: 30px; width: 50px">清空</button>
 								</td>
 								<td class="tdTwo" rowspan="2" style="padding-left: 8px;">
 									<button id="showlayout" style="height: 30px; width: 75px">显示网格</button>
@@ -208,30 +227,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</tr>
 						</table>
 						<table style="background-color: transparent;padding-top: 80px">
-
-						<tr style="padding-left: 8px">
-							<td style="padding-left: 5px">Message 1</td>
-							<td>
-								<textarea id = "me1" rows="15" cols="80"></textarea>
-							</td>
-						</tr>
-						<tr style="padding-left: 8px">
-							<td style="padding-left: 5px">Message 2</td>
-							<td>
-								<textarea id = "me2" rows="15" cols="80"></textarea>
-							</td>
-						</tr>
-						<tr style="padding-left: 8px">
-							<td style="padding-left: 5px">Message 3</td>
-							<td>
-								<textarea id = "me3" rows="15" cols="80"></textarea>
-							</td>
-						</tr>
+							<tr style="padding-left: 8px">
+								<td style="padding-left: 5px">Message 1</td>
+								<td>
+									<textarea id = "me1" rows="15" cols="75"></textarea>
+								</td>
+							</tr>
+							<tr style="padding-left: 8px">
+								<td style="padding-left: 5px">Message 2</td>
+								<td>
+									<textarea id = "me2" rows="15" cols="75"></textarea>
+								</td>
+							</tr>
+							<tr style="padding-left: 8px">
+								<td style="padding-left: 5px">Message 3</td>
+								<td>
+									<textarea id = "me3" rows="15" cols="75"></textarea>
+								</td>
+							</tr>
 						</table>
 					</div> <!-- page-left -->
-					
-					
-						
 				</div> <!-- /page-content -->
 			</div>
 			
