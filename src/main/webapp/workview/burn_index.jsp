@@ -160,11 +160,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</li-->
 						
 					</ul><!-- /.nav-list -->
-
 					<div class="sidebar-collapse" id="sidebar-collapse">
 						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
 					</div>
-
 					<script type="text/javascript">
 						try{ace.settings.check('sidebar')}catch(e){}
 					</script>
@@ -209,7 +207,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												</tr>
 											</table>
 										</div>
-									
 										<div style="padding-top:3px">
 											<table id="table_burn"></table>
 										</div>
@@ -230,15 +227,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div>
 								</div>
 							</div>
-							
-						
 							<div class = "tab2" style="float:bottom;"  >
 								<div align="center" style="float:top; padding-top:1px border-top:solid 1px;border-left:solid 1px;border-right:solid 1px;border-bottom:solid 1px">
 									<table style="background-color:transparent;">	
 										<tr>
-											<td style="padding-left:35px">案件配置项</td>
+											<td>
+												<button id="Showpant" onclick="showplant()" style="height: 30px; width: 60px">初始化</button>
+												<button id="ShowPoints" style="height: 30px; width: 45px">素材</button>
+												<button id="ShowObj" style="height: 30px; width: 45px">模型</button>
+												<button id="HideObj" style="height: 30px; width: 45px">去除</button>
+												<button id="Clear" style="height: 30px; width: 45px">清空</button>
+												<button id="showlayout" style="height: 30px; width: 45px">网格</button>
+												<button id="deletelayout" style="height: 30px; width: 45px">隐藏</button>
+												<button id="lockPoints" style="height: 30px; width: 45px">锁定</button>
+												<button id="showBotton1"  onclick="show3d()" style="height:30px;width:45px">素材</button>
+												<button id="showBotton2"  onclick="showrun()"  style="height:30px;width:45px">展示</button>
+												<button id="showBotton3"  onclick="acc()"  style="height:30px;width:45px">加速</button>		
+												<button id="showBotton4"  onclick="stoprun()"  style="height:30px;width:45px">停止</button>
+											</td>
 										</tr>
 									</table>
+								</div>
+								<div style="float:bottom;">
+									<div class = "tab2.3" style="width:50%;float:left;border-left:solid 1px;border-right:solid 1px" align="center">
+										<text>关联信息</text>
+										<p>
+											<textarea id = "correlation" rows="18" cols="45"></textarea>
+										</p>
+									</div>
+									<div class = "tab2.4" style="width:50%;float:right;border-right:solid 1px;"  align="center">
+										<text>外联信息</text>
+										<p>
+											<textarea id = "e-correlation" rows="18" cols="45"></textarea>
+										</p>
+									</div>
 								</div>
 								<div style="float:bottom;">
 									<div class = "tab2.1" style="width:50%;float:left;border-left:solid 1px;border-right:solid 1px" align="center">
@@ -247,7 +269,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<div >
 													<table style="background-color:transparent;">
 														<tr>
-															<td style= "padding-right:20px">原始点云</td>
+															<td style= "padding-right:25px">原始点云</td>
 															<td>
 																<button id="searchPC" style="height:25px;width:75px">匹配搜索</button>
 																<button id="assignPC" style="height:25px;width:75px">绑定点云</button>
@@ -255,17 +277,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 															</td>
 														</tr>
 													</table>
-													<div style="padding-top:3px">
-														<table id="table_burn"></table>
-													</div>
 												</div>
 												<div>
 													<table style="background-color:transparent;">	
 														<tr>
 															<td style= "padding-right:20px">空间位置：</td>
 															<td style="padding-left:4px">
-																<input type="text" style= "height:25px;width:105px;" id="lat" placeholder="中心经度">
-																<input type="text" style= "height:25px;width:105px;" id="lon" placeholder="中心纬度">
+																<input type="text" style= "height:25px;width:105px;" id="pointlat" placeholder="中心经度">
+																<input type="text" style= "height:25px;width:105px;" id="pointlon" placeholder="中心纬度">
 															</td>
 														</tr>
 													</table>
@@ -275,8 +294,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														<tr>
 															<td style= "padding-right:20px">录入时间：</td>
 															<td style="padding-left:4px">
-																<input type="text" style="height:25px;width:105px;" id="from" class="from" placeholder="开始时间">
-																<input type="text" style="height:25px;width:105px;" id="to" class="to" placeholder="结束时间">	
+																<input type="text" style="height:25px;width:105px;" id="pointfrom" class="from" placeholder="开始时间">
+																<input type="text" style="height:25px;width:105px;" id="pointto" class="to" placeholder="结束时间">	
 															</td>
 														</tr>
 													</table>
@@ -284,22 +303,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<div style="padding-top:3px">
 													<table id="table_pointinfo"></table>
 												</div>
-												<!-- div class="tab-pane fade" id="material">
-													<button id="material_load" style= "height:25px;width:65px" onClick="load_m()">Load</button>										
-													<div class="zTreeDemoBackground left">
-														<ul id="treeDemo" class="ztree"></ul>
-													</div>
-												</div-->
-												<div class="tab-pane fade" id="trail">
-													<button id="trail_load" style= "height:25px;width:65px" onClick="load_t()">Load</button>																																
-													<p>
-														<textarea id = "trail_show_all" rows="10" cols="40">此处显示</textarea>
-													</p>
-												</div>
 											</div>
 										</div>
 									</div>
-									
 									<div class = "tab2.2" style="width:50%;float:right;border-right:solid 1px;"  align="center">
 										<div id="myTabContent" class="tab-content">
 											<div style="background-color:transparent;float:top;">
@@ -308,15 +314,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														<tr>
 															<td style= "padding-right:20px">场景模型</td>
 															<td>
-																<button id="searchPC" style="height:25px;width:75px">匹配搜索</button>
-																<button id="assignPC" style="height:25px;width:75px">绑定模型</button>
-																<button id="clearPC" style="height:25px;width:75px">清空绑定</button>
+																<button id="searchModel" style="height:25px;width:75px">匹配搜索</button>
+																<button id="assignModel" style="height:25px;width:75px">绑定模型</button>
+																<button id="clearModel" style="height:25px;width:75px">清空绑定</button>
 															</td>
 														</tr>
 													</table>
-													<div style="padding-top:3px">
-														<table id="table_burn"></table>
-													</div>
 												</div>
 												<div>
 													<table style="background-color:transparent;">	
@@ -341,45 +344,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</table>
 												</div>
 												<div style="padding-top:3px">
-													<table id="table_pointinfo"></table>
-												</div>
-												<div class="tab-pane fade" id="trail">
-													<button id="trail_load" style= "height:25px;width:65px" onClick="load_t()">Load</button>																																
-													<p>
-														<textarea id = "trail_show_all" rows="10" cols="40">此处显示</textarea>
-													</p>
+													<table id="table_modelinfo"></table>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div style="float:bottom;">
-									<div class = "tab2.3" style="width:50%;float:left;border-left:solid 1px;border-right:solid 1px" align="center">
-										<text>关联信息</text>
-										<p>
-											<textarea id = "correlation" rows="20" cols="40"></textarea>
-										</p>
-										
-									</div>
-									<div class = "tab2.4" style="width:50%;float:right;border-right:solid 1px;"  align="center">
-										<text>外联信息</text>
-										<p>
-											<textarea id = "e-correlation" rows="20" cols="40"></textarea>
-										</p>
-									</div>
-								</div>
-								
 							</div>							
-							
 						</div>
 						
 						<div style="width:55%;float:right">
-							<div align="center">
+							<!-- div align="center">
 								<button id="showBotton1"  onclick="show3d()"  >素材展示</button>
 								<button id="showBotton2"  onclick="showrun()"  >动态展示</button>
 								<button id="showBotton3"  onclick="acc()"  >加速</button>		
 								<button id="showBotton4"  onclick="stoprun()"  >停止</button>																
-							</div>
+							</div-->
 							
 							<div>
 							

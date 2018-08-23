@@ -75,6 +75,6 @@ function show3d() {
 }
 
 function showplant() {
-	jq("#plantshow").load("/pro/3dshow/points.jsp");
+	jq("#plantshow").load("/pro/3dshow/burndisplay.jsp");
 	jq("#Showpant").attr("disabled", true);
 }
