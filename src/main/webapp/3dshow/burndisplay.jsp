@@ -32,7 +32,7 @@
 			var axisHelper;
 			var judge_01 = 1, obj_01 = 0;
 
-			var width = 950, height = 850;
+			var width = 920, height = 800;
 			
 			var dis_ori, dis_now, dis_step, dis_step_new;
 			var min_level = 10,  max_level = 17;			
@@ -49,7 +49,7 @@
 	        var new_jx = 0, new_jy = 0, new_jz = 0;
 	        var mouse_down = true;
 
-	        initScence();   						
+	        initScence();
 						
 			jQuery(function($) {
 				$('#ShowPoints').on('click', function() {
@@ -62,9 +62,8 @@
 
 					len_x = Math.abs(maxx - minx);
 					len_y = Math.abs(maxy - miny);
-					len_z = Math.abs(maxz - minz);										
+					len_z = Math.abs(maxz - minz);
 					// console.log("##############show points input"+minx+","+miny+","+minz+","+maxx+","+maxy+","+maxz+","+level);
-									    	
 					$.ajax({
 						async: false,
 						cache: false,

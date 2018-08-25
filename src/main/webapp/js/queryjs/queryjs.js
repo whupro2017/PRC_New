@@ -74,6 +74,11 @@ function show3d() {
 	jq("#showBotton1").attr("disabled", true);
 }
 
+function showall() {
+	jq("#3dshow").load("/pro/3dshow/burndisplay.jsp");
+	jq("#init").attr("disabled", true);
+}
+
 function showplant() {
 	jq("#plantshow").load("/pro/3dshow/burndisplay.jsp");
 	jq("#Showpant").attr("disabled", true);

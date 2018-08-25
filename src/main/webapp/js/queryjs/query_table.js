@@ -246,8 +246,14 @@ jQuery(function($) {
 		mtype : 'POST',
 
 		height : 200,
-		colNames : [ '入库时间', '状态', '描述' ],
+		colNames : [ '标识', '入库时间', '状态', '描述' ],
 		colModel : [ {
+			name : 'id',
+			index : 'id',
+			width : 30,
+			sortable : false,
+			editable : false
+		}, {
 			name : 'createTime',
 			index : 'createTime',
 			width : 80,
@@ -256,13 +262,13 @@ jQuery(function($) {
 		}, {
 			name : 'productstatus',
 			index : 'productstatus',
-			width : 40,
+			width : 30,
 			editable : false,
 			sorttype : "string"
 		}, {
 			name : 'comments',
 			index : 'comments',
-			width : 40,
+			width : 60,
 			sortable : false,
 			editable : false
 		} ],
@@ -276,6 +282,14 @@ jQuery(function($) {
 			var table = this;
 			setTimeout(function() {
 			}, 0);
+		},
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.id;
+			console.log("sceneid " + cid);
+			document.getElementById('sceneid').value = cid;
 		},
 		autowidth : true
 	});

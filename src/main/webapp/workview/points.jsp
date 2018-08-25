@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</a></li>
 
 					<li><a href="all_index.jsp"> <i class="icon-th"></i> <span
-							class="menu-text"> 全部案件 </span>
+							class="menu-text"> 案件管理  </span>
 					</a></li>
 
 					<li><a href="burn_index.jsp"> <i class="icon-fire"></i> <span
