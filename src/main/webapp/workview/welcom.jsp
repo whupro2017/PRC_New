@@ -1,8 +1,9 @@
 <%@ page language="java" import="java.util.*"
 	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+			String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+					+ path + "/";
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,25 +34,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="../css/bootstrap/bootstrap-datepicker3.css" rel="stylesheet">
 
 <script type="text/javascript">
-		    $(function () {
-		        $(".from").datepicker({
-		            language: "zh-CN",
-		            autoclose: true,//选中之后自动隐藏日期选择框
-		            clearBtn: true,//清除按钮
-		            format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		        });
-		    });
-		    
-		    $(function () {
-		        $(".to").datepicker({
-		            language: "zh-CN",
-		            autoclose: true,//选中之后自动隐藏日期选择框
-		            clearBtn: true,//清除按钮
-		            format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		        });
-		    });
-		    
-		</script>
+	$(function() {
+		$(".from").datepicker({
+			language : "zh-CN",
+			autoclose : true,//选中之后自动隐藏日期选择框
+			clearBtn : true,//清除按钮
+			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+		});
+	});
+
+	$(function() {
+		$(".to").datepicker({
+			language : "zh-CN",
+			autoclose : true,//选中之后自动隐藏日期选择框
+			clearBtn : true,//清除按钮
+			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+		});
+	});
+</script>
 
 <link href="../css/bootstrap/css/bootstrap-table.css" rel="stylesheet">
 <script src="../js/jQuery/jquery-2.1.4.min.js" type="text/javascript"></script>
@@ -68,13 +68,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<div class="navbar navbar-default" id="navbar" style="height: 70px;">
 		<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
+			try {
+				ace.settings.check('navbar', 'fixed')
+			} catch (e) {
+			}
+		</script>
 
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
-				<a href="#" class="navbar-brand"> <img src="./logo.png" /> <textvertical-align:middle;>案事件现场勘验综合展示系统</text>
-					</a>
+				<a href="#" class="navbar-brand"> <img src="./logo.png" /> <text
+						style="vertical-align:middle;">案事件现场勘验综合展示系统</text>
+				</a>
 				<!-- /.brand -->
 			</div>
 			<!-- /.navbar-header -->
@@ -84,8 +88,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<div class="main-container" id="main-container">
 		<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
-			</script>
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch (e) {
+			}
+		</script>
 
 		<div class="main-container-inner">
 			<a class="menu-toggler" id="menu-toggler" href="#"> <span
@@ -94,8 +101,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			<div class="sidebar" id="sidebar">
 				<script type="text/javascript">
-						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
-					</script>
+					try {
+						ace.settings.check('sidebar', 'fixed')
+					} catch (e) {
+					}
+				</script>
 
 				<ul class="nav nav-list">
 					<li class="active"><a href="welcom.jsp"> <i
@@ -154,8 +164,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 
 				<script type="text/javascript">
-						try{ace.settings.check('sidebar','collapsed')}catch(e){}
-					</script>
+					try {
+						ace.settings.check('sidebar', 'collapsed')
+					} catch (e) {
+					}
+				</script>
 			</div>
 
 			<div class="main-content">
@@ -172,12 +185,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<!-- /.main-container -->
 	<script type="text/javascript">
-			window.jQuery || document.write("<script src='../assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
-		</script>
+		window.jQuery
+				|| document
+						.write("<script src='../assets/js/jquery-2.0.3.min.js'>"
+								+ "<"+"script>");
+	</script>
 
 	<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
-		</script>
+		if ("ontouchend" in document)
+			document
+					.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"
+							+ "<"+"script>");
+	</script>
 	<script src="../assets/js/bootstrap.min.js"></script>
 	<script src="../assets/js/typeahead-bs2.min.js"></script>
 

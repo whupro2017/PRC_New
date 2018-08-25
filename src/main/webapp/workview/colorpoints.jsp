@@ -67,9 +67,9 @@
 
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
-				<a href="#" class="navbar-brand"> <img src="./logo.png" />
-				<textvertical-align:middle;>案事件现场勘验综合展示系统</text>
-					</a>
+				<a href="#" class="navbar-brand"> <img src="./logo.png" /> <text
+						style="vertical-align:middle;">案事件现场勘验综合展示系统</text>
+				</a>
 				<!-- /.brand -->
 			</div>
 			<!-- /.navbar-header -->

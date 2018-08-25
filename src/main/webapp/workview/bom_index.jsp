@@ -1,8 +1,9 @@
 <%@ page language="java" import="java.util.*"
 	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+			String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+					+ path + "/";
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,38 +56,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="../js/queryjs/ztree.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-			jQuery(function ($) {
-		        $(".from").datepicker({
-		            language: "zh-CN",
-		            autoclose: true,//选中之后自动隐藏日期选择框
-		            clearBtn: true,//清除按钮
-		            format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		        });
-		    });
-		    
-			jQuery(function ($) {
-		        $(".to").datepicker({
-		            language: "zh-CN",
-		            autoclose: true,//选中之后自动隐藏日期选择框
-		            clearBtn: true,//清除按钮
-		            format: "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		        });
-		    });
-		    
-		</script>
+	jQuery(function($) {
+		$(".from").datepicker({
+			language : "zh-CN",
+			autoclose : true,//选中之后自动隐藏日期选择框
+			clearBtn : true,//清除按钮
+			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+		});
+	});
+
+	jQuery(function($) {
+		$(".to").datepicker({
+			language : "zh-CN",
+			autoclose : true,//选中之后自动隐藏日期选择框
+			clearBtn : true,//清除按钮
+			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+		});
+	});
+</script>
 </head>
 
 
 <body>
 	<div class="navbar navbar-default" id="navbar">
 		<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
-			</script>
+			try {
+				ace.settings.check('navbar', 'fixed')
+			} catch (e) {
+			}
+		</script>
 
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
-				<a href="#" class="navbar-brand"> <img src="./logo.png" /> <textvertical-align:middle;>案事件现场勘验综合展示系统</text>
-					</a>
+				<a href="#" class="navbar-brand"> <img src="./logo.png" /> <text
+						style="vertical-align:middle;">案事件现场勘验综合展示系统</text>
+				</a>
 				<!-- /.brand -->
 			</div>
 			<!-- /.navbar-header -->
@@ -96,8 +100,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<div class="main-container" id="main-container">
 		<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
-			</script>
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch (e) {
+			}
+		</script>
 
 		<div class="main-container-inner">
 			<a class="menu-toggler" id="menu-toggler" href="#"> <span
@@ -106,12 +113,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			<div class="sidebar" id="sidebar">
 				<script type="text/javascript">
-						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
-					</script>
+					try {
+						ace.settings.check('sidebar', 'fixed')
+					} catch (e) {
+					}
+				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i>
-							<span class="menu-text"> 首页 </span>
+					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+							class="menu-text"> 首页 </span>
 					</a></li>
 
 					<li><a href="all_index.jsp"> <i class="icon-th"></i> <span
@@ -167,8 +177,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 
 				<script type="text/javascript">
-						try{ace.settings.check('sidebar')}catch(e){}
-					</script>
+					try {
+						ace.settings.check('sidebar')
+					} catch (e) {
+					}
+				</script>
 			</div>
 
 			<div class="main-content">
