@@ -197,27 +197,47 @@ jQuery(function($) {
 			.on(
 					'click',
 					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
-						from2 = $(".pointfrom").val();
-						to1 = $(".pointto").val();
+						console.log("#table_pointinfo");
+						from2 = $("#pointfrom").val();
+						to2 = $("#pointto").val();
 						centerx = $('#pointlat').val();
 						centery = $('#pointlon').val();
-						console.log(from1 + "," + to1 + "," + centerx + ","
-								+ centery);
-						$(grid_selector)
-								.jqGrid(
-										'setGridParam',
-										{
-											url : '/pro/CaseQueryController/getBurnCase?beginTime='
-													+ from1
-													+ '&endTime='
-													+ to1
-													+ '&pro='
-													+ pro1
-													+ '&city='
-													+ city1 + '&dis=' + dis1,
-											datatype : "json",
-											mtype : 'POST',
-										}).trigger("reloadGrid"); // 重新载入
+						if (from2.length == 0) {
+							from2 = '2000-01-01';
+						}
+						if (to2.length == 0) {
+							to2 = '2030-01-01';
+						}
+						console.log(from2 + "," + to2 + "," + centerx + ","
+								+ centerx.length + "," + centery);
+						if (centerx.length == 0 || centery.length == 0) {
+							console.log("branch1");
+							$(grid_selector)
+									.jqGrid(
+											'setGridParam',
+											{
+												url : '/pro/PointInfoQueryController/getPointTimeRangeInfo?begin='
+														+ from2 + '&end=' + to2,
+												datatype : "json",
+												mtype : 'POST',
+											}).trigger("reloadGrid"); // 重新载入
+						} else {
+							console.log("branch2");
+							$(grid_selector)
+									.jqGrid(
+											'setGridParam',
+											{
+												url : '/pro/PointInfoQueryController/getPointInfo?begin='
+														+ from2
+														+ '&end='
+														+ to2
+														+ '&px='
+														+ centerx
+														+ '&py=' + centery,
+												datatype : "json",
+												mtype : 'POST',
+											}).trigger("reloadGrid"); // 重新载入
+						}
 					});
 
 	jQuery(grid_selector).jqGrid({
@@ -225,13 +245,13 @@ jQuery(function($) {
 		datatype : "json",
 		mtype : 'POST',
 
-		height : 320,
-		colNames : [ '入库时间', '处理状态', '场景描述' ],
+		height : 200,
+		colNames : [ '入库时间', '状态', '描述' ],
 		colModel : [ {
-			name : 'createtime',
-			index : 'createtime',
-			width : 40,
-			sorttype : "date",
+			name : 'createTime',
+			index : 'createTime',
+			width : 80,
+			sorttype : "string",
 			editable : false
 		}, {
 			name : 'productstatus',
@@ -242,7 +262,7 @@ jQuery(function($) {
 		}, {
 			name : 'comments',
 			index : 'comments',
-			width : 80,
+			width : 40,
 			sortable : false,
 			editable : false
 		} ],
@@ -276,27 +296,45 @@ jQuery(function($) {
 			.on(
 					'click',
 					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
-						from2 = $(".pointfrom").val();
-						to1 = $(".pointto").val();
-						centerx = $('#pointlat').val();
-						centery = $('#pointlon').val();
-						console.log(from1 + "," + to1 + "," + centerx + ","
-								+ centery);
-						$(grid_selector)
-								.jqGrid(
-										'setGridParam',
-										{
-											url : '/pro/CaseQueryController/getBurnCase?beginTime='
-													+ from1
-													+ '&endTime='
-													+ to1
-													+ '&pro='
-													+ pro1
-													+ '&city='
-													+ city1 + '&dis=' + dis1,
-											datatype : "json",
-											mtype : 'POST',
-										}).trigger("reloadGrid"); // 重新载入
+						console.log("#table_modelinfo");
+						from2 = $("#modelfrom").val();
+						to2 = $("#modelto").val();
+						centerx = $('#modellat').val();
+						centery = $('#modellon').val();
+						if (from2.length == 0) {
+							from2 = '2000-01-01';
+						}
+						if (to2.length == 0) {
+							to2 = '2030-01-01';
+						}
+						console.log(from2 + "," + to2 + "," + centerx + ","
+								+ centerx.length + "," + centery);
+						if (centerx.length == 0 || centery.length == 0) {
+							$(grid_selector)
+									.jqGrid(
+											'setGridParam',
+											{
+												url : '/pro/ModelInfoQueryController/getModelTimeRangeInfo?begin='
+														+ from2 + '&end=' + to2,
+												datatype : "json",
+												mtype : 'POST',
+											}).trigger("reloadGrid"); // 重新载入
+						} else {
+							$(grid_selector)
+									.jqGrid(
+											'setGridParam',
+											{
+												url : '/pro/ModelInfoQueryController/getModelInfo?begin='
+														+ from2
+														+ '&end='
+														+ to2
+														+ '&px='
+														+ centerx
+														+ '&py=' + centery,
+												datatype : "json",
+												mtype : 'POST',
+											}).trigger("reloadGrid"); // 重新载入
+						}
 					});
 
 	jQuery(grid_selector).jqGrid({
@@ -304,13 +342,13 @@ jQuery(function($) {
 		datatype : "json",
 		mtype : 'POST',
 
-		height : 320,
-		colNames : [ '入库时间', '处理状态', '场景描述' ],
+		height : 200,
+		colNames : [ '入库时间', '状态', '描述' ],
 		colModel : [ {
-			name : 'createtime',
-			index : 'createtime',
-			width : 40,
-			sorttype : "date",
+			name : 'createTime',
+			index : 'createTime',
+			width : 80,
+			sorttype : "string",
 			editable : false
 		}, {
 			name : 'productstatus',
@@ -321,7 +359,7 @@ jQuery(function($) {
 		}, {
 			name : 'comments',
 			index : 'comments',
-			width : 80,
+			width : 40,
 			sortable : false,
 			editable : false
 		} ],

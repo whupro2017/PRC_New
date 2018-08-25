@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- author lyx; date 2016.09.28 -->
+<mapper namespace="com.whu.pro.dao.ModelInfoQueryDao">
+	<select id="getModelInfo" parameterType="com.whu.pro.mapper.param.InfoQueryParam"
+		resultType="com.whu.pro.mapper.result.InfoResult">
+		select id, centerx, centery, createtime, shiftx, shifty, shiftz, minx, miny, minz, maxx, maxy, maxz, mdnx, mdny, mdnz, minlevel, maxlevel, thumb, productstatus, comments from modelinfo 
+		where (createtime between #{beginTime} and #{endTime} and minx&lt;#{refx} and maxx&gt;#{refx} and miny&lt;#{refy} and maxy&gt;#{refy}) ;
+	</select>
+	
+	<select id="getModelTimeRangeInfo" parameterType="com.whu.pro.mapper.param.InfoTimeRangeQueryParam"
+		resultType="com.whu.pro.mapper.result.InfoResult">
+		select id, centerx, centery, createtime, shiftx, shifty, shiftz, minx, miny, minz, maxx, maxy, maxz, mdnx, mdny, mdnz, minlevel, maxlevel, thumb, productstatus, comments from modelinfo 
+		where (createtime between #{beginTime} and #{endTime}) ;
+	</select>
+</mapper>

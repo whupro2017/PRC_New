@@ -282,7 +282,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<table style="background-color:transparent;">	
 														<tr>
 															<td style= "padding-right:20px">空间位置：</td>
-															<td style="padding-left:4px">
+															<td style="padding-left:4px" data-toggle="distpicker">
 																<input type="text" style= "height:25px;width:105px;" id="pointlat" placeholder="中心经度">
 																<input type="text" style= "height:25px;width:105px;" id="pointlon" placeholder="中心纬度">
 															</td>
@@ -293,7 +293,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<table style="background-color:transparent;">	
 														<tr>
 															<td style= "padding-right:20px">录入时间：</td>
-															<td style="padding-left:4px">
+															<td style="padding-left:4px" data-toggle="distpicker">
 																<input type="text" style="height:25px;width:105px;" id="pointfrom" class="from" placeholder="开始时间">
 																<input type="text" style="height:25px;width:105px;" id="pointto" class="to" placeholder="结束时间">	
 															</td>
@@ -325,9 +325,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<table style="background-color:transparent;">	
 														<tr>
 															<td style= "padding-right:20px">空间位置：</td>
-															<td style="padding-left:4px">
-																<input type="text" style= "height:25px;width:105px;" id="lat" placeholder="中心经度">
-																<input type="text" style= "height:25px;width:105px;" id="lon" placeholder="中心纬度">
+															<td style="padding-left:4px"  data-toggle="distpicker">
+																<input type="text" style= "height:25px;width:105px;" id="modellat" placeholder="中心经度">
+																<input type="text" style= "height:25px;width:105px;" id="modellon" placeholder="中心纬度">
 															</td>
 														</tr>
 													</table>
@@ -337,8 +337,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														<tr>
 															<td style= "padding-right:20px">录入时间：</td>
 															<td style="padding-left:4px">
-																<input type="text" style="height:25px;width:105px;" id="from" class="from" placeholder="开始时间">
-																<input type="text" style="height:25px;width:105px;" id="to" class="to" placeholder="结束时间">	
+																<input type="text" style="height:25px;width:105px;" id="modelfrom" class="from" placeholder="开始时间">
+																<input type="text" style="height:25px;width:105px;" id="modelto" class="to" placeholder="结束时间">	
 															</td>
 														</tr>
 													</table>
