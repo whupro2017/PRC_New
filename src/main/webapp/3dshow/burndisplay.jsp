@@ -85,15 +85,14 @@
 							geometry = new THREE.Geometry();         				
 							vec_judge = new Array();							
 							var x = 0, y = 0, z = 0;
-							console.log("Judge: "+cenx+","+ceny+","+cenz);
+							console.log("Judge: "+cenx+","+ceny+","+cenz+","+judge_num);
 							for(var i=0; i<judge_num;i++){
 								var row = data[i];
 								judge_arr[i].position.x = data[i].x-cenx;
 								judge_arr[i].position.y = data[i].y-ceny;
 								judge_arr[i].position.z = data[i].z-cenz;
-
 								var vertex = new THREE.Vector3(data[i].x-cenx, data[i].y-ceny, data[i].z-cenz);
-								x+=data[i].x-cenx; y+=data[i].y-ceny; z+=data[i].z-cenz;			
+								x+=data[i].x-cenx; y+=data[i].y-ceny; z+=data[i].z-cenz;
 								vec_judge.push(vertex);
 							}
 							
