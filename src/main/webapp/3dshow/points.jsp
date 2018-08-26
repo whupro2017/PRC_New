@@ -72,7 +72,7 @@
 						datatype: 'json',
 						url:'/pro/PointsController/getAllColorPoints?minx=' + minx + '&miny=' + miny 
 							+ '&minz=' + minz + '&maxx=' + maxx + '&maxy=' + maxy + '&maxz=' + maxz
-							+ '&level=' + level,
+							+ '&level=' + level + '&maxLevel=' + max_level,
 						error: function(){
 							alert("失败");
 						},

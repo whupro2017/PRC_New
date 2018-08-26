@@ -35,7 +35,7 @@
 			var width = 920, height = 800;
 			
 			var dis_ori, dis_now, dis_step, dis_step_new;
-			var min_level = 10,  max_level = 17;			
+			var min_level,  max_level;			
 			
 			var minx, miny,  maxz,maxx, maxy,minz, cenx, ceny, cenz, level;
 			var old_cx, old_cy, old_cz,new_cx, new_cy, new_cz,true_cx, true_cy, true_cz;
@@ -48,22 +48,25 @@
 	        var old_jx = 0, old_jy = 0, old_jz = 0;
 	        var new_jx = 0, new_jy = 0, new_jz = 0;
 	        var mouse_down = true;
-
-	        initScence();
-						
+	        var cameraheight;
 			jQuery(function($) {
 				$('#ShowPoints').on('click', function() {
 					minx = $(".minx").val(); maxx = $(".maxx").val();
 					miny = $(".miny").val(); maxy = $(".maxy").val();
 					minz = $(".minz").val(); maxz = $(".maxz").val();
-														
 					cenx = $(".cenx").val(); ceny = $(".ceny").val();					
-					cenz = $(".cenz").val(); level = $("#level").val();					
+					cenz = $(".cenz").val();
 
 					len_x = Math.abs(maxx - minx);
 					len_y = Math.abs(maxy - miny);
 					len_z = Math.abs(maxz - minz);
-					// console.log("##############show points input"+minx+","+miny+","+minz+","+maxx+","+maxy+","+maxz+","+level);
+					
+					level = $("#level").val(); max_level = $('#maxlevel').val();
+					cameraheight = parseInt(Math.sqrt(len_x * len_y) * Math.pow(1.5, Math.log(Math.sqrt(len_x * len_y) / 1000)));
+					console.log("Input: "+minx+","+miny+","+minz+","+maxx+","+maxy+","+maxz+","+level+","+max_level);
+					console.log(min_level+","+max_level + "," + cameraheight + "," +(maxx-minx)+ "," +(maxy-miny));
+			        initScence(cameraheight);
+			        
 					$.ajax({
 						async: false,
 						cache: false,
@@ -71,7 +74,7 @@
 						datatype: 'json',
 						url:'/pro/PointsController/getAllColorPoints?minx=' + minx + '&miny=' + miny 
 							+ '&minz=' + minz + '&maxx=' + maxx + '&maxy=' + maxy + '&maxz=' + maxz
-							+ '&level=' + level,
+							+ '&level=' + level + '&maxLevel=' + max_level,
 						error: function(){
 							alert("失败");
 						},
@@ -82,7 +85,7 @@
 							geometry = new THREE.Geometry();         				
 							vec_judge = new Array();							
 							var x = 0, y = 0, z = 0;
-
+							console.log("Judge: "+cenx+","+ceny+","+cenz);
 							for(var i=0; i<judge_num;i++){
 								var row = data[i];
 								judge_arr[i].position.x = data[i].x-cenx;
@@ -95,8 +98,8 @@
 							}
 							
 							old_cx = x/judge_num; old_cy = y/judge_num; old_cz = z/judge_num;
-							new_cx = old_cx; new_cy = old_cy; new_cz = old_cz;						
-							true_cx = old_cx; true_cy = old_cy; true_cz = old_cz;																			
+							new_cx = old_cx; new_cy = old_cy; new_cz = old_cz;
+							true_cx = old_cx; true_cy = old_cy; true_cz = old_cz;
 							for (var i = judge_num-1; i < data.length; i++) {
 								var row = data[i];
 								var vertex = new THREE.Vector3(data[i].x, data[i].y, data[i].z);
@@ -142,7 +145,7 @@
 				});
 			});
 				
-			function initScence() {
+			function initScence(cameraheight) {
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 				//scene
@@ -153,7 +156,8 @@
                 scene.add(new THREE.AmbientLight(0x333333));
 				//camera              
                 camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 20000);
-                camera.position.set(0, 0, 500);
+				console.log("height: " + cameraheight);
+                camera.position.set(0, 0, cameraheight);
                 camera.lookAt(0, 0, 1);            		
            		//init judge box		
            		var size = 5; 
@@ -295,15 +299,17 @@
 			
 			function update_level(){
 	            juli();	           
-	            var le = document.getElementById('level').value;	            
+	            var le = document.getElementById('level').value;
+				var max_level = document.getElementById('maxLevel').value;
+	            var dft_level = max_level - 7;
 	            dis_step_new = dis_step * (1 - 0.05*(le-10));
 	            var K = (dis_ori-dis_now) / dis_step_new ;
 	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step_new + " K: " + K
 	            level = 10 + Math.floor(K);
-	            if(level > 17)
-            		level = 17;
-            		else if(level < 10)
-            			level = 10
+	            if(level > max_level)
+            		level = max_level;
+            		else if(level < dft_level)
+            			level = dft_level;
 
 	            if(le != level){	            		            	
 	                if(le < level){

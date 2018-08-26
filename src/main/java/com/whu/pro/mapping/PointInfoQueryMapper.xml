@@ -2,6 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- author lyx; date 2016.09.28 -->
 <mapper namespace="com.whu.pro.dao.PointInfoQueryDao">
+	<select id="getPointInfoById" parameterType="com.whu.pro.mapper.param.InfoTimeRangeQueryParam"
+		resultType="com.whu.pro.mapper.result.InfoResult">
+		select id, centerx, centery, createtime, shiftx, shifty, shiftz, minx, miny, minz, maxx, maxy, maxz, mdnx, mdny, mdnz, minlevel, maxlevel, thumb, productstatus, comments from rawinfo 
+		where (id = #{id}) ;
+	</select>
+
 	<select id="getPointInfo" parameterType="com.whu.pro.mapper.param.InfoQueryParam"
 		resultType="com.whu.pro.mapper.result.InfoResult">
 		select id, centerx, centery, createtime, shiftx, shifty, shiftz, minx, miny, minz, maxx, maxy, maxz, mdnx, mdny, mdnz, minlevel, maxlevel, thumb, productstatus, comments from rawinfo 

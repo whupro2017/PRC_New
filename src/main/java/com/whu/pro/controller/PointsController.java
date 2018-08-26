@@ -36,11 +36,12 @@ public class PointsController {
     @ResponseBody
     @RequestMapping(value = "getAllPoints", method = { RequestMethod.GET, RequestMethod.POST })
     public Object getAllPoints(String minx, String miny, String minz, String maxx, String maxy, String maxz,
-            String level) throws SQLException {
+            String level, String maxLevel) throws SQLException {
         //		Point center = new Point(500000, 500000, 300000);
         Point leftBottom = new Point(Double.parseDouble(minx), Double.parseDouble(miny), Double.parseDouble(minz));
         Point rightTop = new Point(Double.parseDouble(maxx), Double.parseDouble(maxy), Double.parseDouble(maxz));
         //		Hilbert hilbert = new Hilbert(center, 500000, 22);
+        Hilbert.DEPTH = Integer.parseInt(maxLevel);
         List<Range> rangeList = Hilbert.getRange(Integer.parseInt(level), leftBottom, rightTop);
         ArrayList<PointResult> res = new ArrayList<PointResult>();
         System.out.println("----------------Points Range:" + rangeList.size());
@@ -106,8 +107,10 @@ public class PointsController {
     @ResponseBody
     @RequestMapping(value = "getAllColorPoints", method = { RequestMethod.GET, RequestMethod.POST })
     public Object getAllColorPoints(String minx, String miny, String minz, String maxx, String maxy, String maxz,
-            String level) throws SQLException, Exception {
+            String level, String maxLevel) throws SQLException, Exception {
         //		Point center = new Point(500000, 500000, 300000);
+        System.out.println(
+                minx + "," + miny + "," + minz + "," + maxx + "," + maxy + "," + maxz + "," + level + "," + maxLevel);
         Point leftBottom = new Point(Double.parseDouble(minx), Double.parseDouble(miny), Double.parseDouble(minz));
         Point rightTop = new Point(Double.parseDouble(maxx), Double.parseDouble(maxy), Double.parseDouble(maxz));
         ArrayList<ColorPointResult> center = new ArrayList<ColorPointResult>();
@@ -146,6 +149,7 @@ public class PointsController {
 
         //		Hilbert hilbert = new Hilbert(center, 500000, 22);
         long begin = System.currentTimeMillis();
+        Hilbert.DEPTH = Integer.parseInt(maxLevel);
         List<Range> rangeList = Hilbert.getRange(Integer.parseInt(level), leftBottom, rightTop);
         System.out.println("Rec: " + leftBottom.toString() + "<->" + rightTop.toString() + "@" + level + " elipsed: "
                 + (System.currentTimeMillis() - begin));

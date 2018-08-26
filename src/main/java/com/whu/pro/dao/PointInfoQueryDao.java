@@ -14,6 +14,8 @@ import com.whu.pro.mapper.result.InfoResult;
  *
  */
 public interface PointInfoQueryDao {
+    InfoResult getPointInfoById(InfoQueryParam query);
+
     List<InfoResult> getPointInfo(InfoQueryParam query);
 
     List<InfoResult> getPointTimeRangeInfo(InfoTimeRangeQueryParam query);

@@ -69,6 +69,35 @@ function load_t() {
 	}
 }
 
+function loadmeta() {
+	var id = jq('#sceneid').val();
+	jq.ajax({
+		async : false,
+		cache : false,
+		type : 'POST',
+		datatype : 'json',
+		url : '/pro/PointInfoQueryController/getPointInfoById?id=' + id,
+		datatype : "json",
+		mtype : 'POST',
+		success : function(data) {
+			console.log("data count:" + data.id + "," + data.minx + ","
+					+ data.max + "," + data.mdnx + "," + data.minlevel + ","
+					+ data.maxlevel);
+			document.getElementById('minx').value = data.minx;
+			document.getElementById('miny').value = data.miny;
+			document.getElementById('minz').value = data.minz;
+			document.getElementById('maxx').value = data.maxx;
+			document.getElementById('maxy').value = data.maxy;
+			document.getElementById('maxz').value = data.maxz;
+			document.getElementById('cenx').value = data.mdnx;
+			document.getElementById('ceny').value = data.mdny;
+			document.getElementById('cenz').value = data.mdnz;
+			document.getElementById('level').value = data.maxlevel - 7;
+			document.getElementById('maxlevel').value = data.maxlevel;
+		}
+	})
+}
+
 function show3d() {
 	jq("#3dshow").load("/pro/3dshow/all_3d.jsp");
 	jq("#showBotton1").attr("disabled", true);
@@ -80,6 +109,6 @@ function showall() {
 }
 
 function showplant() {
-	jq("#plantshow").load("/pro/3dshow/burndisplay.jsp");
+	jq("#plantshow").load("/pro/3dshow/points.jsp");
 	jq("#Showpant").attr("disabled", true);
 }

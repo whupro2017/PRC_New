@@ -395,14 +395,8 @@
 						<button id="showBotton4" onclick="stoprun()">停止</button>
 					</div-->
 					<div align="center">
-						<button id="showBotton1" onclick="show3d()"
-							style="height: 30px; width: 60px">初始化</button>
-						<button id="showBotton2" onclick="showrun()"
-							style="height: 30px; width: 45px">展示</button>
-						<button id="showBotton3" onclick="acc()"
-							style="height: 30px; width: 45px">加速</button>
-						<button id="showBotton4" onclick="stoprun()"
-							style="height: 30px; width: 45px">停止</button>
+						<button id="loadpointmeta" onclick="loadmeta()"
+							style="height: 30px; width: 60px">元数据</button>
 						<button id="init" onclick="showall()"
 							style="height: 30px; width: 60px">初始化</button>
 						<button id="ShowPoints" style="height: 30px; width: 45px">素材</button>
@@ -412,6 +406,12 @@
 						<button id="showlayout" style="height: 30px; width: 45px">网格</button>
 						<button id="deletelayout" style="height: 30px; width: 45px">隐藏</button>
 						<button id="lockPoints" style="height: 30px; width: 45px">锁定</button>
+						<button id="showBotton2" onclick="showrun()"
+							style="height: 30px; width: 45px">展示</button>
+						<button id="showBotton3" onclick="acc()"
+							style="height: 30px; width: 45px">加速</button>
+						<button id="showBotton4" onclick="stoprun()"
+							style="height: 30px; width: 45px">停止</button>
 					</div>
 					<div>
 						<input type="text" style="height: 20px; width: 40px;" id="sceneid"
@@ -420,13 +420,13 @@
 							placeholder="x" value="610970.9"> <input type="text"
 							style="height: 20px; width: 80px;" id="miny" class="miny"
 							placeholder="y" value="104542.53"> <input type="text"
-							style="height: 20px; width: 80px;" id="maxz" class="maxz"
+							style="height: 20px; width: 80px;" id="minz" class="minz"
 							placeholder="z" value="90.195"> <input type="text"
 							style="height: 20px; width: 80px;" id="maxx" class="maxx"
 							placeholder="x" value="611297.9"> <input type="text"
 							style="height: 20px; width: 80px;" id="maxy" class="maxy"
 							placeholder="y" value="104868.46"> <input type="text"
-							style="height: 20px; width: 80px;" id="minz" class="minz"
+							style="height: 20px; width: 80px;" id="maxz" class="maxz"
 							placeholder="z" value="10.841"> <input type="text"
 							style="height: 20px; width: 80px;" id="cenx" class="cenx"
 							placeholder="x" value="611150"> <input type="text"
@@ -435,9 +435,11 @@
 							style="height: 20px; width: 80px;" id="cenz" class="cenz"
 							placeholder="z" value="60"> <input type="text"
 							style="height: 20px; width: 30px;" id="level" value="10">
-						<input type="text" style="height: 20px; width: 30px;" id="locked"
-							value="0"> <input type="text"
-							style="height: 20px; width: 30px;" id="invalid" value="0">
+						<input type="text" style="height: 20px; width: 30px;"
+							id="maxlevel" value="10"> <input type="text"
+							style="height: 20px; width: 20px;" id="locked" value="0">
+						<input type="text" style="height: 20px; width: 20px;" id="invalid"
+							value="0">
 					</div>
 					<div style="width: 55%; float: right">
 						<div id="3dshow"></div>

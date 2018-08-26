@@ -24,6 +24,10 @@ public class PointInfoQueryImpl implements PointInfoQueryService {
     @Resource
     PointInfoQueryDao piq;
 
+    public InfoResult getPointInfoById(InfoQueryParam query) {
+        return piq.getPointInfoById(query);
+    }
+
     public List<InfoResult> getPointInfo(InfoQueryParam query) {
         return piq.getPointInfo(query);
     }

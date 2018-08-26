@@ -33,6 +33,14 @@ public class PointInfoQueryController {
     private PointInfoQueryService cqs;
 
     @ResponseBody
+    @RequestMapping(value = "getPointInfoById", method = { RequestMethod.GET, RequestMethod.POST })
+    public Object getPointInfoById(int id) {
+        InfoQueryParam ciqp = new InfoQueryParam();
+        ciqp.setId(id);
+        return cqs.getPointInfoById(ciqp);
+    }
+
+    @ResponseBody
     @RequestMapping(value = "getPointInfo", method = { RequestMethod.GET, RequestMethod.POST })
     public Object getPointInfo(String begin, String end, double px, double py) {
         System.out.println(begin + ", " + end + ", " + px + ", " + py);

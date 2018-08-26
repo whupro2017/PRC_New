@@ -42,6 +42,7 @@
 					var ceny = $(".ceny").val();
 					var cenz = $(".cenz").val();
 					var level = $("#level").val();
+					var max_level = 17;
 				
 					console.log("##############show color points input"+minx+","+miny+","+minz+","+maxx+","+maxy+","+maxz+","+level);
 									    	
@@ -52,7 +53,7 @@
 						datatype: 'json',
 						url:'/pro/PointsController/getAllColorPoints?minx=' + minx + '&miny=' + miny +  '&minz=' + minz 
 							+ '&maxx=' + maxx + '&maxy=' + maxy + '&maxz=' + maxz
-							+ '&level=' + level,
+							+ '&level=' + level + '&maxLevel=' + max_level,
 						error: function(){
 							alert("失败");
 						},
