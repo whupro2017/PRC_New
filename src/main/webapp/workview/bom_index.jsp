@@ -133,24 +133,28 @@
 					</a></li>
 
 					<li><a href="element.jsp"> <i class="icon-eye-open"></i> <span
-							class="menu-text"> 素材管理 </span>
+							class="menu-text"> 模型管理 </span>
+					</a></li>
+
+					<li><a href="inquisition.jsp"> <i class="icon-hand-up"></i>
+							<span class="menu-text"> 要素管理 </span>
 					</a></li>
 
 					<li><a href="burn_index.jsp"> <i class="icon-fire"></i> <span
-							class="menu-text"> 放火 </span>
+							class="menu-text"> 放火案件 </span>
 					</a></li>
 
 					<li class="active"><a href="bom_index.jsp"> <i
-							class="icon-certificate"></i> <span class="menu-text"> 爆炸
-						</span>
+							class="icon-certificate"></i> <span class="menu-text">
+								爆炸案件 </span>
 					</a></li>
 
 					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
-							class="menu-text"> 抢盗 </span>
+							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
 					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
-							class="menu-text"> 碰撞 </span>
+							class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
 					<!-- li>
@@ -193,7 +197,13 @@
 								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
-								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li>
+								<li><a href="#home" data-toggle="tab">炸药信息</a></li>
+								<li><a href="#material" data-toggle="tab">刚体模型</a></li>
+								<li><a href="#trail" data-toggle="tab">轨迹序列</a></li>
+								<li><a href="#trail" data-toggle="tab">姿态序列</a></li>
+								<li><a href="#material" data-toggle="tab">结果展示</a></li>
+								<li><a href="#material" data-toggle="tab">过程评估</a></li>
+								<li><a href="#material" data-toggle="tab">过程反演</a></li>
 							</ul>
 
 							<div id="myTabContent" class="tab-content">

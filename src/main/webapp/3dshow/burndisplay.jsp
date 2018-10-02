@@ -48,7 +48,9 @@
 	        var old_jx = 0, old_jy = 0, old_jz = 0;
 	        var new_jx = 0, new_jy = 0, new_jz = 0;
 	        var mouse_down = true;
+	        var initialization = true;
 	        var cameraheight;
+	        
 			jQuery(function($) {
 				$('#ShowPoints').on('click', function() {
 					minx = $(".minx").val(); maxx = $(".maxx").val();
@@ -62,10 +64,14 @@
 					len_z = Math.abs(maxz - minz);
 					
 					level = $("#level").val(); max_level = $('#maxlevel').val();
-					cameraheight = parseInt(Math.sqrt(len_x * len_y) * Math.pow(1.5, Math.log(Math.sqrt(len_x * len_y) / 1000)));
+					//cameraheight = parseInt(Math.sqrt(len_x * len_y) * Math.pow(1.5, Math.log(Math.sqrt(len_x * len_y) / 1000)));
+					cameraheight = parseInt(Math.sqrt(len_x * len_y) * 1.5);
 					console.log("Input: "+minx+","+miny+","+minz+","+maxx+","+maxy+","+maxz+","+level+","+max_level);
-					console.log(min_level+","+max_level + "," + cameraheight + "," +(maxx-minx)+ "," +(maxy-miny));
-			        initScence(cameraheight);
+					console.log(min_level+","+max_level + "," + cameraheight + "," +(maxx-minx)+ "," +(maxy-miny)+","+initialization+","+cameraheight);
+					if (initialization) {
+				        initScence(cameraheight);
+						initialization=false;
+					}
 			        
 					$.ajax({
 						async: false,
@@ -81,32 +87,37 @@
 						success: function(data){
 							console.log("data count:" + data.length);
 							// console.log("the first test:"+data[0].x+"|"+data[0].y+"|"+data[0].z);
-					    	
 							geometry = new THREE.Geometry();         				
 							vec_judge = new Array();							
 							var x = 0, y = 0, z = 0;
-							console.log("Judge: "+cenx+","+ceny+","+cenz+","+judge_num);
+							console.log("Judge: "+cenx+","+ceny+","+cenz+","+judge_num+","+data.length);
 							for(var i=0; i<judge_num;i++){
 								var row = data[i];
 								judge_arr[i].position.x = data[i].x-cenx;
 								judge_arr[i].position.y = data[i].y-ceny;
 								judge_arr[i].position.z = data[i].z-cenz;
 								var vertex = new THREE.Vector3(data[i].x-cenx, data[i].y-ceny, data[i].z-cenz);
+								console.log("\tjudge,"+(data[i].x-cenx)+","+(data[i].y-ceny)+","+(data[i].z-cenz)+","+data[i].x+","+data[i].y+","+data[i].z);
 								x+=data[i].x-cenx; y+=data[i].y-ceny; z+=data[i].z-cenz;
+								//console.log("\tAccumulate: "+x+","+y+","+z);
 								vec_judge.push(vertex);
 							}
 							
-							old_cx = x/judge_num; old_cy = y/judge_num; old_cz = z/judge_num;
+							old_cx = x/judge_num;
+							old_cy = y/judge_num;
+							old_cz = z/judge_num;
+							console.log("Current: "+old_cx+","+old_cy+","+old_cz+","+judge_num);
 							new_cx = old_cx; new_cy = old_cy; new_cz = old_cz;
 							true_cx = old_cx; true_cy = old_cy; true_cz = old_cz;
 							for (var i = judge_num-1; i < data.length; i++) {
 								var row = data[i];
-								var vertex = new THREE.Vector3(data[i].x, data[i].y, data[i].z);
+								var vertex = new THREE.Vector3(data[i].x,data[i].y,data[i].z);
+								console.log("\tpoint,"+data[i].x+","+data[i].y+","+data[i].z);
 								var color = new THREE.Color(data[i].r/255, data[i].g/255, data[i].b/255);
 								geometry.vertices.push(vertex);
 								geometry.colors.push(color);
 							}					
-							addPoint(cenx, ceny, cenz,level);	
+							addPoint(cenx, ceny, cenz, level);	
 							event_flag1 = true;	
 							event_flag = true;					
 						}
@@ -170,6 +181,7 @@
 				}
                 
 				renderer = new THREE.WebGLRenderer();
+				//renderer.setClearColor(0x428bca);
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize(width, height);
 				container.appendChild( renderer.domElement );
@@ -271,7 +283,7 @@
 				//animate();
 	        }
 
-			function load_obj(pathf,pathm,path1, size, rotation,x,y,z) {
+			function load_obj(pathf, pathm, path1, size, rotation, x, y, z) {
 	            mtlloader = new THREE.MTLLoader();
 	            mtlloader.setPath(pathf);
 	            mtlloader.load(pathm, function () {
@@ -299,6 +311,7 @@
 			function update_level(){
 	            juli();	           
 	            var le = document.getElementById('level').value;
+				console.log("##### le: " + le + " level: " + level);
 				var max_level = document.getElementById('maxLevel').value;
 	            var dft_level = max_level - 7;
 	            dis_step_new = dis_step * (1 - 0.05*(le-10));
@@ -309,7 +322,6 @@
             		level = max_level;
             		else if(level < dft_level)
             			level = dft_level;
-
 	            if(le != level){	            		            	
 	                if(le < level){
 	                	len_x = len_x/step_level;
@@ -337,7 +349,7 @@
 		                clearScence();
 						jQuery(function($) {
 							$('#ShowPoints').trigger('click');
-							console.log("button click")						
+							console.log("button click level")						
 						});
 	            	}		
 	            } else {
@@ -388,6 +400,7 @@
 	            true_cx = new_cx * 2 - old_cx;
 	            true_cy = new_cy * 2 - old_cy;
 	            true_cz = new_cz * 2 - old_cz;
+	            //console.log("compute_center " + true_cx + ", "+ true_cy + ", " + true_cz + ", " + len);
 	        }
 
 			function CountInAndPrint(){
@@ -409,7 +422,7 @@
 		            clearScence();
 		            jQuery(function($) {
 						$('#ShowPoints').trigger('click');
-						console.log("button click")						
+						console.log("button click count")						
 					});
 	            }else{
 	            	event_flag1 = true;		

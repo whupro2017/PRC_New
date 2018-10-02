@@ -61,37 +61,41 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li class="active"><a href="workview/welcom.jsp"> <i
+					<li class="active"><a href="./workview/welcom.jsp"> <i
 							class="icon-dashboard"></i> <span class="menu-text"> 首页 </span>
 					</a></li>
 
-					<li><a href="workview/all_index.jsp"> <i class="icon-th"></i>
+					<li><a href="./workview/all_index.jsp"> <i class="icon-th"></i>
 							<span class="menu-text"> 案件管理 </span>
 					</a></li>
 
-					<li><a href="workview/reconstruct.jsp"> <i
+					<li><a href="./workview/reconstruct.jsp"> <i
 							class="icon-cloud"></i> <span class="menu-text"> 场景管理 </span>
 					</a></li>
 
-					<li><a href="workview/element.jsp"> <i
-							class="icon-eye-open"></i> <span class="menu-text"> 素材管理 </span>
+					<li><a href="./workview/element.jsp"> <i
+							class="icon-eye-open"></i> <span class="menu-text"> 模型管理 </span>
 					</a></li>
 
-					<li><a href="workview/burn_index.jsp"> <i
-							class="icon-fire"></i> <span class="menu-text"> 放火 </span>
+					<li><a href="./workview/inquisition.jsp"> <i
+							class="icon-hand-up"></i> <span class="menu-text"> 要素管理 </span>
 					</a></li>
 
-					<li><a href="workview/bom_index.jsp"> <i
-							class="icon-certificate"></i> <span class="menu-text"> 爆炸
-						</span>
+					<li><a href="./workview/burn_index.jsp"> <i
+							class="icon-fire"></i> <span class="menu-text"> 放火案件 </span>
 					</a></li>
 
-					<li><a href="workview/burn_grab.jsp"> <i class="icon-jpy"></i>
-							<span class="menu-text"> 抢盗 </span>
+					<li><a href="./workview/bom_index.jsp"> <i
+							class="icon-certificate"></i> <span class="menu-text">
+								爆炸案件 </span>
 					</a></li>
 
-					<li><a href="workview/kill_grab.jsp"> <i class="icon-tint"></i>
-							<span class="menu-text"> 碰撞 </span>
+					<li><a href="./workview/grab_index.jsp"> <i
+							class="icon-jpy"></i> <span class="menu-text"> 抢盗案件 </span>
+					</a></li>
+
+					<li><a href="./workview/grab_index.jsp"> <i
+							class="icon-tint"></i> <span class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
 					<!--li>

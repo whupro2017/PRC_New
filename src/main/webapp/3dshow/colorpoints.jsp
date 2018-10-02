@@ -148,6 +148,7 @@
 				scene.add(particles);
 				
 				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor(0xffffff);
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize(width / 2, height / 2);
 				container.appendChild( renderer.domElement );

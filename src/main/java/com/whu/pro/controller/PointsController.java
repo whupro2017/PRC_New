@@ -127,9 +127,9 @@ public class PointsController {
         float[] cenx = new float[split];
         float[] ceny = new float[split];
         float[] cenz = new float[split];
-        mx += xx / 2;
+        /*mx += xx / 2;
         my += yy / 2;
-        mz += zz / 2;
+        mz += zz / 2;*/
         for (int i = 0; i < split; i++) {
             cenx[i] = mx;
             ceny[i] = my;
@@ -186,9 +186,9 @@ public class PointsController {
             }
         }
 
-        double perf = (double) 1999999 / (num + 1);
+        double perf = (double) 999999 / (num + 1);
         //        System.out.println("ori ++++++++++++++++num point is: " + num + " and perf is" + perf);
-        if (num < 2000000) {
+        if (num < 1000000) {
             perf = 1;
         }
         //        else if (num > 3000000) {

@@ -168,6 +168,10 @@
 				}
                 
 				renderer = new THREE.WebGLRenderer();
+				//renderer.setClearColor(0x6f8fbf);
+				//renderer.setClearColor(0x5f9fdf);
+				//renderer.setClearColor(0x2f7faf);
+				renderer.setClearColor(0x428bca);
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize(width, height);
 				container.appendChild( renderer.domElement );

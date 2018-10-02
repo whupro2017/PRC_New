@@ -121,23 +121,27 @@
 					</a></li>
 
 					<li><a href="element.jsp"> <i class="icon-eye-open"></i> <span
-							class="menu-text"> 素材管理 </span>
+							class="menu-text"> 模型管理 </span>
+					</a></li>
+
+					<li><a href="inquisition.jsp"> <i class="icon-hand-up"></i>
+							<span class="menu-text"> 要素管理 </span>
 					</a></li>
 
 					<li><a href="burn_index.jsp"> <i class="icon-fire"></i> <span
-							class="menu-text"> 放火 </span>
+							class="menu-text"> 放火案件 </span>
 					</a></li>
 
 					<li><a href="bom_index.jsp"> <i class="icon-certificate"></i>
-							<span class="menu-text"> 爆炸 </span>
+							<span class="menu-text"> 爆炸案件 </span>
 					</a></li>
 
 					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
-							class="menu-text"> 抢盗 </span>
+							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
 					<li><a href="grab_index.jsp"> <i class="icon-tint"></i> <span
-							class="menu-text"> 碰撞 </span>
+							class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
 					<!--li>

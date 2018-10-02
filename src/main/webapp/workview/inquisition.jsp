@@ -118,16 +118,16 @@
 							class="menu-text"> 案件管理 </span>
 					</a></li>
 
-					<li class="active"><a href="reconstruct.jsp"> <i
-							class="icon-cloud"></i> <span class="menu-text"> 场景管理 </span>
+					<li><a href="reconstruct.jsp"> <i class="icon-cloud"></i>
+							<span class="menu-text"> 场景管理 </span>
 					</a></li>
 
 					<li><a href="element.jsp"> <i class="icon-eye-open"></i> <span
 							class="menu-text"> 模型管理 </span>
 					</a></li>
 
-					<li><a href="inquisition.jsp"> <i class="icon-hand-up"></i>
-							<span class="menu-text"> 要素管理 </span>
+					<li class="active"><a href="inquisition.jsp"> <i
+							class="icon-hand-up"></i> <span class="menu-text"> 要素管理 </span>
 					</a></li>
 
 					<li><a href="burn_index.jsp"> <i class="icon-fire"></i> <span
@@ -143,7 +143,7 @@
 					</a></li>
 
 					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
-							class="menu-text"> 碰撞案件 </span>
+							class="menu-text"> 碰撞案件</span>
 					</a></li>
 
 					<!-- li>
@@ -186,12 +186,17 @@
 							<ul id="myTab" class="nav nav-tabs">
 								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
-								<li><a href="#home" data-toggle="tab"> 点云数据 </a></li>
-								<li><a href="#home" data-toggle="tab"> 模型数据 </a></li>
-								<li><a href="#home" data-toggle="tab"> 影像数据 </a></li>
-								<li><a href="#material" data-toggle="tab">模型素材</a></li>
-								<li><a href="#home" data-toggle="tab"> 参考信息 </a></li>
-								<li><a href="#trail" data-toggle="tab">轨迹信息</a></li>
+								<li><a href="#home" data-toggle="tab"> 提取信息 </a></li>
+								<li><a href="#home" data-toggle="tab"> 物证信息 </a></li>
+								<li><a href="#home" data-toggle="tab"> 主体信息 </a></li>
+								<li><a href="#home" data-toggle="tab"> 并案信息 </a></li>
+								<li><a href="#home" data-toggle="tab"> 嫌疑人信息 </a></li>
+								<li><a href="#kancha" data-toggle="tab"> 指纹数据 </a></li>
+								<li><a href="#trail" data-toggle="tab"> 足迹 </a></li>
+								<li><a href="#kancha" data-toggle="tab"> 法庭科学</a></li>
+								<li><a href="#material" data-toggle="tab"> DNA </a></li>
+								<!-- li><a href="#material" data-toggle="tab">案例素材</a></li>
+								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li-->
 							</ul>
 
 							<div id="myTabContent" class="tab-content">
@@ -213,18 +218,44 @@
 													<button id="AddCase"
 														style="height: 30px; width: 60px; background-color: #0099ff"
 														onclick="diag()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px"><input type="text"
+													style="height: 25px; width: 105px;" id="from" class="from"
+													placeholder="开始时间"> <input type="text"
+													style="height: 25px; width: 105px;" id="to" class="to"
+													placeholder="结束时间">
+													<button id="CaseInqueryBotton"
+														style="height: 25px; width: 65px">查询</button></td>
+											</tr>
+										</table>
+									</div>
+
+									<div style="padding-top: 3px">
+										<table id="table_all"></table>
+									</div>
+								</div>
+
+								<div class="tab-pane fade in active" id="kancha">
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询地区：</td>
+												<td style="padding-left: 4px">
+													<div data-toggle="distpicker">
+														<select id="prov" style="height: 25px; width: 76px;"
+															class="prov"></select> <select id="city"
+															style="height: 25px; width: 125px;" class="city"></select>
+														<select id="dis" style="height: 25px; width: 76px;"
+															class="district"></select>
+													</div>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
 													<button id="AddCase"
-														style="height: 30px; width: 60px; background-color: #cccccc"
-														onclick="diag()">生产</button>
-													<button id="AddCase"
-														style="height: 30px; width: 60px; background-color: #cccccc"
-														onclick="diag()">入库</button>
-													<button id="AddCase"
-														style="height: 30px; width: 60px; background-color: #cccccc"
-														onclick="diag()">失效</button>
-													<button id="AddCase"
-														style="height: 30px; width: 60px; background-color: #cccccc"
-														onclick="diag()">销毁</button>
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="diag()">录入</button>
 												</td>
 											</tr>
 											<tr>

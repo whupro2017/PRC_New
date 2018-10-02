@@ -77,7 +77,7 @@
 </head>
 
 
-<body>
+<body style="background-image:url(../images/bkground.png)">
 	<div class="navbar navbar-default" id="navbar">
 		<script type="text/javascript">
 			try {
@@ -105,7 +105,7 @@
 			}
 		</script>
 
-		<div class="main-container-inner">
+		<div class="main-container-inner" style="background-image:url(../images/bkground.png)">
 			<a class="menu-toggler" id="menu-toggler" href="#"> <span
 				class="menu-text"></span>
 			</a>
@@ -119,36 +119,40 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li style="background-image:url(../images/bkground.png)"><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
-					<li><a href="all_index.jsp"> <i class="icon-th"></i> <span
+					<li style="background-image:url(../images/bkground.png)"><a href="all_index.jsp"> <i class="icon-th"></i> <span
 							class="menu-text"> 案件管理 </span>
 					</a></li>
 
-					<li><a href="reconstruct.jsp"> <i class="icon-cloud"></i>
+					<li style="background-image:url(../images/bkground.png)"><a href="reconstruct.jsp"> <i class="icon-cloud"></i>
 							<span class="menu-text"> 场景管理 </span>
 					</a></li>
 
 					<li><a href="element.jsp"> <i class="icon-eye-open"></i> <span
-							class="menu-text"> 素材管理 </span>
+							class="menu-text"> 模型管理 </span>
+					</a></li>
+
+					<li><a href="inquisition.jsp"> <i class="icon-hand-up"></i>
+							<span class="menu-text"> 要素管理 </span>
 					</a></li>
 
 					<li class="active"><a href="burn_index.jsp"> <i
-							class="icon-fire"></i> <span class="menu-text"> 放火 </span>
+							class="icon-fire"></i> <span class="menu-text"> 放火案件</span>
 					</a></li>
 
 					<li><a href="bom_index.jsp"> <i class="icon-certificate"></i>
-							<span class="menu-text"> 爆炸 </span>
+							<span class="menu-text"> 爆炸案件</span>
 					</a></li>
 
 					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
-							class="menu-text"> 抢盗 </span>
+							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
 					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
-							class="menu-text"> 碰撞 </span>
+							class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
 					<li><a href="points.jsp"> <i class="icon-spinner"></i> <span
@@ -186,7 +190,13 @@
 								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
-								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li>
+								<li><a href="#material" data-toggle="tab">燃烧源信息</a></li>
+								<li><a href="#material" data-toggle="tab">燃质信息</a></li>
+								<li><a href="#material" data-toggle="tab">主体信息</a></li>
+								<li><a href="#trail" data-toggle="tab">扩散信息</a></li>
+								<li><a href="#material" data-toggle="tab">燃烧结果</a></li>
+								<li><a href="#material" data-toggle="tab">过程评估</a></li>
+								<li><a href="#material" data-toggle="tab">燃烧反演</a></li>
 							</ul>
 
 							<div id="myTabContent" class="tab-content">
@@ -247,7 +257,7 @@
 									align="center">
 									<text>关联信息</text>
 									<p>
-										<textarea id="correlation" rows="18" cols="45"></textarea>
+										<textarea id="correlation" rows="15" cols="45"></textarea>
 									</p>
 								</div>
 								<div class="tab2.4"
@@ -255,7 +265,25 @@
 									align="center">
 									<text>外联信息</text>
 									<p>
-										<textarea id="e-correlation" rows="18" cols="45"></textarea>
+										<textarea id="e-correlation" rows="15" cols="45"></textarea>
+									</p>
+								</div>
+							</div>
+							<div style="float: bottom;">
+								<div class="tab2.3"
+									style="width: 50%; float: left; border-left: solid 1px; border-right: solid 1px"
+									align="center">
+									<text>视图信息</text>
+									<p>
+										<textarea id="me1" rows="3" cols="45"></textarea>
+									</p>
+								</div>
+								<div class="tab2.4"
+									style="width: 50%; float: right; border-right: solid 1px;"
+									align="center">
+									<text>浏览信息</text>
+									<p>
+										<textarea id="me2" rows="3" cols="45"></textarea>
 									</p>
 								</div>
 							</div>
