@@ -92,7 +92,8 @@ function loadmeta() {
 			document.getElementById('cenx').value = data.mdnx;
 			document.getElementById('ceny').value = data.mdny;
 			document.getElementById('cenz').value = data.mdnz;
-			document.getElementById('level').value = data.maxlevel - 7;
+			document.getElementById('level').value = data.maxlevel - 3;
+			document.getElementById('minlevel').value = data.maxlevel - 3;
 			document.getElementById('maxlevel').value = data.maxlevel;
 		}
 	})

@@ -118,7 +118,7 @@ public class PointsController {
         float my = Float.parseFloat(miny);
         float mz = Float.parseFloat(minz);
 
-        int split = 5;
+        int split = 10;
 
         float xx = (Float.parseFloat(maxx) - mx) / split;
         float yy = (Float.parseFloat(maxy) - my) / split;
@@ -186,9 +186,9 @@ public class PointsController {
             }
         }
 
-        double perf = (double) 999999 / (num + 1);
+        double perf = (double) 1499999 / (num + 1);
         //        System.out.println("ori ++++++++++++++++num point is: " + num + " and perf is" + perf);
-        if (num < 1000000) {
+        if (num < 1500000) {
             perf = 1;
         }
         //        else if (num > 3000000) {

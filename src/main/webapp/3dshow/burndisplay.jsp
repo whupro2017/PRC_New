@@ -18,8 +18,8 @@
 
 	<div>
 		<script type="text/javascript">
-			var step_level = 1.15;
-			var judge_num = 125;
+			var step_level = 2;
+			var judge_num = 1000;
 			var container, camera, scene, renderer;
 			var particles, geometry;
 
@@ -47,9 +47,13 @@
 	        var old_camex = 0, old_camey = 0, old_camez = 500;
 	        var old_jx = 0, old_jy = 0, old_jz = 0;
 	        var new_jx = 0, new_jy = 0, new_jz = 0;
+	        var last_dx = 0, last_dy = 0; last_dz = 0;
+	        var last_dist = 0;
+	        var current_dist = 0;
 	        var mouse_down = true;
 	        var initialization = true;
 	        var cameraheight;
+	        var view_counter;
 	        
 			jQuery(function($) {
 				$('#ShowPoints').on('click', function() {
@@ -63,7 +67,9 @@
 					len_y = Math.abs(maxy - miny);
 					len_z = Math.abs(maxz - minz);
 					
-					level = $("#level").val(); max_level = $('#maxlevel').val();
+					level = $("#level").val();
+					min_level = $("#minlevel").val();
+					max_level = $('#maxlevel').val();
 					//cameraheight = parseInt(Math.sqrt(len_x * len_y) * Math.pow(1.5, Math.log(Math.sqrt(len_x * len_y) / 1000)));
 					cameraheight = parseInt(Math.sqrt(len_x * len_y) * 1.5);
 					console.log("Input: "+minx+","+miny+","+minz+","+maxx+","+maxy+","+maxz+","+level+","+max_level);
@@ -97,7 +103,7 @@
 								judge_arr[i].position.y = data[i].y-ceny;
 								judge_arr[i].position.z = data[i].z-cenz;
 								var vertex = new THREE.Vector3(data[i].x-cenx, data[i].y-ceny, data[i].z-cenz);
-								console.log("\tjudge,"+(data[i].x-cenx)+","+(data[i].y-ceny)+","+(data[i].z-cenz)+","+data[i].x+","+data[i].y+","+data[i].z);
+								//console.log("\tjudge,"+(data[i].x-cenx)+","+(data[i].y-ceny)+","+(data[i].z-cenz)+","+data[i].x+","+data[i].y+","+data[i].z);
 								x+=data[i].x-cenx; y+=data[i].y-ceny; z+=data[i].z-cenz;
 								//console.log("\tAccumulate: "+x+","+y+","+z);
 								vec_judge.push(vertex);
@@ -112,14 +118,14 @@
 							for (var i = judge_num-1; i < data.length; i++) {
 								var row = data[i];
 								var vertex = new THREE.Vector3(data[i].x,data[i].y,data[i].z);
-								console.log("\tpoint,"+data[i].x+","+data[i].y+","+data[i].z);
+								//console.log("\tpoint,"+data[i].x+","+data[i].y+","+data[i].z);
 								var color = new THREE.Color(data[i].r/255, data[i].g/255, data[i].b/255);
 								geometry.vertices.push(vertex);
 								geometry.colors.push(color);
 							}					
 							addPoint(cenx, ceny, cenz, level);	
 							event_flag1 = true;	
-							event_flag = true;					
+							event_flag = true;
 						}
 					})
 				});
@@ -170,7 +176,8 @@
                 camera.position.set(0, 0, cameraheight);
                 camera.lookAt(0, 0, 1);            		
            		//init judge box		
-           		var size = 5; 
+           		//var size = 5;
+                var size = Math.sqrt(len_x * len_y) / 100;
 				geometrypoint = new THREE.BoxGeometry(size,size,size);
 				materialpoint = new THREE.MeshLambertMaterial({
 	                color:0xff0000
@@ -182,6 +189,7 @@
                 
 				renderer = new THREE.WebGLRenderer();
 				//renderer.setClearColor(0x428bca);
+				renderer.setClearColor(0xbbbbbb);
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize(width, height);
 				container.appendChild( renderer.domElement );
@@ -189,7 +197,11 @@
 				dis_ori = Math.pow((camera.position.x*camera.position.x +
 		                camera.position.y*camera.position.y +
 		                camera.position.z*camera.position.z) , 1/2);	
-		        dis_step = dis_ori / 8;			
+		        dis_step = dis_ori / 8;
+				last_dx = camera.position.x;
+				last_dy = camera.position.y;
+				last_dz = camera.position.z;
+				last_dist = Math.sqrt(/* last_dx * last_dx + last_dy * last_dy +  */last_dz * last_dz);
 				
 				var controls = new THREE.OrbitControls(camera);
 				controls.addEventListener('change', renderer);
@@ -221,7 +233,7 @@
 				
 				// point:
 				material = new THREE.PointsMaterial({
-					size: 5, sizeAttenuation: false,
+					size: 6, sizeAttenuation: false,
 					vertexColors: THREE.VertexColors,					
 					alphaTest: 0.5,transparent: true
 				});												
@@ -308,20 +320,58 @@
 	            dis_now = Math.pow((mx * mx + my * my + mz * mz) , 1/2);
 	        }
 			
+			function computeDistance() {
+				var mx = camera.position.x;
+				var my = camera.position.y;
+				var mz = camera.position.z;
+				current_dist = Math.sqrt(/* mx * mx + my * my */  + mz * mz );
+			}
+			
+			function updateDistance() {
+				last_dist = current_dist;
+			}
+
+			function isInView(vector){
+	            //check if within camera's view:
+	            camera.updateMatrix(); // make sure camera's local matrix is updated
+	            camera.updateMatrixWorld(); // make sure camera's world matrix is updated
+	            camera.matrixWorldInverse.getInverse( camera.matrixWorld );
+	            var frustum = new THREE.Frustum();
+	            frustum.setFromMatrix( new THREE.Matrix4().multiplyMatrices( camera.projectionMatrix, camera.matrixWorldInverse ) );
+	            if(frustum.containsPoint(vector)) {
+	                return true;
+	            } else {
+	                return false;
+	            }
+	        }
+			
 			function update_level(){
-	            juli();	           
+	            //juli();	           
 	            var le = document.getElementById('level').value;
-				console.log("##### le: " + le + " level: " + level);
-				var max_level = document.getElementById('maxLevel').value;
-	            var dft_level = max_level - 7;
-	            dis_step_new = dis_step * (1 - 0.05*(le-10));
+				var max_level = document.getElementById('maxlevel').value;
+	            var dft_level = /* max_level - 7 */min_level;
+				console.log("##### le: " + le + " level: " + level+" maxlevel: " + max_level+" min_level: "+min_level+" dft_level: "+ dft_level);
+	            //dis_step_new = dis_step * (1 - 0.05*(le-/* 10 */min_level));
+	            dis_step_new = dis_step * (1 - 0.05*(le-min_level));
 	            var K = (dis_ori-dis_now) / dis_step_new ;
-	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step_new + " K: " + K
-	            level = 10 + Math.floor(K);
-	            if(level > max_level)
+	            //viewWithin();
+	            computeDistance();
+	            console.log("last_dist: " + last_dist + " current_dist: " + current_dist);
+	            if (current_dist > last_dist) {
+	            	K = -Math.floor((current_dist - last_dist) / last_dist);
+	            } else {
+	            	K = Math.floor((last_dist - current_dist) / current_dist);
+	            }
+	            console.log("last_dist: " + last_dist + " current_dist: " + current_dist);
+	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step_new + " K: " + K;
+	            //level = /* 10 */parseFloat(min_level) + Math.floor(K);
+	            level = parseInt(le) + K;
+	            console.log("dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step_new + " K: " + K + " level: " + level + " min_level: " + min_level);
+	            if(level > max_level) {
             		level = max_level;
-            		else if(level < dft_level)
-            			level = dft_level;
+	            } else if(level < min_level) {
+        			level = dft_level;
+	            }
 	            if(le != level){	            		            	
 	                if(le < level){
 	                	len_x = len_x/step_level;
@@ -336,9 +386,11 @@
 	                updateText();
 	                document.getElementById('level').value=level;
 	                le = level;
-
+	                updateAncors();
+	                updateDistance();
 	                // update the size of judege box
-	                var size = 10 - 0.5 * level ;
+	                //var size = 10 - 0.5 * level ;
+	                var size = Math.sqrt(len_x * len_y) / 100;
 					geometrypoint = new THREE.BoxGeometry(size,size,size);					
 		            for(var i=0; i<judge_num;i++){
 		            	scene.remove(judge_arr[i]);
@@ -375,20 +427,6 @@
 	            document.getElementById('maxy').value=new_maxy ;
 	            // document.getElementById('minz').value=new_minz ;
 			}
-
-			function isInView(vector){
-	            //check if within camera's view:
-	            camera.updateMatrix(); // make sure camera's local matrix is updated
-	            camera.updateMatrixWorld(); // make sure camera's world matrix is updated
-	            camera.matrixWorldInverse.getInverse( camera.matrixWorld );
-	            var frustum = new THREE.Frustum();
-	            frustum.setFromMatrix( new THREE.Matrix4().multiplyMatrices( camera.projectionMatrix, camera.matrixWorldInverse ) );
-	            if(frustum.containsPoint(vector)) {
-	                return true;
-	            } else {
-	                return false;
-	            }
-	        }
 			
 			function compute_centor(vec_array){
 	            var x = 0, y=0, z=0;
@@ -402,23 +440,65 @@
 	            true_cz = new_cz * 2 - old_cz;
 	            //console.log("compute_center " + true_cx + ", "+ true_cy + ", " + true_cz + ", " + len);
 	        }
+			
+			function viewWithin() {
+				vector_in_view = new Array();
+				/* var view_minx = Number.MAX_VALUE;
+				var view_miny = Number.MAX_VALUE;
+				var view_minz = Number.MAX_VALUE;
+				var view_maxx = Number.MIN_VALUE;
+				var view_maxy = Number.MIN_VALUE;
+				var view_maxz = Number.MIN_VALUE; */
+	            for(var j=0;j<judge_num;j++){
+	                if( isInView(vec_judge[j]) ){
+	                	/* vector_in_view.push(vec_judge[j]);
+	                    if (view_minx > vec_judge[j].x) {
+	                    	view_minx = vec_judge[j].x;
+	                    }
+	                    if (view_miny > vec_judge[j].y) {
+	                    	view_miny = vec_judge[j].y;
+	                    }
+	                    if (view_minz > vec_judge[j].z) {
+	                    	view_minz = vec_judge[j].z;
+	                    }
+	                    if (view_maxx < vec_judge[j].x) {
+	                    	view_maxx = vec_judge[j].x;
+	                    }
+	                    if (view_maxy < vec_judge[j].y) {
+	                    	view_maxy = vec_judge[j].y;
+	                    }
+	                    if (view_maxz < vec_judge[j].z) {
+	                    	view_maxz = vec_judge[j].z;
+	                    } */
+	                    view_counter += 1;
+	                }
+	            }
+	            /* document.getElementById('minx').value = view_minx + parseFloat(cenx);
+	            document.getElementById('miny').value = view_miny + parseFloat(ceny);
+	            document.getElementById('minz').value = view_minz + parseFloat(cenz);
+	            document.getElementById('maxx').value = view_maxx + parseFloat(cenx);
+	            document.getElementById('maxy').value = view_maxy + parseFloat(ceny);
+	            document.getElementById('maxz').value = view_maxz + parseFloat(cenz); */
+	            document.getElementById('me2').value= "view_minx: " + (view_minx + parseFloat(cenx)) + " view_miny: " + (view_miny + parseFloat(ceny))  + " view_minz: " + (view_minz + parseFloat(cenz))
+	            + " view_maxx: " + (view_maxx + parseFloat(cenx)) + " view_maxy: " + (view_maxy + parseFloat(ceny))  + " view_maxz: " + (view_maxz + parseFloat(cenz));
+			}
 
 			function CountInAndPrint(){
 				var count = 0;
-				vector_in_view = new Array()
+				vector_in_view = new Array();
 	            for(var j=0;j<judge_num;j++){
 	                if( isInView(vec_judge[j]) ){
-	                    vector_in_view.push(vec_judge[j]);	count += 1;
+	                    vector_in_view.push(vec_judge[j]);
+						count += 1;
 	                }
 	            }
-
 	            document.getElementById('me1').value= "距离： " + " dis_ori: " + dis_ori + " dis_now: " + dis_now  + " step: " + dis_step
 	            + "\n" + "视野中点的数量:" +count +" of " +  judge_num ;
 
-	            if(!sceneLock && count < judge_num*0.3){
+	            if(!sceneLock && count < judge_num*0.5){
 		            compute_centor(vector_in_view);		            
 					old_cx = true_cx; old_cy = true_cy; old_cz = true_cz;
-					updateText();		            
+					updateText();
 		            clearScence();
 		            jQuery(function($) {
 						$('#ShowPoints').trigger('click');
@@ -435,18 +515,11 @@
 				console.log(event_flag + ";" + event_flag1)
 				if(event_flag){
 					event_flag = false;
-					update_level();	  	
+					update_level();
 				}					        
 	        }
-
-	        function onDocumentMouseUp( event ) {
-	        	
-	        	//document.getElementById('me3').value= old_jx + "\t" + old_jy + "\t" + old_jz + "\t";
-	        	//mouse_down = false;
-
-	        	event.preventDefault();	 
-	        	// test mouseX and mouseY
-        	 	//document.getElementById('me3').value=event.clientX + ";" + event.clientY;
+			
+			function updateAncors() {
         	 	var vector = new THREE.Vector3();
 	            vector.set(
 	                ( (event.clientX-190)/ width) * 2 - 1,
@@ -461,6 +534,17 @@
 	            	+( parseFloat(intersects[0].object.position.y) +  parseFloat(ceny) ) + " ; z: "
 	            	+( parseFloat(intersects[0].object.position.z) +  parseFloat(cenz) )
 		        }
+			}
+
+	        function onDocumentMouseUp( event ) {
+	        	
+	        	//document.getElementById('me3').value= old_jx + "\t" + old_jy + "\t" + old_jz + "\t";
+	        	//mouse_down = false;
+
+	        	event.preventDefault();	 
+	        	// test mouseX and mouseY
+        	 	//document.getElementById('me3').value=event.clientX + ";" + event.clientY;
+        	 	updateAncors();
 
 	            if(event_flag1){
 	            	event_flag1 = false;

@@ -19,7 +19,7 @@
 	<div>
 		<script type="text/javascript">
 			var step_level = 1.15;
-			var judge_num = 125;
+			var judge_num = 1000;
 			var container, camera, scene, renderer;
 			var particles, geometry;
 

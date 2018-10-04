@@ -35,6 +35,12 @@
     </dependency>
 
     <dependency>
+      <groupId>whu.spatial</groupId>
+      <artifactId>SpatialCoding</artifactId>
+      <version>0.1</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.version}</version>

@@ -77,7 +77,7 @@
 </head>
 
 
-<body style="background-image:url(../images/bkground.png)">
+<body style="background-image: url(../images/bkground.png)">
 	<div class="navbar navbar-default" id="navbar">
 		<script type="text/javascript">
 			try {
@@ -105,7 +105,8 @@
 			}
 		</script>
 
-		<div class="main-container-inner" style="background-image:url(../images/bkground.png)">
+		<div class="main-container-inner"
+			style="background-image: url(../images/bkground.png)">
 			<a class="menu-toggler" id="menu-toggler" href="#"> <span
 				class="menu-text"></span>
 			</a>
@@ -119,16 +120,19 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li style="background-image:url(../images/bkground.png)"><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li style="background-image: url(../images/bkground.png)"><a
+						href="welcom.jsp"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
-					<li style="background-image:url(../images/bkground.png)"><a href="all_index.jsp"> <i class="icon-th"></i> <span
+					<li style="background-image: url(../images/bkground.png)"><a
+						href="all_index.jsp"> <i class="icon-th"></i> <span
 							class="menu-text"> 案件管理 </span>
 					</a></li>
 
-					<li style="background-image:url(../images/bkground.png)"><a href="reconstruct.jsp"> <i class="icon-cloud"></i>
-							<span class="menu-text"> 场景管理 </span>
+					<li style="background-image: url(../images/bkground.png)"><a
+						href="reconstruct.jsp"> <i class="icon-cloud"></i> <span
+							class="menu-text"> 场景管理 </span>
 					</a></li>
 
 					<li><a href="element.jsp"> <i class="icon-eye-open"></i> <span
@@ -442,7 +446,7 @@
 							style="height: 30px; width: 45px">停止</button>
 					</div>
 					<div>
-						<input type="text" style="height: 20px; width: 40px;" id="sceneid"
+						<input type="text" style="height: 20px; width: 30px;" id="sceneid"
 							class="sceneid" value="-1"> <input type="text"
 							style="height: 20px; width: 80px;" id="minx" class="minx"
 							placeholder="x" value="610970.9"> <input type="text"
@@ -460,14 +464,15 @@
 							placeholder="x" value="611150"> <input type="text"
 							style="height: 20px; width: 80px;" id="ceny" class="ceny"
 							placeholder="y" value="104710"> <input type="text"
-							style="height: 20px; width: 80px;" id="cenz" class="cenz"
+							style="height: 20px; width: 70px;" id="cenz" class="cenz"
 							placeholder="z" value="60"> <input type="text"
-							style="height: 20px; width: 30px;" id="level" value="10">
-						<input type="text" style="height: 20px; width: 30px;"
-							id="maxlevel" value="10"> <input type="text"
-							style="height: 20px; width: 20px;" id="locked" value="0">
-						<input type="text" style="height: 20px; width: 20px;" id="invalid"
-							value="0">
+							style="height: 20px; width: 30px;" id="level" value="10"><input
+							type="text" style="height: 20px; width: 30px;" id="minlevel"
+							value="10"> <input type="text"
+							style="height: 20px; width: 30px;" id="maxlevel" value="10">
+						<input type="text" style="height: 20px; width: 20px;" id="locked"
+							value="0"> <input type="text"
+							style="height: 20px; width: 20px;" id="invalid" value="0">
 					</div>
 					<div style="width: 55%; float: right">
 						<div id="3dshow"></div>
