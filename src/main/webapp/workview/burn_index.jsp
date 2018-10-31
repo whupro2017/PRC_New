@@ -464,7 +464,7 @@
 							placeholder="x" value="611150"> <input type="text"
 							style="height: 20px; width: 80px;" id="ceny" class="ceny"
 							placeholder="y" value="104710"> <input type="text"
-							style="height: 20px; width: 70px;" id="cenz" class="cenz"
+							style="height: 20px; width: 65px;" id="cenz" class="cenz"
 							placeholder="z" value="60"> <input type="text"
 							style="height: 20px; width: 30px;" id="level" value="10"><input
 							type="text" style="height: 20px; width: 30px;" id="minlevel"
