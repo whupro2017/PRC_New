@@ -6,6 +6,8 @@ import com.whu.pro.mapper.param.CaseQueryParam;
 import com.whu.pro.mapper.result.CaseQueryResult;
 
 public interface CaseQueryService {
+    ArrayList<CaseQueryResult> getAllCaseByKeyword(CaseQueryParam params);
+
     ArrayList<CaseQueryResult> getAllCase(CaseQueryParam params);
 
     ArrayList<CaseQueryResult> getBurnCase(CaseQueryParam params);

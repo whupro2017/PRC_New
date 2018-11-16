@@ -57,7 +57,7 @@
 
 <script type="text/javascript">
 	jQuery(function($) {
-		$(".from").datepicker({
+		$(".date").datepicker({
 			language : "zh-CN",
 			autoclose : true,//选中之后自动隐藏日期选择框
 			clearBtn : true,//清除按钮
@@ -65,6 +65,7 @@
 		});
 	});
 </script>
+
 </head>
 
 <body>
@@ -184,7 +185,7 @@
 						<div class="tab1"
 							style="height: 60%; border: solid 1px; float: top; overflow: auto">
 							<ul id="myTab" class="nav nav-tabs">
-								<li class="active"><a href="#home" data-toggle="tab">
+								<li class="active"><a href="#trial" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
 								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li>
@@ -214,9 +215,9 @@
 											<tr>
 												<td style="padding-left: 5px">查询时间：</td>
 												<td style="padding-left: 4px"><input type="text"
-													style="height: 25px; width: 105px;" id="from" class="from"
+													style="height: 25px; width: 105px;" id="from" class="date"
 													placeholder="开始时间"> <input type="text"
-													style="height: 25px; width: 105px;" id="to" class="to"
+													style="height: 25px; width: 105px;" id="to" class="date"
 													placeholder="结束时间">
 													<button id="CaseInqueryBotton"
 														style="height: 25px; width: 65px">查询</button></td>

@@ -21,19 +21,19 @@ public class MyUserDetailService implements UserDetailsService {
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // TODO Auto-generated method stub
-        System.out.println("*******************用户名 ：" + username);
+        System.out.println("*******************�û���" + username);
         UserParam userParam = new UserParam();
         userParam.setUsername(username);
         TestUserResult testUserResult = null;
         List<TestUserResult> list = (List<TestUserResult>) userMapper.getUsers(userParam);
         if (list == null || list.size() == 0) {
-            System.out.println("登录失败");
+            System.out.println("��¼ʧ��");
             throw new UsernameNotFoundException(MyUserDetailService.class.getName());
         } else {
-            System.out.println("登录成功");
+            System.out.println("��¼�ɹ�");
             testUserResult = list.get(0);
         }
-        //注入到userdetail中
+        //娉ㄥ叆鍒皍serdetail涓�
         MyUserDetails userDetails = new MyUserDetails(testUserResult);
         return userDetails;
     }

@@ -9,6 +9,7 @@ public class CaseQueryParam {
     private String dis;
     private String type;
     private String des;
+    private String keyword;
 
     public int getId() {
         return id;
@@ -72,6 +73,14 @@ public class CaseQueryParam {
 
     public void setDes(String des) {
         this.des = des;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
 }

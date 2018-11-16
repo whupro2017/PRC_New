@@ -16,6 +16,11 @@ public class CaseQueryImpl implements CaseQueryService {
     @Resource
     CaseQueryDao cqd;
 
+    public ArrayList<CaseQueryResult> getAllCaseByKeyword(CaseQueryParam params) {
+        ArrayList<CaseQueryResult> list = cqd.getAllCaseByKeyword(params);
+        return list;
+    }
+
     public ArrayList<CaseQueryResult> getBurnCase(CaseQueryParam params) {
         // TODO Auto-generated method stub
         ArrayList<CaseQueryResult> list = cqd.selectBurnCase(params);

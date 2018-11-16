@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
+    <project.build.sourceEncoding>GBK</project.build.sourceEncoding>
     <!-- spring version -->
     <spring.version>4.1.6.RELEASE</spring.version>
 	<springsecurity.version>4.0.0.RELEASE</springsecurity.version>
@@ -134,7 +135,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
-      <version>1.0.16</version>
+      <version>1.0.15</version>
     </dependency>
     <!-- JSTL -->
     <dependency>
@@ -286,9 +287,11 @@
 	</dependency>
 	
   </dependencies>
+  
   <build>
     <finalName>pro</finalName>
   </build>
+  
   <profiles>
     <profile>
         <id>jdk-1.8</id>

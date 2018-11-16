@@ -2,6 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- author lyx; date 2016.09.28 -->
 <mapper namespace="com.whu.pro.dao.CaseQueryDao">
+     <select id="getAllCaseByKeyword" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time	between #{beginTime} and #{endTime}) and 
+		((#{keyword}='全部') or (case_id like '%${keyword}%') or (case_type like '%${keyword}%') or (case_province like '%${keyword}%') or (case_city like '%${keyword}%')or (case_district like '%${keyword}%')or (case_desc like '%${keyword}%'))  ;
+	</select>
+
 	<select id="selectAllCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
 		resultType="com.whu.pro.mapper.result.CaseQueryResult">
 		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where (case_time		

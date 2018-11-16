@@ -28,7 +28,7 @@ public class CaseQueryController {
             beginTime = "0000-00-00";
         }
         if (endTime.equals("")) {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//璁剧疆鏃ユ湡鏍煎紡
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
             endTime = df.format(new Date());
         }
 
@@ -44,13 +44,34 @@ public class CaseQueryController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "getAllCaseByKeyword", method = { RequestMethod.GET, RequestMethod.POST })
+    public Object getAllCaseByKeyword(String beginTime, String endTime, String keyword) {
+        if (beginTime.equals("")) {
+            beginTime = "0000-00-00";
+        }
+        if (endTime.equals("")) {
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+            endTime = df.format(new Date());
+        }
+        if (keyword.equals("")) {
+            keyword = "全部";
+        }
+        CaseQueryParam cqp = new CaseQueryParam();
+        cqp.setBeginTime(beginTime);
+        cqp.setEndTime(endTime);
+        cqp.setKeyword(keyword);
+        ArrayList<CaseQueryResult> list = casequeryService.getAllCaseByKeyword(cqp);
+        System.out.println("----------------" + list.size());
+        return list;
+    }
+    @ResponseBody
     @RequestMapping(value = "getBurnCase", method = { RequestMethod.GET, RequestMethod.POST })
     public Object getBurnCase(String beginTime, String endTime, String pro, String city, String dis) {
         if (beginTime.equals("")) {
             beginTime = "0000-00-00";
         }
         if (endTime.equals("")) {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//璁剧疆鏃ユ湡鏍煎紡
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
             endTime = df.format(new Date());
         }
 
@@ -72,7 +93,7 @@ public class CaseQueryController {
             beginTime = "0000-00-00";
         }
         if (endTime.equals("")) {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//璁剧疆鏃ユ湡鏍煎紡
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
             endTime = df.format(new Date());
         }
 
@@ -94,7 +115,7 @@ public class CaseQueryController {
             beginTime = "0000-00-00";
         }
         if (endTime.equals("")) {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//璁剧疆鏃ユ湡鏍煎紡
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
             endTime = df.format(new Date());
         }
 
@@ -116,7 +137,7 @@ public class CaseQueryController {
             beginTime = "0000-00-00";
         }
         if (endTime.equals("")) {
-            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//璁剧疆鏃ユ湡鏍煎紡
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
             endTime = df.format(new Date());
         }
 

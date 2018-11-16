@@ -57,7 +57,7 @@
 
 <script type="text/javascript">
 	jQuery(function($) {
-		$(".from").datepicker({
+		$(".date").datepicker({
 			language : "zh-CN",
 			autoclose : true,//选中之后自动隐藏日期选择框
 			clearBtn : true,//清除按钮
@@ -184,23 +184,197 @@
 						<div class="tab1"
 							style="height: 60%; border: solid 1px; float: top; overflow: auto">
 							<ul id="myTab" class="nav nav-tabs">
-								<li class="active"><a href="#home" data-toggle="tab">
+								<li class="active"><a href="#case_inquisition" data-toggle="tab">
 										案例查询 </a></li>
-								<li><a href="#home" data-toggle="tab"> 提取信息 </a></li>
-								<li><a href="#home" data-toggle="tab"> 物证信息 </a></li>
+								<li><a href="#abstract" data-toggle="tab"> 提取信息 </a></li>
+								<li><a href="#evidence" data-toggle="tab"> 物证信息 </a></li>
 								<li><a href="#home" data-toggle="tab"> 主体信息 </a></li>
 								<li><a href="#home" data-toggle="tab"> 并案信息 </a></li>
 								<li><a href="#home" data-toggle="tab"> 嫌疑人信息 </a></li>
-								<li><a href="#kancha" data-toggle="tab"> 指纹数据 </a></li>
-								<li><a href="#trail" data-toggle="tab"> 足迹 </a></li>
+								<li><a href="#fingerprint" data-toggle="tab"> 指纹数据 </a></li>
+								<li><a href="#footmark" data-toggle="tab"> 足迹 </a></li>
 								<li><a href="#kancha" data-toggle="tab"> 法庭科学</a></li>
-								<li><a href="#material" data-toggle="tab"> DNA </a></li>
+								<li><a href="#dna" data-toggle="tab"> DNA </a></li>
 								<!-- li><a href="#material" data-toggle="tab">案例素材</a></li>
 								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li-->
 							</ul>
 
 							<div id="myTabContent" class="tab-content">
-								<div class="tab-pane fade in active" id="home">
+							    <div class="tab-pane fade in active" id="case_inquisition">
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="key_word" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="diag()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="begin_date" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="end_date" class="date" placeholder="结束时间">
+													        <button id="CaseInquisitionBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									<div style="padding-top: 3px">
+										<table id="table_inquisition"></table>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade " id="abstract"   >
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="abstract_keyword" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="abs()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="abstract_from" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="abstract_to" class="date" placeholder="结束时间">
+													        <button id="MaterialAbstractBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									<div style=" width:45%;padding-top: 3px">
+										<table id="table_abstract"></table>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade " id="evidence"   >
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="evidence_keyword" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="evi()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="evidence_from" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="evidence_to" class="date" placeholder="结束时间">
+													        <button id="MaterialEvidenceBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									<div style=" width:45%;padding-top: 3px">
+										<table id="table_evidence"></table>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade " id="fingerprint"   >
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="fingerprint_keyword" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="finger()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="fingerprint_from" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="fingerprintto" class="date" placeholder="结束时间">
+													        <button id="MaterialFingerprintBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									<div style=" width:45%;padding-top: 3px">
+										<table id="table_fingerprint"></table>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade " id="footmark"   >
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="footmark_keyword" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="foot()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="footmark_from" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="footmark_to" class="date" placeholder="结束时间">
+													        <button id="MaterialFootmarkBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									<div style=" width:45%;padding-top: 3px">
+										<table id="table_footmark"></table>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade " id="dna"   >
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="dna_keyword" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="dna()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="dna_from" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="dna_to" class="date" placeholder="结束时间">
+													        <button id="MaterialDnaBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									<div style=" width:45%;padding-top: 3px">
+										<table id="table_dna"></table>
+									</div>
+								</div>
+								
+								<div class="tab-pane fade" id="home">
 									<div style="background-color: transparent; float: top;">
 										<table style="background-color: transparent;">
 											<tr>
@@ -223,22 +397,21 @@
 											<tr>
 												<td style="padding-left: 5px">查询时间：</td>
 												<td style="padding-left: 4px"><input type="text"
-													style="height: 25px; width: 105px;" id="from" class="from"
+													style="height: 25px; width: 105px;" id="from" class="date"
 													placeholder="开始时间"> <input type="text"
-													style="height: 25px; width: 105px;" id="to" class="to"
+													style="height: 25px; width: 105px;" id="to" class="date"
 													placeholder="结束时间">
 													<button id="CaseInqueryBotton"
 														style="height: 25px; width: 65px">查询</button></td>
 											</tr>
 										</table>
 									</div>
-
-									<div style="padding-top: 3px">
+									  <div style="padding-top: 3px">
 										<table id="table_all"></table>
 									</div>
 								</div>
 
-								<div class="tab-pane fade in active" id="kancha">
+								<div class="tab-pane fade" id="kancha">
 									<div style="background-color: transparent; float: top;">
 										<table style="background-color: transparent;">
 											<tr>
@@ -352,17 +525,73 @@
 			class="btn-scroll-up btn btn-sm btn-inverse"> <i
 			class="icon-double-angle-up icon-only bigger-110"></i>
 		</a>
+		<img id="case_image"  src= ""    hidden="true"  width="220px" title="案件图片"  />
+		
+		
 	</div>
 	<!-- /.main-container -->
+	
 
 
 	<script type="text/javascript">
 		function diag() {
 			window
 					.open(
-							"addCase.jsp",
-							"addCase",
-							"height=330, width=410, top=100, left=100,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+							"inq_addCase.jsp",
+							"inq_addCase",
+							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+		function abs() {
+			window
+					.open(
+							"add_materialabstract.jsp",
+							"add_materialabstract",
+							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+		
+		function evi() {
+			window
+					.open(
+							"add_materialevidence.jsp",
+							"add_materialevidence",
+							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+		
+		function finger() {
+			window
+					.open(
+							"add_materialfingerprint.jsp",
+							"add_materialfingerprint",
+							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+		
+		function foot() {
+			window
+					.open(
+							"add_materialfootmark.jsp",
+							"add_materialfootmark",
+							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+		
+		function dna() {
+			window
+					.open(
+							"add_materialdna.jsp",
+							"add_materialevidedna",
+							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+		
+		function showimage(image) {
+			/*var newwin=window.open();                                           
+			myimg=newwin.document.createElement("img");
+			myimg.src=image;
+			newwin.document.body.appendChild(myimg);*/
+			document.getElementById("case_image").src=image;
+			window
+					.open(
+							"showimage.jsp",
+							"showimage",
+							"height=700, width=1200, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 	</script>
 </body>
