@@ -54,17 +54,8 @@
 <script src="../zTree/js/jquery.ztree.core.js" type="text/javascript"></script>
 <script src="../zTree/js/jquery.ztree.excheck.js" type="text/javascript"></script>
 <script src="../js/queryjs/ztree.js" type="text/javascript"></script>
+<script src="../js/element_type/element_type_picker.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-	jQuery(function($) {
-		$(".date").datepicker({
-			language : "zh-CN",
-			autoclose : true,//选中之后自动隐藏日期选择框
-			clearBtn : true,//清除按钮
-			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		});
-	});
-</script>
 </head>
 
 <body>
@@ -110,7 +101,7 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li><a href="../indexCtrl"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -138,11 +129,11 @@
 							<span class="menu-text"> 爆炸案件</span>
 					</a></li>
 
-					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
 							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
+					<li><a href="collision_index.jsp"> <i class="icon-tint"></i> <span
 							class="menu-text"> 碰撞案件</span>
 					</a></li>
 
@@ -183,6 +174,8 @@
 					<div style="width: 45%; float: left;">
 						<div class="tab1"
 							style="height: 60%; border: solid 1px; float: top; overflow: auto">
+							<textarea id="update_id"  style="display:none"></textarea>
+							<textarea id="element_id"  style="display:none"></textarea>
 							<ul id="myTab" class="nav nav-tabs">
 								<li class="active"><a href="#case_inquisition" data-toggle="tab">
 										案例查询 </a></li>
@@ -199,6 +192,9 @@
 								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li-->
 							</ul>
 
+							<input id="type_id"  style="display:none"></input>  
+							<input id="button_name"  style="display:none"></input>      <!--  按钮名，用于删除操作后刷新grid表 -->
+							<input id="rowdata"  style="display:none"></input>    <!--  选中行数据，用于更新页面传值 -->
 							<div id="myTabContent" class="tab-content">
 							    <div class="tab-pane fade in active" id="case_inquisition">
 									<div style="background-color: transparent; float: top;">
@@ -219,7 +215,7 @@
 												<td style="padding-left: 4px">
 															<input type="text" 	style="height: 25px; width: 105px;" id="begin_date" class="date" placeholder="开始时间">
 														    <input type="text"    style="height: 25px; width: 105px;" id="end_date" class="date" placeholder="结束时间">
-													        <button id="CaseInquisitionBotton" style="height: 25px; width: 65px">查询</button>
+													        <button id="MatInqButton" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
@@ -248,12 +244,12 @@
 												<td style="padding-left: 4px">
 															<input type="text" 	style="height: 25px; width: 105px;" id="abstract_from" class="date" placeholder="开始时间">
 														    <input type="text"    style="height: 25px; width: 105px;" id="abstract_to" class="date" placeholder="结束时间">
-													        <button id="MaterialAbstractBotton" style="height: 25px; width: 65px">查询</button>
+													        <button id="MatAbsBotton" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
 									   </div>
-									<div style=" width:45%;padding-top: 3px">
+									<div style="padding-top: 3px">
 										<table id="table_abstract"></table>
 									</div>
 								</div>
@@ -277,12 +273,12 @@
 												<td style="padding-left: 4px">
 															<input type="text" 	style="height: 25px; width: 105px;" id="evidence_from" class="date" placeholder="开始时间">
 														    <input type="text"    style="height: 25px; width: 105px;" id="evidence_to" class="date" placeholder="结束时间">
-													        <button id="MaterialEvidenceBotton" style="height: 25px; width: 65px">查询</button>
+													        <button id="MatEviBotton" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
 									   </div>
-									<div style=" width:45%;padding-top: 3px">
+									<div style="padding-top: 3px">
 										<table id="table_evidence"></table>
 									</div>
 								</div>
@@ -306,12 +302,12 @@
 												<td style="padding-left: 4px">
 															<input type="text" 	style="height: 25px; width: 105px;" id="fingerprint_from" class="date" placeholder="开始时间">
 														    <input type="text"    style="height: 25px; width: 105px;" id="fingerprintto" class="date" placeholder="结束时间">
-													        <button id="MaterialFingerprintBotton" style="height: 25px; width: 65px">查询</button>
+													        <button id="MatFingBotton" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
 									   </div>
-									<div style=" width:45%;padding-top: 3px">
+									<div style="padding-top: 3px">
 										<table id="table_fingerprint"></table>
 									</div>
 								</div>
@@ -335,12 +331,12 @@
 												<td style="padding-left: 4px">
 															<input type="text" 	style="height: 25px; width: 105px;" id="footmark_from" class="date" placeholder="开始时间">
 														    <input type="text"    style="height: 25px; width: 105px;" id="footmark_to" class="date" placeholder="结束时间">
-													        <button id="MaterialFootmarkBotton" style="height: 25px; width: 65px">查询</button>
+													        <button id="MatFootBotton" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
 									   </div>
-									<div style=" width:45%;padding-top: 3px">
+									<div style="padding-top: 3px">
 										<table id="table_footmark"></table>
 									</div>
 								</div>
@@ -364,12 +360,12 @@
 												<td style="padding-left: 4px">
 															<input type="text" 	style="height: 25px; width: 105px;" id="dna_from" class="date" placeholder="开始时间">
 														    <input type="text"    style="height: 25px; width: 105px;" id="dna_to" class="date" placeholder="结束时间">
-													        <button id="MaterialDnaBotton" style="height: 25px; width: 65px">查询</button>
+													        <button id="MatDnaBotton" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
 									   </div>
-									<div style=" width:45%;padding-top: 3px">
+									<div style="padding-top: 3px">
 										<table id="table_dna"></table>
 									</div>
 								</div>
@@ -483,7 +479,7 @@
 									align="center">
 									<text>关联信息:</text>
 									<p>
-										<textarea id="correlation" rows="20" cols="27"></textarea>
+										<ul id="element_tree"  class="ztree" style="display:none"></ul>
 									</p>
 
 								</div>
@@ -492,7 +488,7 @@
 									align="center">
 									<text>外联信息:</text>
 									<p>
-										<textarea id="e-correlation" rows="20" cols="27"></textarea>
+										<textarea id="e-correlation" rows="20" cols="45"></textarea>
 									</p>
 								</div>
 							</div>
@@ -525,59 +521,128 @@
 			class="btn-scroll-up btn btn-sm btn-inverse"> <i
 			class="icon-double-angle-up icon-only bigger-110"></i>
 		</a>
-		<img id="case_image"  src= ""    hidden="true"  width="220px" title="案件图片"  />
+		<img id="element_image"  src= ""    hidden="true"  width="220px" title="案件图片"  />
 		
 		
 	</div>
 	<!-- /.main-container -->
-	
-
-
 	<script type="text/javascript">
+	jQuery(function($) {
+		$(".date").datepicker({
+			language : "zh-CN",
+			autoclose : true,//选中之后自动隐藏日期选择框
+			clearBtn : true,//清除按钮
+			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+		});
+	});
+	
+	jQuery(document).ready(function($){
+			var setting={
+					callback: {
+						onClick: zTreeOnClick,
+						beforeClick: zTreeBeforeClick
+					}
+			};
+			var znodes=[
+				  {
+					  name:"要素信息",open:true,isparent:true,children:[
+						  {name:"关联案件",open:true,isparent:true,node_type:"upon_leaf"}
+					  ]
+				  }
+			];
+			$.fn.zTree.init($("#element_tree"),setting,znodes);
+			
+			function zTreeBeforeClick(treeId, treeNode, clickFlag) {
+		    	 document.getElementById('e-correlation').value="";
+		    	 if(treeNode.node_type=="upon_leaf"){
+		    		 var treeObj = $.fn.zTree.getZTreeObj("element_tree");
+		    			 treeObj.removeChildNodes(treeNode);
+		    	 }
+		     }
+			function zTreeOnClick(event, treeId, treeNode) {
+				var treeObj = $.fn.zTree.getZTreeObj("element_tree");
+				if(treeNode.node_type=="upon_leaf"){
+					var element_id=document.getElementById('check_id').value;
+					var type_id=document.getElementById('type_id').value;
+					var xhr = new XMLHttpRequest(); 
+					xhr.open('POST', '/pro/ConnectionQueryController/GetCases?e_id='+element_id+ '&t_id=' + type_id,true); 
+					xhr.send();
+					xhr.onload = function(e) {
+					    if(xhr.readyState ==4 && xhr.status == 200){
+					        var json=JSON.parse(xhr.responseText);
+					        var length=json.length;
+					        console.log("length  "+length);
+					        for(var i=0;i<length;i++){
+					        	var name="case"+i;
+					        	var case_id=json[name];
+						        var newNode = {name:treeNode.name+case_id,  node_type:"leaf",  type_id:treeNode.type_id, case_id:case_id};
+						        newNode = treeObj.addNodes(treeNode, newNode,false);
+					        }
+					  }
+			     	}
+			    }else if(treeNode.node_type=="leaf"){
+			    	var xhr = new XMLHttpRequest(); 
+					var fd = new FormData(); 
+					fd.append("case_id", treeNode.case_id);
+					xhr.open('POST', '/pro/CaseQueryController/GetCaseInfo',true); 
+					xhr.send(fd);
+					xhr.onload = function(e) { 
+					    if(xhr.readyState ==4 && xhr.status == 200){
+					        var json=JSON.parse(xhr.responseText);
+					        var jsonStr = JSON.stringify(json);
+					        //修改json字符串格式以便显示
+					        jsonStr=jsonStr.replace(/\{\"/g,"").replace(/\"\}/g,"").replace(/\":\"/g," :     ").replace(/\"\}/g,"").replace(/\",\"/g,"\n");   
+					        document.getElementById('e-correlation').value= jsonStr;
+					    }
+				    }
+			    }
+		    }
+	});
+
 		function diag() {
 			window
 					.open(
-							"inq_addCase.jsp",
-							"inq_addCase",
+							"add_MatInq.jsp",
+							"add_materialinquisition",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 		function abs() {
 			window
 					.open(
-							"add_materialabstract.jsp",
-							"add_materialabstract",
+							"add_MatAbs.jsp",
+							"add_MatAbs",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 		
 		function evi() {
 			window
 					.open(
-							"add_materialevidence.jsp",
-							"add_materialevidence",
+							"add_MatEvi.jsp",
+							"add_MatEvi",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 		
 		function finger() {
 			window
 					.open(
-							"add_materialfingerprint.jsp",
-							"add_materialfingerprint",
+							"add_MatFing.jsp",
+							"add_MatFing",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 		
 		function foot() {
 			window
 					.open(
-							"add_materialfootmark.jsp",
-							"add_materialfootmark",
+							"add_MatFoot.jsp",
+							"add_MatFoot",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 		
 		function dna() {
 			window
 					.open(
-							"add_materialdna.jsp",
-							"add_materialevidedna",
+							"add_MatDna.jsp",
+							"add_MatDna",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
 		
@@ -586,7 +651,7 @@
 			myimg=newwin.document.createElement("img");
 			myimg.src=image;
 			newwin.document.body.appendChild(myimg);*/
-			document.getElementById("case_image").src=image;
+			document.getElementById("element_image").src=image;
 			window
 					.open(
 							"showimage.jsp",

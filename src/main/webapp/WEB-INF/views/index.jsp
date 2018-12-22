@@ -18,7 +18,6 @@
 <!-- ace settings handler -->
 <script src="assets/js/ace-extra.min.js"></script>
 </head>
-
 <body>
 	<div class="navbar navbar-default" id="navbar">
 		<script type="text/javascript">
@@ -31,7 +30,7 @@
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
 				<a href="#" class="navbar-brand"> <img src="images/logo.png" />
-					<text style=""vertical-align:middle;">案事件现场勘验综合展示系统</text></a>
+					<text style="vertical-align:middle;">案事件现场勘验综合展示系统</text></a>
 				<!-- /.brand -->
 			</div>
 			<!-- /.navbar-header -->
@@ -61,7 +60,7 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li class="active"><a href="./workview/welcom.jsp"> <i
+					<li class="active"><a href="/pro/indexCtrl"> <i
 							class="icon-dashboard"></i> <span class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -90,11 +89,11 @@
 								爆炸案件 </span>
 					</a></li>
 
-					<li><a href="./workview/grab_index.jsp"> <i
+					<li><a href="./workview/kill_index.jsp"> <i
 							class="icon-jpy"></i> <span class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="./workview/grab_index.jsp"> <i
+					<li><a href="./workview/collision_index.jsp"> <i
 							class="icon-tint"></i> <span class="menu-text"> 碰撞案件 </span>
 					</a></li>
 

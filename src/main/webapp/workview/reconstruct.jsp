@@ -118,7 +118,7 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li><a href="../indexCtrl"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -146,11 +146,11 @@
 							<span class="menu-text"> 爆炸案件</span>
 					</a></li>
 
-					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
 							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
+					<li><a href="collision_index.jsp"> <i class="icon-tint"></i> <span
 							class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
@@ -287,7 +287,7 @@
 									align="center">
 									<text>关联信息:</text>
 									<p>
-										<textarea id="correlation" rows="20" cols="27"></textarea>
+										<textarea id="correlation" rows="20" cols="45"></textarea>
 									</p>
 
 								</div>
@@ -296,7 +296,7 @@
 									align="center">
 									<text>外联信息:</text>
 									<p>
-										<textarea id="e-correlation" rows="20" cols="27"></textarea>
+										<textarea id="e-correlation" rows="20" cols="45"></textarea>
 									</p>
 								</div>
 							</div>

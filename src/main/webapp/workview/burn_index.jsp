@@ -121,7 +121,7 @@
 
 				<ul class="nav nav-list">
 					<li style="background-image: url(../images/bkground.png)"><a
-						href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+						href="../indexCtrl"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -151,11 +151,11 @@
 							<span class="menu-text"> 爆炸案件</span>
 					</a></li>
 
-					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
 							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
+					<li><a href="collision_index.jsp"> <i class="icon-tint"></i> <span
 							class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
@@ -194,11 +194,11 @@
 								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
-								<li><a href="#material" data-toggle="tab">燃烧源信息</a></li>
-								<li><a href="#material" data-toggle="tab">燃质信息</a></li>
-								<li><a href="#material" data-toggle="tab">主体信息</a></li>
-								<li><a href="#trail" data-toggle="tab">扩散信息</a></li>
-								<li><a href="#material" data-toggle="tab">燃烧结果</a></li>
+								<li><a href="#source" data-toggle="tab">燃烧源信息</a></li>
+								<li><a href="#fuel" data-toggle="tab">燃质信息</a></li>
+								<li><a href="#subject" data-toggle="tab">主体信息</a></li>
+								<li><a href="#diffusion" data-toggle="tab">扩散信息</a></li>
+								<li><a href="#result" data-toggle="tab">燃烧结果</a></li>
 								<li><a href="#material" data-toggle="tab">过程评估</a></li>
 								<li><a href="#material" data-toggle="tab">燃烧反演</a></li>
 							</ul>
@@ -229,6 +229,11 @@
 													placeholder="结束时间">
 													<button id="CaseBurn" style="height: 25px; width: 65px">查询</button>
 												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="diag()">录入</button>
+												</td>
 											</tr>
 										</table>
 									</div>
@@ -240,9 +245,52 @@
 								<div class="tab-pane fade" id="material">
 									<button id="material_load" style="height: 25px; width: 65px"
 										onClick="load_m()">Load</button>
+										<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="diag()">录入</button>
 									<div class="zTreeDemoBackground left">
 										<ul id="treeDemo" class="ztree"></ul>
 									</div>
+								</div>
+								
+								<div class="tab-pane fade" id="source">
+									<button id="material_load" style="height: 25px; width: 65px"
+										onClick="load_m()">Load</button>
+										<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="source()">录入</button>
+								</div>
+								
+								<div class="tab-pane fade" id="fuel">
+									<button id="material_load" style="height: 25px; width: 65px"
+										onClick="load_m()">Load</button>
+										<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="fuel()">录入</button>
+								</div>
+								
+								<div class="tab-pane fade" id="subject">
+									<button id="material_load" style="height: 25px; width: 65px"
+										onClick="load_m()">Load</button>
+										<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="subject()">录入</button>
+								</div>
+								
+								<div class="tab-pane fade" id="diffusion">
+									<button id="material_load" style="height: 25px; width: 65px"
+										onClick="load_m()">Load</button>
+										<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="diiffusion()">录入</button>
+								</div>
+								
+								<div class="tab-pane fade" id="result">
+									<button id="material_load" style="height: 25px; width: 65px"
+										onClick="load_m()">Load</button>
+										<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="result()">录入</button>
 								</div>
 
 								<div class="tab-pane fade" id="trail">
@@ -428,22 +476,22 @@
 					</div-->
 					<div align="center">
 						<button id="loadpointmeta" onclick="loadmeta()"
-							style="height: 30px; width: 60px">元数据</button>
+							style="height: 30px; width: 70px">元数据</button>
 						<button id="init" onclick="showall()"
-							style="height: 30px; width: 60px">初始化</button>
-						<button id="ShowPoints" style="height: 30px; width: 45px">素材</button>
-						<button id="ShowObj" style="height: 30px; width: 45px">模型</button>
-						<button id="HideObj" style="height: 30px; width: 45px">去除</button>
-						<button id="Clear" style="height: 30px; width: 45px">清空</button>
-						<button id="showlayout" style="height: 30px; width: 45px">网格</button>
-						<button id="deletelayout" style="height: 30px; width: 45px">隐藏</button>
-						<button id="lockPoints" style="height: 30px; width: 45px">锁定</button>
+							style="height: 30px; width: 70px">初始化</button>
+						<button id="ShowPoints" style="height: 30px; width: 50px">素材</button>
+						<button id="ShowObj" style="height: 30px; width: 50px">模型</button>
+						<button id="HideObj" style="height: 30px; width: 50px">去除</button>
+						<button id="Clear" style="height: 30px; width: 50px">清空</button>
+						<button id="showlayout" style="height: 30px; width: 50px">网格</button>
+						<button id="deletelayout" style="height: 30px; width: 50px">隐藏</button>
+						<button id="lockPoints" style="height: 30px; width: 50px">锁定</button>
 						<button id="showBotton2" onclick="showrun()"
-							style="height: 30px; width: 45px">展示</button>
+							style="height: 30px; width: 50px">展示</button>
 						<button id="showBotton3" onclick="acc()"
-							style="height: 30px; width: 45px">加速</button>
+							style="height: 30px; width: 50px">加速</button>
 						<button id="showBotton4" onclick="stoprun()"
-							style="height: 30px; width: 45px">停止</button>
+							style="height: 30px; width: 50px">停止</button>
 					</div>
 					<div>
 						<input type="text" style="height: 20px; width: 30px;" id="sceneid"
@@ -492,6 +540,46 @@
 		</a>
 	</div>
 	<!-- /.main-container -->
+	<script>
+	function source() {
+		window
+				.open(
+						"add_BurnSour.jsp",
+						"add_burnsource",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	function fuel() {
+		window
+				.open(
+						"add_BurnFuel.jsp",
+						"add_burnfuel",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function subject() {
+		window
+				.open(
+						"add_BurnSub.jsp",
+						"add_burnsubject",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function diffusion() {
+		window
+				.open(
+						"add_BurnDiff.jsp",
+						"add_burndiffusion",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function result() {
+		window
+				.open(
+						"add_BurnRes.jsp",
+						"add_burnresult",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	</script>
 
 </body>
 </html>

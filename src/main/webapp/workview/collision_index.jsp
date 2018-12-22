@@ -120,7 +120,7 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li><a href="../indexCtrl"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -148,12 +148,12 @@
 							<span class="menu-text"> 爆炸案件 </span>
 					</a></li>
 
-					<li class="active"><a href="grab_index.jsp"> <i
-							class="icon-jpy"></i> <span class="menu-text"> 抢盗案件</span>
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
+							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
-							class="menu-text"> 碰撞案件 </span>
+					<li class="active"><a href="collision_index.jsp"> <i class="icon-tint"></i> 
+					<span class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
 					<!-- li>
@@ -196,10 +196,10 @@
 								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
-								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li>
-								<li><a href="#material" data-toggle="tab">刚体模型</a></li>
-								<li><a href="#trail" data-toggle="tab">轨迹序列</a></li>
-								<li><a href="#trail" data-toggle="tab">姿态序列</a></li>
+								<li><a href="#subject" data-toggle="tab">碰撞主体</a></li>
+								<li><a href="#object" data-toggle="tab">碰撞客体</a></li>
+								<li><a href="#fragment" data-toggle="tab">碎片信息</a></li>
+								<li><a href="#environment" data-toggle="tab">环境信息</a></li>
 								<li><a href="#material" data-toggle="tab">结果展示</a></li>
 								<li><a href="#material" data-toggle="tab">过程评估</a></li>
 								<li><a href="#material" data-toggle="tab">过程反演</a></li>
@@ -229,14 +229,14 @@
 													placeholder="开始时间"> <input type="text"
 													style="height: 25px; width: 105px;" id="to" class="to"
 													placeholder="结束时间">
-													<button id="CaseGrab" style="height: 25px; width: 65px">查询</button>
+													<button id="CaseKill" style="height: 25px; width: 65px">查询</button>
 												</td>
 											</tr>
 										</table>
 									</div>
 
 									<div style="padding-top: 3px">
-										<table id="table_grab"></table>
+										<table id="table_kill"></table>
 									</div>
 								</div>
 
@@ -252,6 +252,46 @@
 								<div class="tab-pane fade" id="trail">
 									<button id="trail_load" style="height: 25px; width: 65px"
 										onClick="load_t()">Load</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="subject">
+									<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+										onclick="subject()">录入</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="object">
+									<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+									    onclick="object()">录入</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="environment">
+									<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+									    onClick ="environment()">录入</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="fragment">
+									<<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+									    onclick="fragment()">录入</button>
 									<p>
 										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
 									</p>
@@ -274,7 +314,7 @@
 									align="center">
 									<text>关联信息:</text>
 									<p>
-										<textarea id="correlation" rows="20" cols="27"></textarea>
+										<textarea id="correlation" rows="20" cols="45"></textarea>
 									</p>
 
 								</div>
@@ -283,7 +323,7 @@
 									align="center">
 									<text>外联信息:</text>
 									<p>
-										<textarea id="e-correlation" rows="20" cols="27"></textarea>
+										<textarea id="e-correlation" rows="20" cols="45"></textarea>
 									</p>
 								</div>
 							</div>
@@ -321,5 +361,37 @@
 	</div>
 	<!-- /.main-container -->
 
+<script>
+	function subject() {
+		window
+				.open(
+						"add_CollSub.jsp",
+						"add_collisionsubject",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	function object() {
+		window
+				.open(
+						"add_CollObj.jsp",
+						"add_collisionobject",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function fragment() {
+		window
+				.open(
+						"add_CollFrag.jsp",
+						"add_collisionfragment",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function environment() {
+		window
+				.open(
+						"add_CollEnv.jsp",
+						"add_collisionenvironment",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	</script>
 </body>
 </html>

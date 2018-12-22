@@ -2,11 +2,12 @@
 <classpath>
 	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="E:/Gdal/bin/gdal/java"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/classes" path="src/main/resources">
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -84,6 +85,10 @@
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
+		<accessrules>
+			<accessrule kind="accessible" pattern="**"/>
+		</accessrules>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/Gdal/bin/gdal/java/gdal.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

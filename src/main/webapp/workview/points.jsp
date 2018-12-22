@@ -88,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i>
+					<li><a href="../indexCtrl"> <i class="icon-dashboard"></i>
 							<span class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -104,11 +104,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<span class="menu-text"> 爆炸 </span>
 					</a></li>
 
-					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
 							class="menu-text"> 抢盗 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
+					<li><a href="collision_index.jsp"> <i class="icon-tint"></i> <span
 							class="menu-text"> 碰撞 </span>
 					</a></li>
 

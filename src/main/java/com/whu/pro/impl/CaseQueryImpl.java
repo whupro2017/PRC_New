@@ -51,9 +51,9 @@ public class CaseQueryImpl implements CaseQueryService {
         return list;
     }
 
-    public ArrayList<CaseQueryResult> IdIsExsit(CaseQueryParam params) {
+    public ArrayList<CaseQueryResult> GetCaseInfo(CaseQueryParam params) {
         // TODO Auto-generated method stub
-        ArrayList<CaseQueryResult> list = cqd.IdIsExsit(params);
+        ArrayList<CaseQueryResult> list = cqd.GetCaseInfo(params);
         return list;
     }
 
@@ -62,4 +62,8 @@ public class CaseQueryImpl implements CaseQueryService {
         // TODO Auto-generated method stub
     }
 
+    public void DeleteCase(CaseQueryParam params) {
+        cqd.DeleteCase(params);
+        // TODO Auto-generated method stub
+    }
 }

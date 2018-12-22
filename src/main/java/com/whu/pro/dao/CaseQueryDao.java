@@ -18,7 +18,9 @@ public interface CaseQueryDao {
 
     ArrayList<CaseQueryResult> selectKillCase(CaseQueryParam params);
 
-    ArrayList<CaseQueryResult> IdIsExsit(CaseQueryParam params);
+    ArrayList<CaseQueryResult> GetCaseInfo(CaseQueryParam params);
 
     void InsertCase(CaseQueryParam params);
+
+    void DeleteCase(CaseQueryParam params);
 }

@@ -1,6 +1,13 @@
 # PRC_New
 
-ä¸€ã€mysqlçš„è®¾ç½®
+mysqlµÄÉèÖÃ£º
 1: src/main/resources/generator.properities 
 2: src/main/resources/generatorConfig.xml  line 19-21
 3: src/main/resources/jdbc.properties 
+
+ftp·şÎñÆ÷ÉèÖÃ£º
+1:±¾µØ´æ´¢Â·¾¶:  E:/FTPServer  
+2: hostname = "192.168.75.1";
+3: ¶Ë¿ÚºÅÄ¬ÈÏÎª21
+4: µÇÂ¼ÕËºÅ "user";
+5: µÇÂ¼ÃÜÂë"123";

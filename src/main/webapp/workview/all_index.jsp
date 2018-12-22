@@ -55,16 +55,6 @@
 <script src="../zTree/js/jquery.ztree.excheck.js" type="text/javascript"></script>
 <script src="../js/queryjs/ztree.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-	jQuery(function($) {
-		$(".date").datepicker({
-			language : "zh-CN",
-			autoclose : true,//选中之后自动隐藏日期选择框
-			clearBtn : true,//清除按钮
-			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
-		});
-	});
-</script>
 
 </head>
 
@@ -111,7 +101,7 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li><a href="../indexCtrl"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -139,12 +129,12 @@
 							<span class="menu-text"> 爆炸案件 </span>
 					</a></li>
 
-					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
 							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
-							class="menu-text"> 碰撞 案件</span>
+					<li><a href="collision_index.jsp"> <i class="icon-tint"></i> <span
+							class="menu-text"> 碰撞案件</span>
 					</a></li>
 
 					<!-- li>
@@ -163,7 +153,7 @@
 
 				</ul>
 				<!-- /.nav-list -->
-
+                <input id="button_name"  style="display:none"></input>      <!--  按钮名，用于删除操作后刷新grid表 -->
 				<div class="sidebar-collapse" id="sidebar-collapse">
 					<i class="icon-double-angle-left"
 						data-icon1="icon-double-angle-left"
@@ -254,7 +244,7 @@
 						<div class="tab2" style="float: bottom;">
 							<div align="center"
 								style="float: top; padding-top: 1px border-top:solid 1px; border-left: solid 1px; border-right: solid 1px; border-bottom: solid 1px">
-								<text>展示案件 ：</text>
+								<text>案件编号 ：</text>
 								<input style="height: 25px; width: 55px;" type="text"
 									id="check_id" disabled="true" />
 							</div>
@@ -264,7 +254,7 @@
 									align="center">
 									<text>关联信息:</text>
 									<p>
-										<textarea id="correlation" rows="20" cols="27"></textarea>
+										<ul id="case_tree"  class="ztree" style="display:none"></ul>
 									</p>
 
 								</div>
@@ -273,7 +263,7 @@
 									align="center">
 									<text>外联信息:</text>
 									<p>
-										<textarea id="e-correlation" rows="20" cols="27"></textarea>
+										<textarea id="e-correlation"   rows="20" cols="45"></textarea>
 									</p>
 								</div>
 							</div>
@@ -310,14 +300,100 @@
 	<!-- /.main-container -->
 
 
+<script type="text/javascript">
+	jQuery(function($) {
+		$(".date").datepicker({
+			language : "zh-CN",
+			autoclose : true,//选中之后自动隐藏日期选择框
+			clearBtn : true,//清除按钮
+			format : "yyyy-mm-dd"//日期格式，详见 http://bootstrap-datepicker.readthedocs.org/en/release/options.html#format
+		});
+	});
+</script>
 	<script type="text/javascript">
-		function diag() {
-			window
-					.open(
-							"addCase.jsp",
-							"addCase",
-							"height=330, width=410, top=100, left=100,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	jQuery(document).ready(function($){
+		var setting={
+				data: {
+					keep: {
+						parent: false
+					}
+				},
+				callback: {
+					onClick: zTreeOnClick,
+					beforeClick: zTreeBeforeClick
+				}
+		};
+		var znodes=[
+			  {
+				  name:"案件信息：",open:true,isparent:true,children:[
+					  {name:"要素管理",open:true,isparent:true,children:[
+						  {name:"查询信息",node_type:"upon_leaf",type_id:"3001000",controller_name:"MatInqQueryController",isparent:true}, 
+						  {name:"提取信息",node_type:"upon_leaf",type_id:"3002000",controller_name:"MatAbsQueryController",isparent:true}, 
+						  {name:"物证信息",node_type:"upon_leaf",type_id:"3003000",controller_name:"MatEviQueryController",isparent:true}, 
+						  {name:"指纹信息",node_type:"upon_leaf",type_id:"3004000",controller_name:"MatFingQueryController",isparent:true}, 
+						  {name:"足迹信息",node_type:"upon_leaf",type_id:"3005000",controller_name:"MatFootQueryController",isparent:true}, 
+						  {name:"DNA信息",node_type:"upon_leaf",type_id:"3006000",controller_name:"MatDnaQueryController",isparent:true}, 
+					  ]},
+				  ]
+			  }
+		];
+	     $.fn.zTree.init($("#case_tree"),setting,znodes);
+		
+	     function zTreeBeforeClick(treeId, treeNode, clickFlag) {
+	    	 document.getElementById('e-correlation').value="";
+	    	 if(treeNode.node_type=="upon_leaf"){
+	    		 var treeObj = $.fn.zTree.getZTreeObj("case_tree");
+	    			 treeObj.removeChildNodes(treeNode);
+	    	 }
+	     }
+		function zTreeOnClick(event, treeId, treeNode) {
+			var treeObj = $.fn.zTree.getZTreeObj("case_tree");
+			if(treeNode.node_type=="upon_leaf"){
+				var case_id=document.getElementById('check_id').value;
+				var type_id=treeNode.type_id;
+				var xhr = new XMLHttpRequest(); 
+				xhr.open('POST', '/pro/ConnectionQueryController/GetElements?c_id='+case_id+'&t_id='
+						+ type_id,true); 
+				xhr.send();
+				xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+				        var json=JSON.parse(xhr.responseText);
+				        var length=json.length;
+				        for(var i=0;i<length;i++){
+				        	var name="element"+i;
+				        	var elementid=json[name];
+					        var newNode = {name:treeNode.name+elementid,  node_type:"leaf",  controller_name:treeNode.controller_name,  elementid:elementid};
+					        newNode = treeObj.addNodes(treeNode, newNode,false);
+				        }
+				  }
+		     	}
+		    }else if(treeNode.node_type=="leaf"){
+		    	var xhr = new XMLHttpRequest(); 
+				var fd = new FormData(); 
+				fd.append("elementid", treeNode.elementid);
+				xhr.open('POST', '/pro/'+treeNode.controller_name+'/GetElementInfo',true); 
+				xhr.send(fd);
+				xhr.onload = function(e) { 
+				    if(xhr.readyState ==4 && xhr.status == 200){
+				        var json=JSON.parse(xhr.responseText);
+				        var jsonStr = JSON.stringify(json);
+				        //修改json字符串格式以便显示
+				        jsonStr=jsonStr.replace(/\{\"/g,"").replace(/\"\}/g,"").replace(/\":\"/g," :     ").replace(/\"\}/g,"").replace(/\",\"/g,"\n");   
+				        document.getElementById('e-correlation').value= jsonStr;
+				        
+				    }
+			    }
+		    }
+			
 		}
+	});
+	function diag() {
+		window
+				.open(
+						"addCase.jsp",
+						"addCase",
+						"height=330, width=410, top=100, left=100,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
 	</script>
 </body>
 </html>

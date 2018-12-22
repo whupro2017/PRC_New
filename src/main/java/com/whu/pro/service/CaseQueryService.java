@@ -18,7 +18,9 @@ public interface CaseQueryService {
 
     ArrayList<CaseQueryResult> getKillCase(CaseQueryParam params);
 
-    ArrayList<CaseQueryResult> IdIsExsit(CaseQueryParam params);
+    ArrayList<CaseQueryResult> GetCaseInfo(CaseQueryParam params);
 
     void InsertCase(CaseQueryParam params);
+
+    void DeleteCase(CaseQueryParam params);
 }

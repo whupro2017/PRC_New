@@ -120,7 +120,7 @@
 				</script>
 
 				<ul class="nav nav-list">
-					<li><a href="welcom.jsp"> <i class="icon-dashboard"></i> <span
+					<li><a href="../indexCtrl"> <i class="icon-dashboard"></i> <span
 							class="menu-text"> 首页 </span>
 					</a></li>
 
@@ -149,11 +149,11 @@
 								爆炸案件 </span>
 					</a></li>
 
-					<li><a href="grab_index.jsp"> <i class="icon-jpy"></i> <span
+					<li><a href="kill_index.jsp"> <i class="icon-jpy"></i> <span
 							class="menu-text"> 抢盗案件 </span>
 					</a></li>
 
-					<li><a href="kill_index.jsp"> <i class="icon-tint"></i> <span
+					<li><a href="collision_index.jsp"> <i class="icon-tint"></i> <span
 							class="menu-text"> 碰撞案件 </span>
 					</a></li>
 
@@ -197,10 +197,10 @@
 								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
-								<li><a href="#home" data-toggle="tab">炸药信息</a></li>
-								<li><a href="#material" data-toggle="tab">刚体模型</a></li>
-								<li><a href="#trail" data-toggle="tab">轨迹序列</a></li>
-								<li><a href="#trail" data-toggle="tab">姿态序列</a></li>
+								<li><a href="#dynamite" data-toggle="tab">炸药信息</a></li>
+								<li><a href="#source" data-toggle="tab">爆炸源信息</a></li>
+								<li><a href="#subject" data-toggle="tab">主体信息</a></li>
+								<li><a href="#fragment" data-toggle="tab">碎片信息</a></li>
 								<li><a href="#material" data-toggle="tab">结果展示</a></li>
 								<li><a href="#material" data-toggle="tab">过程评估</a></li>
 								<li><a href="#material" data-toggle="tab">过程反演</a></li>
@@ -250,9 +250,41 @@
 
 								</div>
 
-								<div class="tab-pane fade" id="trail">
+								<div class="tab-pane fade" id="dynamite">
 									<button id="trail_load" style="height: 25px; width: 65px"
 										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+										onclick="dynamite()">录入</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="source">
+									<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+									    onclick="source()">录入</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="subject">
+									<<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+									    onclick="subject()">录入</button>
+									<p>
+										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
+									</p>
+								</div>
+								
+								<div class="tab-pane fade" id="fragment">
+									<<button id="trail_load" style="height: 25px; width: 65px"
+										onClick="load_t()">Load</button>
+									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
+									    onclick="fragment()">录入</button>
 									<p>
 										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
 									</p>
@@ -275,7 +307,7 @@
 									align="center">
 									<text>关联信息:</text>
 									<p>
-										<textarea id="correlation" rows="20" cols="27"></textarea>
+										<textarea id="correlation" rows="20" cols="45"></textarea>
 									</p>
 
 								</div>
@@ -284,7 +316,7 @@
 									align="center">
 									<text>外联信息:</text>
 									<p>
-										<textarea id="e-correlation" rows="20" cols="27"></textarea>
+										<textarea id="e-correlation" rows="20" cols="45"></textarea>
 									</p>
 								</div>
 							</div>
@@ -321,6 +353,37 @@
 		</a>
 	</div>
 	<!-- /.main-container -->
-
+<script>
+	function source() {
+		window
+				.open(
+						"add_ExpSour.jsp",
+						"add_explosionsource",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	function dynamite() {
+		window
+				.open(
+						"add_ExpDyn.jsp",
+						"add_explosiondynamite",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function subject() {
+		window
+				.open(
+						"add_ExpSub.jsp",
+						"add_explosionsubject",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	
+	function fragment() {
+		window
+				.open(
+						"add_ExpFrag.jsp",
+						"add_explosionfragment",
+						"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+	}
+	</script>
 </body>
 </html>

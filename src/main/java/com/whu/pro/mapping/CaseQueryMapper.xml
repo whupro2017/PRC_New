@@ -43,14 +43,17 @@
 		( (#{pro}='全部') or (case_province=#{pro} and case_city=#{city} and case_district=#{dis})) and ( case_type='碰撞') ;
 	</select>
 	
-	<select id="IdIsExsit" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
+	<select id="GetCaseInfo" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
 		resultType="com.whu.pro.mapper.result.CaseQueryResult">
-		select case_id from case_t where case_id=#{id};
+		select case_id,case_time,concat(case_province,case_city, case_district)as case_location,case_desc from case_t where case_id=#{id};
 	</select>
 	
-	<select id="InsertCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam"
-		resultType="com.whu.pro.mapper.result.CaseQueryResult">
+	<insert id="InsertCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam">
 		insert into case_t values( #{id}, #{beginTime}, #{pro}, #{city}, #{dis}, #{des}, #{type} );
-	</select>
+	</insert>
+	
+	<delete id="DeleteCase" parameterType="com.whu.pro.mapper.param.CaseQueryParam">
+		delete from case_t where case_id=#{id};
+	</delete>
 		
 </mapper>

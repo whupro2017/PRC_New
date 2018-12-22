@@ -50,7 +50,7 @@
 					show_c2();
 				}else{
 					delete_dog();
-					delete_box1();
+					delete_box1();d
 					delete_c2();
 					delete_house();
 				}
