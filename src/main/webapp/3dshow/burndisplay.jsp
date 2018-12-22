@@ -179,11 +179,16 @@
            		//var size = 5;
                 var size = Math.sqrt(len_x * len_y) / 100;
 				geometrypoint = new THREE.BoxGeometry(size,size,size);
+				geometryclick = new THREE.BoxGeometry(size * 10,size * 10,size);
 				materialpoint = new THREE.MeshLambertMaterial({
-	                color:0xff0000
+	                color:0xff0000, transparent: true, opacity: 0.05
 	            });					
 	            for(var i=0; i<judge_num;i++){
-					judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
+	            	if (i % 10 == 0) {
+						judge_arr[i] = new THREE.Mesh(geometryclick,materialpoint);
+	            	} else {
+						judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
+	            	}
 					judge_arr[i].name = i;
 				}
                 
@@ -391,10 +396,15 @@
 	                // update the size of judege box
 	                //var size = 10 - 0.5 * level ;
 	                var size = Math.sqrt(len_x * len_y) / 100;
-					geometrypoint = new THREE.BoxGeometry(size,size,size);					
+					geometrypoint = new THREE.BoxGeometry(size,size,size);
+					geometryclick = new THREE.BoxGeometry(size * 10,size * 10,size);
 		            for(var i=0; i<judge_num;i++){
 		            	scene.remove(judge_arr[i]);
-						judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
+		            	if (i % 10 == 0) {
+							judge_arr[i] = new THREE.Mesh(geometryclick,materialpoint);
+		            	} else {
+							judge_arr[i] = new THREE.Mesh(geometrypoint,materialpoint);
+		            	}
 						judge_arr[i].name = i;
 					}
 		            if (!sceneLock) {
@@ -527,7 +537,9 @@
 	                0.5);
 	            vector.unproject(camera);
 	            var raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
-	            var intersects = raycaster.intersectObjects(scene.children,true);
+	            //var intersects = raycaster.intersectObjects(scene.children,true);
+	            var intersects = raycaster.intersectObjects([ scene ],true);
+	            document.getElementById('me2').value="clicked points: " + intersects.length + " randid: " + Math.random();
 	            if (intersects.length > 0) {
 	            	document.getElementById('me2').value= "click the " + intersects[0].object.name + "\n x: "
 	            	+( parseFloat(intersects[0].object.position.x) +  parseFloat(cenx) ) + " ; y: "
