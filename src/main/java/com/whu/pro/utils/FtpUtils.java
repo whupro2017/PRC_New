@@ -12,7 +12,7 @@ import org.apache.commons.net.ftp.FTPReply;
 
 public class FtpUtils {
     //ftp服务器地址
-    public String hostname = "192.168.75.1";
+    public String hostname = "127.0.0.1";
     //ftp服务器端口号默认为21
     public Integer port = 21;
     //ftp登录账号
