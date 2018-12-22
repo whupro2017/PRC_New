@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- author lyx; date 2016.09.28 -->
+<mapper namespace="com.whu.pro.dao.MatAbsQueryDao">
+	<select id="InsertElement" parameterType="com.whu.pro.mapper.param.MatAbsQueryParam"
+		resultType="com.whu.pro.mapper.result.MatAbsQueryResult">
+		insert into material_abstract(element_manager,element_remark,element_image,create_date,localname) values(  #{manager},  #{remark},  #{element_image},  #{begin_date},  #{localname} );
+	</select>
+	
+	<update id="UpdateElement" parameterType="com.whu.pro.mapper.param.MatAbsQueryParam">
+		update  material_abstract set element_manager=#{manager},element_remark=#{remark},element_image=#{element_image},create_date=#{begin_date},localname=#{localname}  where element_id=#{element_id}  ;
+	</update>
+	
+	<select id="selectAllElement" parameterType="com.whu.pro.mapper.param.MatAbsQueryParam"
+	   resultType="com.whu.pro.mapper.result.MatAbsQueryResult">
+		select * from material_abstract where (create_date	between #{begin_date} and #{end_date}) and 
+		((#{key_word}='全部')  or  (element_manager like '%${key_word}%') or (element_remark like '%${key_word}%'))  ;
+	</select>
+	
+	<select id="GetElementInfo" parameterType="com.whu.pro.mapper.param.MatAbsQueryParam"
+		resultType="com.whu.pro.mapper.result.MatAbsQueryResult">
+		select * from material_abstract where element_id=#{element_id};
+	</select>
+	
+	<select id="selectMaxId" resultType="com.whu.pro.mapper.result.MatAbsQueryResult">
+		select *from material_abstract where element_id=(select max(element_id) from material_abstract);
+	</select>
+	
+	<delete id="DeleteElement" parameterType="com.whu.pro.mapper.param.MatAbsQueryParam">
+		delete from material_abstract where element_id=#{element_id};
+	</delete>  
+	
+</mapper>

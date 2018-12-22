@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- author lyx; date 2016.09.28 -->
+<mapper namespace="com.whu.pro.dao.ConnectionQueryDao">
+	<insert id="InsertConnection" parameterType="com.whu.pro.mapper.param.ConnectionQueryParam">
+		insert into connection_table(element_id,case_id,type_id) values( #{element_id}, #{case_id}, #{type_id});
+	</insert>
+	
+	<select id="SeleConnections" parameterType="com.whu.pro.mapper.param.ConnectionQueryParam"
+	resultType="com.whu.pro.mapper.result.ConnectionQueryResult">
+		select * from connection_table where (case_id=#{case_id} or element_id=#{element_id}) and type_id=#{type_id};
+	</select>
+	
+	<delete id="DeleteConnection" parameterType="com.whu.pro.mapper.param.ConnectionQueryParam">
+		delete from connection_table where (element_id=#{element_id} and type_id=#{type_id}) or case_id=#{case_id};
+	</delete>
+</mapper>
