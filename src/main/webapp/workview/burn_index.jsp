@@ -350,9 +350,9 @@
 													<tr>
 														<td style="padding-right: 25px">原始点云</td>
 														<td>
-															<button id="searchPC" style="height: 25px; width: 75px">匹配搜索</button>
-															<button id="assignPC" style="height: 25px; width: 75px">绑定点云</button>
-															<button id="clearPC" style="height: 25px; width: 75px">清空绑定</button>
+															<button id="searchPC" style="height: 25px; width: 80px">匹配搜索</button>
+															<button id="assignPC" style="height: 25px; width: 80px">绑定点云</button>
+															<button id="clearPC" style="height: 25px; width: 80px">清空绑定</button>
 														</td>
 													</tr>
 												</table>
@@ -400,10 +400,10 @@
 														<td style="padding-right: 20px">场景模型</td>
 														<td>
 															<button id="searchModel"
-																style="height: 25px; width: 75px">匹配搜索</button>
+																style="height: 25px; width: 80px">匹配搜索</button>
 															<button id="assignModel"
-																style="height: 25px; width: 75px">绑定模型</button>
-															<button id="clearModel" style="height: 25px; width: 75px">清空绑定</button>
+																style="height: 25px; width: 80px">绑定模型</button>
+															<button id="clearModel" style="height: 25px; width: 80px">清空绑定</button>
 														</td>
 													</tr>
 												</table>
