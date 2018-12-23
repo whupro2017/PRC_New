@@ -383,19 +383,19 @@ jQuery(function($) {
 		}, {
 			name : 'case_location',
 			index : 'case_location',
-			width : 60,
+			width : 50,
 			sortable : false,
 			editable : false
 		}, {
 			name : 'case_desc',
 			index : 'case_desc',
-			width : 50,
+			width : 40,
 			sortable : false,
 			editable : false
 		},{ 
 			lable:'operation',
 			name: 'connect_element',  
-			width: 15, 
+			width: 20, 
 			align: 'center',
             formatter: function (value, grid, rows, state) {
                 //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
@@ -404,7 +404,7 @@ jQuery(function($) {
 		},{ 
 			lable:'operation',
 			name: 'delete_case',  
-			width: 15, 
+			width: 20, 
 			align: 'center',
             formatter: function (value, grid, rows, state) {
                 return '<img id="delete_case" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_case(\''+rows.case_id+'\')"></img>';
