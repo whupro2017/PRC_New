@@ -175,7 +175,7 @@
 						<div class="tab1"
 							style="height: 60%; border: solid 1px; float: top; overflow: auto">
 							<ul id="myTab" class="nav nav-tabs">
-								<li class="active"><a href="#trial" data-toggle="tab">
+								<li class="active"><a href="#home" data-toggle="tab">
 										案例查询 </a></li>
 								<li><a href="#material" data-toggle="tab">案例素材</a></li>
 								<li><a href="#trail" data-toggle="tab">移动轨迹</a></li>
