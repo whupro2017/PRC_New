@@ -1,9 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/java=GBK
 encoding//src/main/resources=GBK
-encoding//src/main/webapp/3dshow/all_3d.jsp=UTF-8
-encoding//src/main/webapp/WEB-INF/views/index.jsp=UTF-8
-encoding//src/main/webapp/workview/addCase.jsp=UTF-8
-encoding//src/main/webapp/workview/all_index.jsp=UTF-8
 encoding//src/test/java=GBK
 encoding/<project>=GBK
