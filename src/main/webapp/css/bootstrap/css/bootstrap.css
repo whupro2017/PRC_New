@@ -1292,7 +1292,7 @@ p {
 }
 .lead {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.4;
 }
@@ -2741,7 +2741,7 @@ select[multiple].input-sm {
 }
 .input-lg {
   height: 46px;
-  padding: 10px 16px;
+  padding: 10px 13px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
@@ -2756,7 +2756,7 @@ select[multiple].input-lg {
 }
 .form-group-lg .form-control {
   height: 46px;
-  padding: 10px 16px;
+  padding: 10px 13px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
@@ -2772,7 +2772,7 @@ select[multiple].input-lg {
 .form-group-lg .form-control-static {
   height: 46px;
   min-height: 38px;
-  padding: 11px 16px;
+  padding: 11px 13px;
   font-size: 18px;
   line-height: 1.3333333;
 }
@@ -3486,7 +3486,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 10px 16px;
+  padding: 10px 13px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
@@ -3885,7 +3885,7 @@ tbody.collapse.in {
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
   height: 46px;
-  padding: 10px 16px;
+  padding: 10px 13px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
@@ -3960,7 +3960,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 3px;
 }
 .input-group-addon.input-lg {
-  padding: 10px 16px;
+  padding: 10px 13px;
   font-size: 18px;
   border-radius: 6px;
 }
@@ -4822,7 +4822,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .pagination-lg > li > a,
 .pagination-lg > li > span {
-  padding: 10px 16px;
+  padding: 10px 13px;
   font-size: 18px;
   line-height: 1.3333333;
 }
@@ -5516,7 +5516,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 13px;
   color: inherit;
 }
 .panel-title > a,
