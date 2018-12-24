@@ -1703,7 +1703,7 @@ Component: timeline
   color: #555;
   border-bottom: 1px solid #f4f4f4;
   padding: 5px;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.1;
 }
 .timeline > li > .timeline-item > .timeline-header > a {
@@ -2204,7 +2204,7 @@ Component: timeline
 .lockscreen .lockscreen-name {
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 13px;
 }
 /* Will contain the image and the sign in form */
 .lockscreen-item {
