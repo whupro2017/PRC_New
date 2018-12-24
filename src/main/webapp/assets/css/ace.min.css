@@ -8,7 +8,7 @@ body {
 	background-color: white;
 	min-height: 100%;
 	font-family: 'SimHei';
-	font-size: 16px;
+	font-size: 13px;
 	color: #393939;
 	line-height: 1.5
 }
@@ -70,7 +70,7 @@ body.breadcrumbs-fixed {
 .page-header {
 	margin: 0 0 12px;
 	border-bottom: 1px dotted #e2e2e2;
-	padding-bottom: 16px;
+	padding-bottom: 13px;
 	padding-top: 7px
 }
 
@@ -111,7 +111,7 @@ h1.bigger {
 }
 
 h1.block {
-	margin-bottom: 16px
+	margin-bottom: 13px
 }
 
 h2 {
@@ -129,7 +129,7 @@ h2.bigger {
 }
 
 h2.block {
-	margin-bottom: 16px
+	margin-bottom: 13px
 }
 
 h3 {
@@ -147,7 +147,7 @@ h3.bigger {
 }
 
 h3.block {
-	margin-bottom: 16px
+	margin-bottom: 13px
 }
 
 h4 {
@@ -165,7 +165,7 @@ h4.bigger {
 }
 
 h4.block {
-	margin-bottom: 16px
+	margin-bottom: 13px
 }
 
 h5 {
@@ -179,15 +179,15 @@ h5.smaller {
 }
 
 h5.bigger {
-	font-size: 16px
+	font-size: 13px
 }
 
 h5.block {
-	margin-bottom: 16px
+	margin-bottom: 13px
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: normal;
 	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
 }
@@ -201,7 +201,7 @@ h6.bigger {
 }
 
 h6.block {
-	margin-bottom: 16px
+	margin-bottom: 13px
 }
 
 ul,ol {
@@ -311,7 +311,7 @@ blockquote,blockquote.pull-right {
 }
 
 .alert .close {
-	font-size: 16px
+	font-size: 13px
 }
 
 .alert-block p+p {
@@ -843,7 +843,7 @@ blockquote,blockquote.pull-right {
 }
 
 .hr-16,.hr16 {
-	margin: 16px 0
+	margin: 13px 0
 }
 
 .hr-14,.hr14 {
@@ -1022,7 +1022,7 @@ blockquote,blockquote.pull-right {
 	min-height: 1px;
 	overflow: hidden;
 	margin: 12px 0;
-	margin: 16px 0 15px
+	margin: 13px 0 15px
 }
 
 .vspace-16,.vspace-xs-16,.vspace-sm-16,.vspace-md-16,.vspace-lg-16 {
@@ -1030,7 +1030,7 @@ blockquote,blockquote.pull-right {
 	min-height: 1px;
 	overflow: hidden;
 	margin: 12px 0;
-	margin: 16px 0 15px 0
+	margin: 13px 0 15px 0
 }
 
 .space-14 {
@@ -1147,7 +1147,7 @@ blockquote,blockquote.pull-right {
 
 .header {
 	line-height: 28px;
-	margin-bottom: 16px;
+	margin-bottom: 13px;
 	margin-top: 18px;
 	padding-bottom: 4px;
 	border-bottom: 1px solid #CCC
@@ -1276,7 +1276,7 @@ blockquote,blockquote.pull-right {
 }
 
 .navbar .navbar-nav>li>a,.navbar .navbar-nav>li>a:hover,.navbar .navbar-nav>li>a:focus {
-	font-size: 16px;
+	font-size: 13px;
 	text-shadow: none;
 	color: #fff
 }
@@ -1327,7 +1327,7 @@ blockquote,blockquote.pull-right {
 }
 
 .ace-nav>li>a>[class*="icon-"] {
-	font-size: 16px;
+	font-size: 13px;
 	color: #FFF;
 	display: inline-block;
 	width: 20px;
@@ -1767,7 +1767,7 @@ blockquote,blockquote.pull-right {
 	line-height: 24px;
 	margin: 0 22px 0 12px;
 	padding: 0;
-	font-size: 16px;
+	font-size: 13px;
 	color: #333;
 	border-radius: 0
 }
@@ -1882,7 +1882,7 @@ blockquote,blockquote.pull-right {
 	width: 152px;
 	height: 28px!important;
 	border-radius: 4px!important;
-	font-size: 16px;
+	font-size: 13px;
 	color: #666!important;
 	z-index: 11;
 	-webkit-transition: width ease .15s;
@@ -2122,11 +2122,11 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 	display: block;
 	height: 38px;
 	line-height: 36px;
-	padding: 0 16px 0 7px;
+	padding: 0 13px 0 7px;
 	background-color: #f9f9f9;
 	color: #585858;
 	text-shadow: none!important;
-	font-size: 16px;
+	font-size: 13px;
 	text-decoration: none
 }
 
@@ -2203,7 +2203,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 	background-color: #fff;
 	color: #2b7dbc;
 	font-weight: bold;
-	font-size: 16px
+	font-size: 13px
 }
 
 .nav-list>li.active>a>[class*="icon-"] {
@@ -2406,7 +2406,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 	border: 1px solid #bbb;
 	padding: 0 5px;
 	line-height: 18px;
-	border-radius: 16px;
+	border-radius: 13px;
 	background-color: #fff;
 	position: relative
 }
@@ -2488,7 +2488,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 .nav-list>li>.submenu a>.arrow {
 	right: 11px;
 	top: 10px;
-	font-size: 16px;
+	font-size: 13px;
 	color: #6b828e
 }
 
@@ -2503,7 +2503,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 }
 
 .nav-list>li>.submenu li>.submenu>li {
-	line-height: 16px
+	line-height: 13px
 }
 
 .nav-list>li>.submenu li>.submenu>li:before {
@@ -2530,7 +2530,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 }
 
 .nav-list>li>.submenu li>.submenu>li a {
-	font-size: 16px;
+	font-size: 13px;
 	color: #777
 }
 
@@ -2766,7 +2766,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 }
 
 .menu-min .sidebar-collapse>[class*="icon-"] {
-	font-size: 16px;
+	font-size: 13px;
 	padding: 0 4px;
 	line-height: 15px;
 	border-width: 1px;
@@ -2830,7 +2830,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 		padding-left: 33px;
 		padding-top: 7px;
 		padding-bottom: 1px;
-		font-size: 16px;
+		font-size: 13px;
 		font-weight: bold;
 		text-transform: uppercase;
 		background-color: #444;
@@ -2937,7 +2937,7 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 	}
 
 	.menu-toggler>.menu-text {
-		border-width: 7px 16px;
+		border-width: 7px 13px;
 		bottom: -14px
 	}
 
@@ -2987,12 +2987,12 @@ li [class^="icon-"],li [class*=" icon-"],.nav-list li [class^="icon-"],.nav-list
 .btn-lg {
 	border-width: 5px;
 	line-height: 1.35;
-	padding: 7px 16px
+	padding: 7px 13px
 }
 
 .btn-sm {
 	border-width: 4px;
-	font-size: 16px;
+	font-size: 13px;
 	padding: 4px 9px;
 	line-height: 1.39
 }
@@ -3985,7 +3985,7 @@ button.btn:active {
 
 .btn.btn-app.btn-sm {
 	width: 80px;
-	font-size: 16px;
+	font-size: 13px;
 	border-radius: 10px;
 	line-height: 1.5
 }
@@ -4046,7 +4046,7 @@ button.btn:active {
 
 .btn.btn-app>.label {
 	padding: 1px 6px 3px;
-	font-size: 16px
+	font-size: 13px
 }
 
 .btn.btn-app.radius-4>.badge,.btn.btn-app.no-radius>.badge {
@@ -4476,7 +4476,7 @@ button.btn:active {
 
 .label-lg {
 	padding: .3em .6em .4em;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 1.1;
 	height: 24px
 }
@@ -4619,7 +4619,7 @@ button.btn:active {
 }
 
 .dropdown-menu>li>a {
-	font-size: 16px;
+	font-size: 13px;
 	padding-left: 11px;
 	padding-right: 11px;
 	margin-bottom: 1px;
@@ -4843,7 +4843,7 @@ button.btn:active {
 	padding-top: 0;
 	padding-bottom: 0;
 	line-height: 34px;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: bold;
 	text-transform: none;
 	border-bottom: 1px solid
@@ -4860,7 +4860,7 @@ button.btn:active {
 	margin: 0;
 	border-bottom: 1px solid;
 	font-size: 12px;
-	line-height: 16px;
+	line-height: 13px;
 	color: #555
 }
 
@@ -4875,7 +4875,7 @@ button.btn:active {
 }
 
 .dropdown-navbar>li>a .badge {
-	line-height: 16px;
+	line-height: 13px;
 	padding-right: 4px;
 	padding-left: 4px;
 	font-size: 12px
@@ -4886,7 +4886,7 @@ button.btn:active {
 	border-top: 1px dotted transparent;
 	color: #4f99c6;
 	text-align: center;
-	font-size: 16px
+	font-size: 13px
 }
 
 .dropdown-navbar>li:last-child>a:hover {
@@ -5107,7 +5107,7 @@ textarea,input[type="text"],input[type="password"],input[type="datetime"],input[
 	border: 1px solid #d5d5d5;
 	padding: 5px 4px;
 	line-height: 1.2;
-	font-size: 16px;
+	font-size: 13px;
 	font-family: inherit;
 	-webkit-box-shadow: none!important;
 	box-shadow: none!important;
@@ -5241,7 +5241,7 @@ input[readonly]:focus {
 }
 
 .help-inline {
-	font-size: 16px!important
+	font-size: 13px!important
 }
 
 .input-icon {
@@ -5272,7 +5272,7 @@ span.input-icon {
 	line-height: 28px;
 	display: inline-block;
 	color: #909090;
-	font-size: 16px
+	font-size: 13px
 }
 
 .input-icon.input-icon-right>[class*="icon-"] {
@@ -5370,7 +5370,7 @@ input[type=checkbox].ace+.lbl,input[type=radio].ace+.lbl {
 }
 
 input[type=checkbox].ace+.lbl.padding-16::before,input[type=radio].ace+.lbl.padding-16::before {
-	margin-right: 16px
+	margin-right: 13px
 }
 
 input[type=checkbox].ace+.lbl.padding-12::before,input[type=radio].ace+.lbl.padding-12::before {
@@ -5402,9 +5402,9 @@ input[type=checkbox].ace+.lbl::before,input[type=radio].ace+.lbl::before {
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
-	height: 16px;
+	height: 13px;
 	line-height: 14px;
-	min-width: 16px;
+	min-width: 13px;
 	margin-right: 1px
 }
 
@@ -5533,7 +5533,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-2+.lbl::before {
 
 input[type=checkbox].ace.ace-switch.ace-switch-3+.lbl::after {
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 23px;
 	content: "\f00d";
 	top: -1px
@@ -5617,7 +5617,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-6+.lbl::before {
 	box-shadow: none;
 	border: 0;
 	font-weight: lighter;
-	font-size: 16px;
+	font-size: 13px;
 	border-radius: 12px;
 	display: inline-block;
 	background-color: #888;
@@ -5694,7 +5694,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7+.lbl::before {
 input[type=checkbox].ace.ace-switch.ace-switch-7+.lbl::after {
 	content: '\f00d';
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	position: absolute;
 	top: 3px;
 	left: 39px;
@@ -5834,7 +5834,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 	overflow: hidden;
 	line-height: 28px;
 	color: #888;
-	font-size: 16px;
+	font-size: 13px;
 	vertical-align: top;
 	position: static;
 	padding-left: 30px
@@ -5846,7 +5846,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 }
 
 .ace-file-input .file-label.selected {
-	right: 16px
+	right: 13px
 }
 
 .ace-file-input .file-label.selected .file-name {
@@ -5863,7 +5863,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 	width: 26px;
 	text-align: center;
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	border: 2px solid #FFF;
 	color: #FFF;
 	-webkit-transition: all .1s;
@@ -5957,7 +5957,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 	width: 26px;
 	text-align: center;
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	border: 2px solid #FFF;
 	color: #FFF;
 	-webkit-transition: all .1s;
@@ -6268,7 +6268,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 
 .tab-content {
 	border: 1px solid #c5d0dc;
-	padding: 16px 12px;
+	padding: 13px 12px;
 	position: relative;
 	z-index: 11
 }
@@ -6347,11 +6347,11 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 }
 
 .tab-content.padding-16 {
-	padding: 16px 12px
+	padding: 13px 12px
 }
 
 .tab-content.no-border.padding-16 {
-	padding: 16px
+	padding: 13px
 }
 
 .tab-content.padding-14 {
@@ -6491,12 +6491,12 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 }
 
 .nav-tabs.padding-16 {
-	padding-left: 16px
+	padding-left: 13px
 }
 
 .tabs-right>.nav-tabs.padding-16,.tabs-left>.nav-tabs.padding-16 {
 	padding-left: 0;
-	padding-top: 16px
+	padding-top: 13px
 }
 
 .nav-tabs.padding-14 {
@@ -6579,7 +6579,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 	background-color: #f9f9f9;
 	color: #999;
 	margin-right: -1px;
-	line-height: 16px;
+	line-height: 13px;
 	position: relative;
 	z-index: 11;
 	border-color: #c5d0dc
@@ -6606,7 +6606,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 	border-bottom-color: transparent;
 	background-color: #FFF;
 	z-index: 12;
-	line-height: 16px;
+	line-height: 13px;
 	margin-top: -1px;
 	box-shadow: 0 -2px 3px 0 rgba(0,0,0,0.15)
 }
@@ -6860,7 +6860,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 	background-color: #eef4f9;
 	position: relative;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 1;
 	padding: 10px;
 	display: block
@@ -6884,7 +6884,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 }
 
 .accordion-style1.panel-group .panel-heading .accordion-toggle>[class*="icon-"]:first-child {
-	width: 16px
+	width: 13px
 }
 
 .accordion-style1.panel-group .panel-heading .accordion-toggle:hover>[class*="icon-"]:first-child {
@@ -6953,7 +6953,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-7:checked+.lbl::after {
 .accordion-style2.panel-group .accordion-style2.panel-group .panel .panel-heading,.accordion-style2.panel-group .accordion-style2.panel-group .panel .panel-heading .accordion-toggle {
 	background-color: transparent;
 	border-width: 0;
-	font-size: 16px;
+	font-size: 13px;
 	padding-top: 6px;
 	padding-bottom: 8px
 }
@@ -7079,7 +7079,7 @@ th .lbl:only-child,td .lbl:only-child {
 
 .dataTables_wrapper label {
 	display: inline-block;
-	font-size: 16px
+	font-size: 13px
 }
 
 .dataTables_wrapper input[type=text],.dataTables_wrapper select {
@@ -7123,7 +7123,7 @@ th .lbl:only-child,td .lbl:only-child {
 	display: inline-block;
 	color: #555;
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: normal;
 	float: right;
 	margin-right: 4px;
@@ -7499,7 +7499,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .widget-main.padding-16 {
-	padding: 16px
+	padding: 13px
 }
 
 .widget-main.padding-14 {
@@ -7847,7 +7847,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .widget-header-small>.widget-toolbar>.nav-tabs>li>a {
-	line-height: 16px;
+	line-height: 13px;
 	padding-top: 6px;
 	padding-bottom: 6px
 }
@@ -7929,7 +7929,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .widget-toolbox.padding-16 {
-	padding: 16px
+	padding: 13px
 }
 
 .widget-toolbox.padding-14 {
@@ -8003,7 +8003,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .widget-main.no-padding>form>fieldset,.widget-main.padding-0>form>fieldset {
-	padding: 16px
+	padding: 13px
 }
 
 .widget-main.no-padding>form>fieldset+.form-actions,.widget-main.padding-0>form>fieldset+.form-actions {
@@ -8261,7 +8261,7 @@ th .lbl:only-child,td .lbl:only-child {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	line-height: 16px;
+	line-height: 13px;
 	text-align: center;
 	font-size: 12px;
 	font-family: Verdana
@@ -8479,7 +8479,7 @@ th .lbl:only-child,td .lbl:only-child {
 	display: inline-block;
 	border: 0;
 	border-top-width: 0;
-	font-size: 16px;
+	font-size: 13px;
 	text-align: left;
 	line-height: 21px;
 	min-width: 130px;
@@ -8498,7 +8498,7 @@ th .lbl:only-child,td .lbl:only-child {
 
 .infobox>.infobox-data>.infobox-text {
 	display: block;
-	font-size: 16px;
+	font-size: 13px;
 	margin: 2px 0 4px;
 	position: relative;
 	text-shadow: none
@@ -8795,7 +8795,7 @@ th .lbl:only-child,td .lbl:only-child {
 	top: 11px;
 	text-shadow: none;
 	color: #abbac3;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: bold;
 	padding-right: 18px;
 	padding-top: 3px
@@ -8901,7 +8901,7 @@ th .lbl:only-child,td .lbl:only-child {
 	font-size: 11px;
 	font-weight: bold;
 	line-height: 15px;
-	height: 16px;
+	height: 13px;
 	padding: 0 1px
 }
 
@@ -8962,7 +8962,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .infobox-small .percentage {
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: normal;
 	margin-top: 2px;
 	margin-left: 2px
@@ -8989,7 +8989,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .pricing-box .btn {
-	font-size: 16px
+	font-size: 13px
 }
 
 .pricing-box .widget-header {
@@ -9000,7 +9000,7 @@ th .lbl:only-child,td .lbl:only-child {
 @media only screen and (max-width:768px) {
 	.pricing-box {
 		margin: 0;
-		margin-bottom: 16px;
+		margin-bottom: 13px;
 		padding-left: 0!important;
 		padding-right: 0!important;
 		margin-left: -1px
@@ -9018,7 +9018,7 @@ th .lbl:only-child,td .lbl:only-child {
 @media only screen and (max-width:460px) {
 	.pricing-box {
 		margin: 0;
-		margin-bottom: 16px;
+		margin-bottom: 13px;
 		width: 100%;
 		padding-left: 12px!important;
 		padding-right: 12px!important
@@ -9033,7 +9033,7 @@ th .lbl:only-child,td .lbl:only-child {
 
 .pricing-table-header>li {
 	padding: 7px 0 7px 11px;
-	font-size: 16px
+	font-size: 13px
 }
 
 .pricing-table {
@@ -9043,7 +9043,7 @@ th .lbl:only-child,td .lbl:only-child {
 .pricing-table>li {
 	text-align: center;
 	padding: 7px 0;
-	font-size: 16px
+	font-size: 13px
 }
 
 .list-striped>li:nth-child(odd) {
@@ -9172,7 +9172,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .login-layout .widget-box .widget-main {
-	padding: 16px 36px 36px;
+	padding: 13px 36px 36px;
 	background: #f7f7f7
 }
 
@@ -9243,7 +9243,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .login-layout .login-box .widget-main {
-	padding-bottom: 16px
+	padding-bottom: 13px
 }
 
 .login-box .social-or-login {
@@ -9257,7 +9257,7 @@ th .lbl:only-child,td .lbl:only-child {
 	background: #f7f7f7;
 	padding: 0 8px;
 	color: #5090c1;
-	font-size: 16px
+	font-size: 13px
 }
 
 .login-box .social-or-login:before {
@@ -9292,7 +9292,7 @@ th .lbl:only-child,td .lbl:only-child {
 
 @media only screen and (max-width:480px) {
 	.login-layout .widget-box .widget-main {
-		padding: 16px
+		padding: 13px
 	}
 }
 
@@ -9575,7 +9575,7 @@ th .lbl:only-child,td .lbl:only-child {
 	margin-top: 2px;
 	padding-bottom: 19px;
 	padding-left: 7px;
-	font-size: 16px
+	font-size: 13px
 }
 
 .itemdiv>.body>.text:after {
@@ -9585,7 +9585,7 @@ th .lbl:only-child,td .lbl:only-child {
 	font-size: 0;
 	overflow: hidden;
 	position: absolute;
-	left: 16px;
+	left: 13px;
 	right: -12px;
 	margin-top: 9px;
 	border-top: 1px solid #e4ecf3
@@ -9761,7 +9761,7 @@ th .lbl:only-child,td .lbl:only-child {
 }
 
 .item-list>li label {
-	font-size: 16px
+	font-size: 13px
 }
 
 .item-list>li .percentage {
@@ -10042,7 +10042,7 @@ li.item-default {
 
 .profile-skills .progress .progress-bar {
 	line-height: 26px;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: bold;
 	font-family: "Open Sans";
 	padding: 0 8px
@@ -10483,7 +10483,7 @@ li.item-default {
 }
 
 .message-content {
-	padding: 16px 12px;
+	padding: 13px 12px;
 	border: 1px solid #e9e9e9;
 	-webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,0.02);
 	box-shadow: 0 0 1px 1px rgba(0,0,0,0.02);
@@ -10492,7 +10492,7 @@ li.item-default {
 }
 
 .message-item .message-content {
-	margin-top: 16px;
+	margin-top: 13px;
 	border-top-width: 1px
 }
 
@@ -10533,7 +10533,7 @@ li.item-default {
 
 .message-footer {
 	background-color: #f1f1f1;
-	padding: 12px 16px;
+	padding: 12px 13px;
 	border: 1px solid #e6e6e6;
 	border-width: 1px 0;
 	border-top: 1px solid #e4e9ee
@@ -10672,7 +10672,7 @@ ul.attachment-list>li {
 
 .attached-file>[class*="icon-"] {
 	display: inline-block;
-	width: 16px;
+	width: 13px;
 	margin-right: 2px
 }
 
@@ -10720,8 +10720,8 @@ ul.attachment-list>li {
 
 @media only screen and (max-width:480px) {
 	.message-form {
-		padding-left: 16px;
-		padding-right: 16px
+		padding-left: 13px;
+		padding-right: 13px
 	}
 }
 
@@ -10968,7 +10968,7 @@ ul.attachment-list>li {
 	opacity: 1;
 	border-radius: 100%;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 13px;
 	height: 36px;
 	line-height: 30px;
 	width: 36px;
@@ -11183,7 +11183,7 @@ ul.attachment-list>li {
 	display: block;
 	color: #FFF;
 	background-color: #abbac3;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 28px
 }
 
@@ -11280,7 +11280,7 @@ ul.attachment-list>li {
 	display: inline-block;
 	color: #888;
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	position: absolute;
 	right: 0;
 	top: -7px
@@ -11348,7 +11348,7 @@ ul.attachment-list>li {
 	display: inline-block;
 	color: #888;
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	position: absolute;
 	right: 2px;
 	top: -1px
@@ -11484,7 +11484,7 @@ ul.attachment-list>li {
 	background-color: #91b8d0;
 	color: #fff;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: normal;
 	margin-bottom: 3px;
 	margin-right: 0;
@@ -11750,7 +11750,7 @@ ul.attachment-list>li {
 	padding: 0 4px;
 	text-align: center;
 	border: 2px solid #999;
-	border-radius: 16px;
+	border-radius: 13px;
 	color: #666;
 	font-size: 12px;
 	margin-left: 5px;
@@ -12011,11 +12011,11 @@ ul.attachment-list>li {
 
 	.wizard-steps li.complete .step:before {
 		line-height: 24px;
-		font-size: 16px
+		font-size: 13px
 	}
 
 	.wizard-steps li:before {
-		top: 16px
+		top: 13px
 	}
 
 	.step-content .step-pane {
@@ -12035,7 +12035,7 @@ ul.attachment-list>li {
 	content: "";
 	position: absolute;
 	top: -20px;
-	bottom: 16px;
+	bottom: 13px;
 	left: 0;
 	border: 1px dotted #67b2dd;
 	border-width: 0 0 0 1px;
@@ -12100,7 +12100,7 @@ ul.attachment-list>li {
 	position: absolute;
 	z-index: 1;
 	top: -14px;
-	bottom: 16px;
+	bottom: 13px;
 	left: -14px;
 	border: 1px dotted #67b2dd;
 	border-width: 0 0 0 1px
@@ -12213,7 +12213,7 @@ ul.attachment-list>li {
 	display: block;
 	content: "+";
 	font-family: "Open Sans";
-	font-size: 16px;
+	font-size: 13px;
 	position: relative;
 	z-index: 1
 }
@@ -12335,13 +12335,13 @@ ul.attachment-list>li {
 	line-height: 17px;
 	text-align: center;
 	border: 2px solid transparent;
-	border-radius: 16px;
+	border-radius: 13px;
 	color: #e17b67
 }
 
 .gritter-close:before {
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 13px;
 	content: "\f00d"
 }
 
@@ -12759,7 +12759,7 @@ img.editable-click:hover {
 	font-size: 15px;
 	position: absolute;
 	margin-top: -9px;
-	width: 16px;
+	width: 13px;
 	height: 30px;
 	line-height: 30px;
 	text-align: center
@@ -12776,7 +12776,7 @@ img.editable-click:hover {
 
 .editable-popup .editable-slider {
 	display: block;
-	margin-bottom: 16px;
+	margin-bottom: 13px;
 	margin-top: 4px
 }
 
@@ -12900,8 +12900,8 @@ img.editable-click:hover {
 
 .ui-slider-small .ui-slider-handle {
 	border-radius: 24px;
-	width: 16px;
-	height: 16px;
+	width: 13px;
+	height: 13px;
 	top: -5px
 }
 
@@ -13042,7 +13042,7 @@ img.editable-click:hover {
 	max-width: 24px;
 	text-align: center;
 	color: #393939;
-	font-size: 16px;
+	font-size: 13px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box
@@ -13098,7 +13098,7 @@ img.editable-click:hover {
 
 .ui-dialog .ui-dialog-titlebar,.ui-jqdialog .ui-dialog-titlebar,.ui-dialog .ui-jqdialog-titlebar,.ui-jqdialog .ui-jqdialog-titlebar {
 	background-color: #f1f1f1;
-	font-size: 16px;
+	font-size: 13px;
 	color: #669fc7;
 	padding: 0
 }
@@ -13137,7 +13137,7 @@ img.editable-click:hover {
 	content: "\f00d";
 	display: inline;
 	font-family: FontAwesome;
-	font-size: 16px
+	font-size: 13px
 }
 
 .ui-dialog .ui-dialog-titlebar-close:hover,.ui-jqdialog .ui-dialog-titlebar-close:hover,.ui-dialog .ui-jqdialog-titlebar-close:hover,.ui-jqdialog .ui-jqdialog-titlebar-close:hover {
@@ -13198,7 +13198,7 @@ img.editable-click:hover {
 .ui-accordion .ui-accordion-content {
 	border: 1px solid #cdd8e3;
 	border-top-width: 0;
-	padding: 11px 16px
+	padding: 11px 13px
 }
 
 .ui-tabs .ui-tabs-nav {
@@ -13211,7 +13211,7 @@ img.editable-click:hover {
 	border: 1px solid #c5d0dc;
 	border-bottom-width: 0;
 	color: #999;
-	line-height: 16px;
+	line-height: 13px;
 	margin-right: -1px;
 	z-index: 11;
 	padding: 8px 12px;
@@ -13376,7 +13376,7 @@ img.editable-click:hover {
 }
 
 .ui-jqgrid .ui-jqgrid-view,.ui-jqgrid .ui-paging-info,.ui-jqgrid .ui-pg-table,.ui-jqgrid .ui-pg-selbox {
-	font-size: 16px
+	font-size: 13px
 }
 
 .ui-jqgrid .ui-jqgrid-title {
@@ -13488,7 +13488,7 @@ img.editable-click:hover {
 	font-size: inherit;
 	width: 24px;
 	height: 20px;
-	line-height: 16px;
+	line-height: 13px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -13597,7 +13597,7 @@ img.editable-click:hover {
 
 .ui-jqgrid-sortable {
 	padding-left: 4px;
-	font-size: 16px;
+	font-size: 13px;
 	color: #777;
 	font-weight: bold
 }
@@ -13762,18 +13762,18 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 }
 
 .ui-jqdialog-content,.ui-jqdialog .ui-jqdialog-content {
-	font-size: 16px;
+	font-size: 13px;
 	padding: 4px 0 0
 }
 
 .ui-jqdialog-content .formdata,.ui-jqdialog .ui-jqdialog-content .formdata {
-	font-size: 16px;
+	font-size: 13px;
 	padding: 6px 12px
 }
 
 .ui-jqdialog-content .form-view-data,.ui-jqdialog .ui-jqdialog-content .form-view-data {
 	vertical-align: middle;
-	font-size: 16px
+	font-size: 13px
 }
 
 .ui-jqdialog-content[id*="alertcnt_"],.ui-jqdialog .ui-jqdialog-content[id*="alertcnt_"] {
@@ -13957,7 +13957,7 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 	margin: 4px 4px 8px;
 	padding: 6px 10px;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-	font-size: 16px
+	font-size: 13px
 }
 
 .ui-jqdialog .ui-widget-header {
@@ -14006,7 +14006,7 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 28px;
 	padding: 0 12px 1px;
 	margin: 0 8px;
@@ -15107,7 +15107,7 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 }
 
 .ace-settings-box>div>label {
-	font-size: 16px
+	font-size: 13px
 }
 
 .btn-scroll-up {
@@ -15184,7 +15184,7 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 
 .datepicker td,.daterangepicker td,.datepicker th,.daterangepicker th {
 	border-radius: 0!important;
-	font-size: 16px
+	font-size: 13px
 }
 
 .datepicker td.active,.daterangepicker td.active,.datepicker td.active:hover,.daterangepicker td.active:hover {
@@ -15293,7 +15293,7 @@ th[aria-selected=true] .ui-jqgrid-sortable {
 .tags .tag {
 	display: inline-block;
 	position: relative;
-	font-size: 16px;
+	font-size: 13px;
 	font-weight: normal;
 	vertical-align: baseline;
 	white-space: nowrap;
