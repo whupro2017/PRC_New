@@ -622,8 +622,8 @@ a.editable-click.editable-disabled:hover {
 .input-prepend.date .add-on i {
   display: block;
   cursor: pointer;
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
 }
 .input-daterange input {
   text-align: center;
@@ -641,7 +641,7 @@ a.editable-click.editable-disabled:hover {
 .input-daterange .add-on {
   display: inline-block;
   width: auto;
-  min-width: 16px;
+  min-width: 13px;
   height: 18px;
   padding: 4px 5px;
   font-weight: normal;
