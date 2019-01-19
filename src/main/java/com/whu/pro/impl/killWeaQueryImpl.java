@@ -25,4 +25,30 @@ public class killWeaQueryImpl implements KillWeaQueryService {
         ArrayList<KillWeaQueryResult> list = kwqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<KillWeaQueryResult> selectAllElement(KillWeaQueryParam params) {
+        ArrayList<KillWeaQueryResult> list = kwqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<KillWeaQueryResult> GetElementInfo(KillWeaQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<KillWeaQueryResult> list = kwqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(KillWeaQueryParam params) {
+        // TODO Auto-generated method stub
+        kwqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(KillWeaQueryParam params) {
+        kwqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

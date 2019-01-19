@@ -25,4 +25,30 @@ public class killVicQueryImpl implements KillVicQueryService {
         ArrayList<KillVicQueryResult> list = kvqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<KillVicQueryResult> selectAllElement(KillVicQueryParam params) {
+        ArrayList<KillVicQueryResult> list = kvqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<KillVicQueryResult> GetElementInfo(KillVicQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<KillVicQueryResult> list = kvqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(KillVicQueryParam params) {
+        // TODO Auto-generated method stub
+        kvqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(KillVicQueryParam params) {
+        kvqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

@@ -102,7 +102,7 @@ public class FtpServerController {
         FtpUtils ftputils = new FtpUtils();
         ftputils.uploadFile(filepath, name, multipartFile.getInputStream());//模型文件存入FTP服务器
         System.out.println("模型文件存入FTP服务器成功");
-        return filepath;
+        return filepath + name;
     }
 
     @ResponseBody

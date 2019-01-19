@@ -25,4 +25,30 @@ public class ExpDynQueryImpl implements ExpDynQueryService {
         ArrayList<ExpDynQueryResult> list = edqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<ExpDynQueryResult> selectAllElement(ExpDynQueryParam params) {
+        ArrayList<ExpDynQueryResult> list = edqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<ExpDynQueryResult> GetElementInfo(ExpDynQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<ExpDynQueryResult> list = edqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(ExpDynQueryParam params) {
+        // TODO Auto-generated method stub
+        edqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(ExpDynQueryParam params) {
+        edqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

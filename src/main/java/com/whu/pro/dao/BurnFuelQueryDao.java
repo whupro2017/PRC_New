@@ -10,4 +10,12 @@ public interface BurnFuelQueryDao {
     void InsertElement(BurnFuelQueryParam params);
 
     ArrayList<BurnFuelQueryResult> selectMaxId();
+
+    ArrayList<BurnFuelQueryResult> selectAllElement(BurnFuelQueryParam params);
+
+    ArrayList<BurnFuelQueryResult> GetElementInfo(BurnFuelQueryParam params);
+
+    void UpdateElement(BurnFuelQueryParam params);
+
+    void DeleteElement(BurnFuelQueryParam params);
 }

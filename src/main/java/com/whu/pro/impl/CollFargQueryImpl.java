@@ -25,4 +25,30 @@ public class CollFargQueryImpl implements CollFragQueryService {
         ArrayList<CollFragQueryResult> list = cfqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<CollFragQueryResult> selectAllElement(CollFragQueryParam params) {
+        ArrayList<CollFragQueryResult> list = cfqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<CollFragQueryResult> GetElementInfo(CollFragQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<CollFragQueryResult> list = cfqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(CollFragQueryParam params) {
+        // TODO Auto-generated method stub
+        cfqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(CollFragQueryParam params) {
+        cfqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

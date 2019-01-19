@@ -512,6 +512,601 @@ function material_dna_update() {
 	}
 }
 
+function burn_source_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/BurnSourQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function burn_diffusion_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/BurnDiffQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function burn_fuel_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/BurnFuelQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function burn_result_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/BurnResQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function burn_subject_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/BurnSubQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function collision_environment_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/CollEnvQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function collision_fragment_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/CollFragQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function collision_object_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/CollObjQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function collision_subject_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/CollSubQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function explosion_dynamite_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/ExpDynQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function explosion_fragment_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/ExpFragQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function explosion_source_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/ExpSourQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function explosion_subject_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/ExpSubQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function kill_criminal_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/KillCriQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function kill_environment_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/KillEnvQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function kill_victem_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/KillVicQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
+function kill_weapon_update() {
+	var element_id = jq('#e_id').val();
+	var manager = jq('#e_manager').val();
+	var remark = jq('#e_remark').val();
+	var element_image = jq('#element_image').val();
+	var create_date = jq('#create_date').val();
+	var localname= jq('#localname').val();
+	if (manager == "" || remark == "") {
+		alert("请填写完整");
+	} else {
+			//var blob = dataURLtoBlob(element_image); 
+			var fileObj = document.getElementById("e_model").files[0]; 
+			var fd = new FormData(); 
+			fd.append("file", fileObj);
+			fd.append("element_id", element_id );
+			fd.append("manager", manager );
+			fd.append("remark", remark);
+			fd.append("element_image", element_image);
+			fd.append("create_date", create_date);
+			fd.append("localname", localname);
+			var xhr = new XMLHttpRequest(); 
+			xhr.open('POST', '/pro/KillWeaQueryController/UpdateElement',true); 
+			xhr.send(fd);
+			xhr.onload = function(e) {
+				    if(xhr.readyState ==4 && xhr.status == 200){
+						alert("更新成功");
+						window.close();
+				    }
+					else {
+						console.log("更新失败");
+					}
+		     }
+	}
+}
+
 function material_inquisition_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#c_manager').val();
@@ -859,7 +1454,7 @@ function burn_source_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -893,7 +1488,7 @@ function burn_fuel_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -927,7 +1522,7 @@ function burn_subject_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -961,7 +1556,7 @@ function burn_diffusion_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -995,7 +1590,7 @@ function burn_result_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1029,7 +1624,7 @@ function explosion_dynamite_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1063,7 +1658,7 @@ function explosion_source_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1097,7 +1692,7 @@ function explosion_subject_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1131,7 +1726,7 @@ function explosion_fragment_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1165,7 +1760,7 @@ function kill_victem_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1199,7 +1794,7 @@ function kill_criminal_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1233,7 +1828,7 @@ function kill_weapon_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1267,7 +1862,7 @@ function kill_environment_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1301,7 +1896,7 @@ function collision_subject_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1335,7 +1930,7 @@ function collision_object_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1369,7 +1964,7 @@ function collision_fragment_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {
@@ -1402,7 +1997,7 @@ function collision_environment_luru() {
 	var case_id = jq('#c_id').val();
 	var manager = jq('#e_manager').val();
 	var remark = jq('#e_remark').val();
-	var element_image = jq('#e_image').val();
+	var element_image = jq('#element_image').val();
 	var create_date = jq('#create_date').val();
 	console.log(" 原图大小："+element_image.length);
 	if (manager == "" || remark == "") {

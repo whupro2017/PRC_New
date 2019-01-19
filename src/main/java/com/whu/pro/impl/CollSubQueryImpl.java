@@ -25,4 +25,30 @@ public class CollSubQueryImpl implements CollSubQueryService {
         ArrayList<CollSubQueryResult> list = csqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<CollSubQueryResult> selectAllElement(CollSubQueryParam params) {
+        ArrayList<CollSubQueryResult> list = csqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<CollSubQueryResult> GetElementInfo(CollSubQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<CollSubQueryResult> list = csqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(CollSubQueryParam params) {
+        // TODO Auto-generated method stub
+        csqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(CollSubQueryParam params) {
+        csqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

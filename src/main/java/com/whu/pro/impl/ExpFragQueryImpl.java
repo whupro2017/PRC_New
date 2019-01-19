@@ -25,4 +25,30 @@ public class ExpFragQueryImpl implements ExpFragQueryService {
         ArrayList<ExpFragQueryResult> list = efqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<ExpFragQueryResult> selectAllElement(ExpFragQueryParam params) {
+        ArrayList<ExpFragQueryResult> list = efqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<ExpFragQueryResult> GetElementInfo(ExpFragQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<ExpFragQueryResult> list = efqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(ExpFragQueryParam params) {
+        // TODO Auto-generated method stub
+        efqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(ExpFragQueryParam params) {
+        efqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

@@ -1,3 +1,16 @@
+function showimage(image) {
+			/*var newwin=window.open();                                           
+			myimg=newwin.document.createElement("img");
+			myimg.src=image;
+			newwin.document.body.appendChild(myimg);*/
+			document.getElementById("element_image").src=image;
+			window
+					.open(
+							"showimage.jsp",
+							"showimage",
+							"height=700, width=1200, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+		}
+
 function connect_element() {
 	window
 			.open(
@@ -120,6 +133,176 @@ function update_matdna(data) {
 			.open(
 					"update_MatDna.jsp",
 					"update_MatDna",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_burn_sour(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_BurnSour.jsp",
+					"update_BurnSour",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_burn_sub(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_BurnSub.jsp",
+					"update_BurnSub",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_burn_diff(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_BurnDiff.jsp",
+					"update_BurnDiff",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_burn_fuel(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_BurnFuel.jsp",
+					"update_BurnFuel",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_burn_res(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_BurnRes.jsp",
+					"update_BurnRes",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_coll_env(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_CollEnv.jsp",
+					"update_CollEnv",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_coll_frag(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_CollFrag.jsp",
+					"update_CollFrag",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_coll_obj(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_CollObj.jsp",
+					"update_CollObj",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_coll_sub(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_CollSub.jsp",
+					"update_CollSub",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_exp_dyn(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_ExpDyn.jsp",
+					"update_ExpDyn",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_exp_frag(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_ExpFrag.jsp",
+					"update_ExpFrag",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_exp_sour(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_ExpSour.jsp",
+					"update_ExpSour",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_exp_sub(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_ExpSub.jsp",
+					"update_ExpSub",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_kill_cri(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_KillCri.jsp",
+					"update_KillCri",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_kill_env(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_KillEnv.jsp",
+					"update_KillEnv",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_kill_vic(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_KillVic.jsp",
+					"update_KillVic",
+					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+}
+
+function update_kill_wea(data) {
+	var  rowdata= JSON.stringify(data); 
+	document.getElementById('rowdata').value =rowdata;
+	window
+			.open(
+					"update_KillWea.jsp",
+					"update_KillWea",
 					"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 }
 
@@ -898,7 +1081,6 @@ jQuery(function($) {
 						var button_name=this.id;
 						document.getElementById('button_name').value=button_name;
 						begin_date = $("#begin_date").val();
-						begin_date = $("#begin_date").val();
 						end_date=$("#end_date").val(); 
 						key_word=$("#key_word").val();
 						document.getElementById('type_id').value='3004000';
@@ -1043,6 +1225,8 @@ jQuery(function($) {
 			.on(
 					'click',
 					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
 						begin_date = $("#begin_date").val();
 						end_date=$("#end_date").val(); 
 						key_word=$("#key_word").val();
@@ -1188,6 +1372,8 @@ jQuery(function($) {
 			.on(
 					'click',
 					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
 						begin_date = $("#begin_date").val();
 						end_date=$("#end_date").val(); 
 						key_word=$("#key_word").val();
@@ -1320,6 +1506,2353 @@ jQuery(function($) {
 });
 
 jQuery(function($) {
+	var grid_selector = "#table_burn_source";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#BurnSourBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='4001000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/BurnSourQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_burn_sour("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='4001000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_burn_diffusion";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#BurnDiffBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='4004000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/BurnDiffQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_burn_diff("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='4004000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_burn_fuel";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#BurnFuelBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='4002000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/BurnFuelQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_burn_fuel("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='4002000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_burn_result";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#BurnResBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='4005000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/BurnResQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_burn_res("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='4005000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_burn_subject";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#BurnSubBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='4003000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/BurnSubQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_burn_sub("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='4003000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_collision_environment";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#CollEnvBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='7004000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/CollEnvQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_coll_env("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='7004000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_collision_fragment";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#CollFragBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='7003000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/CollFragQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_coll_frag("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='7003000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_collision_object";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#CollObjBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='7002000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/CollObjQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_coll_obj("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='7002000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_collision_subject";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#CollSubBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='7001000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/CollSubQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_coll_sub("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='7001000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_explosion_dynamite";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#ExpDynBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='5001000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/ExpDynQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_exp_dyn("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='5001000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_explosion_fragment";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#ExpFragBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='5004000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/ExpFragQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_exp_frag("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='5004000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_explosion_source";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#ExpSourBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='5002000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/ExpSourQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_exp_sour("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='5002000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_explosion_subject";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#ExpSubBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						console.log("xxx");
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='5003000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/ExpSubQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_exp_sub("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='5003000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_kill_criminal";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#KillCriBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='6002000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/KillCriQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_kill_cri("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='6002000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_kill_environment";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#KillEnvBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='6004000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/KillEnvQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_kill_env("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='6004000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_kill_victem";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#KillVicBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='6001000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/KillVicQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_kill_vic("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='6001000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
+	var grid_selector = "#table_kill_weapon";
+	var jq = jQuery.noConflict();
+	var begin_date;
+	var end_date;
+	var key_word;
+	function beforeSelectRow() {
+		$(grid_selector).jqGrid('resetSelection');
+		return (true);
+	}
+	$('#KillWeaBotton')
+			.on(
+					'click',
+					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+						var button_name=this.id;
+						document.getElementById('button_name').value=button_name;
+						begin_date = $("#begin_date").val();
+						end_date=$("#end_date").val(); 
+						key_word=$("#key_word").val();
+						document.getElementById('type_id').value='6003000';
+						$(grid_selector)
+								.jqGrid(
+										'setGridParam',
+										{
+											url : '/pro/KillWeaQueryController/selectAllElement?begin_date='
+												+begin_date
+												+ '&end_date='
+												+ end_date
+												+ '&key_word='
+												+key_word,
+											datatype : "json",
+											mtype : 'POST',
+										}).trigger("reloadGrid"); // 重新载入
+					});
+	jQuery(grid_selector).jqGrid({
+		// direction: "rtl",
+		datatype : "json",
+		mtype : 'POST',
+
+		height : 320,
+		colNames : [ '要素编号', '案件负责人', '创建时间' , '案件备注', '图片流', '本地地址','图片', '更新' , '关联' , '删除'],
+		colModel : [ {
+			name : 'element_id',
+			index : 'element_id',
+			width : 120,
+			sortable : false,
+			editable : false,
+		},{
+			name : 'element_manager',
+			index : 'element_manager',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'create_date',
+			index : 'create_date',
+			width : 130,
+			sortable : false,
+			editable : false
+		}, {
+			name : 'element_remark',
+			index : 'element_remark',
+			width : 220,
+			sortable : false,
+			editable : false
+		},{
+			name : 'element_image',
+			index : 'element_image',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			name : 'localname',
+			index : 'localname',
+			width : 1,
+			sortable : false,
+			editable : false,
+			hidden : true
+		},{ 
+			lable:'operation',
+			name: 'show_image',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                //var detail="<img  onclick='btn_detail(\""+ rowObject.clid + "\")'' title='详细信息' src='../../Content/Images/Icon16/application_view_detail.png' style='padding:0px 10px'>";
+                return '<img id="show_image" src="http://localhost:8080/pro/images/image_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="showimage(\''+rows.element_image+'\')"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'update',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+            	var  rowdata= JSON.stringify(rows); 
+                return "<img id='update' src='http://localhost:8080/pro/images/update_button.png'  style= 'cursor:pointer;height:30px;width:30px' onClick='update_kill_wea("+rowdata+")'></img>";
+            },
+        },{ 
+			lable:'operation',
+			name: 'binding',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="binding" src="http://localhost:8080/pro/images/connect_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="connect_case()"></img>';
+            },
+        },{ 
+			lable:'operation',
+			name: 'datele',  
+			width: 50, 
+			align: 'center',
+            formatter: function (value, grid, rows, state) {
+                return '<img id="delete" src="http://localhost:8080/pro/images/delete_button.png"  style= "cursor:pointer;height:30px;width:30px" onClick="delete_element(\''+rows.element_id+'\')"></img>';
+            },
+        }],
+		viewrecords : true,
+		// toppager: true,
+		multiselect : true,
+		// multikey: "ctrlKey",
+		multiboxonly : true,
+		beforeSelectRow : beforeSelectRow,
+		loadComplete : function() {
+			var table = this;
+			setTimeout(function() {
+			}, 0);
+		},
+
+		onSelectRow : function(id) {
+			var selecs = $(grid_selector).jqGrid('getGridParam', 'selarrrow');
+			var rowid = $(grid_selector).getGridParam("selrow");
+			var rowData = $(grid_selector).getRowData(rowid);
+			var cid = rowData.element_id;
+			document.getElementById('check_id').value = cid;
+			document.getElementById('type_id').value='6003000';
+		},
+		autowidth : true
+	});
+});
+
+jQuery(function($) {
 	var grid_selector = "#table_burn";
 	var jq = jQuery.noConflict();
 	var from1;
@@ -1334,7 +3867,7 @@ jQuery(function($) {
 	$('#CaseBurn')
 			.on(
 					'click',
-					function() { // 页面上的button按钮的click事件，重新获取参数后发送参数，然后重新加载数据。
+					function() { 
 						from1 = $(".from").val();
 						to1 = $(".to").val();
 						pro1 = $('#prov').val();

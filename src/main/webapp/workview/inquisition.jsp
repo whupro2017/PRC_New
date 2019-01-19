@@ -645,19 +645,6 @@
 							"add_MatDna",
 							"height=700, width=1000, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 		}
-		
-		function showimage(image) {
-			/*var newwin=window.open();                                           
-			myimg=newwin.document.createElement("img");
-			myimg.src=image;
-			newwin.document.body.appendChild(myimg);*/
-			document.getElementById("element_image").src=image;
-			window
-					.open(
-							"showimage.jsp",
-							"showimage",
-							"height=700, width=1200, top=200, left=300,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
-		}
 	</script>
 </body>
 </html>

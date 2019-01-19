@@ -10,4 +10,12 @@ public interface ExpSubQueryService {
     void InsertElement(ExpSubQueryParam params);
 
     ArrayList<ExpSubQueryResult> selectMaxId();
+
+    ArrayList<ExpSubQueryResult> selectAllElement(ExpSubQueryParam params);
+
+    ArrayList<ExpSubQueryResult> GetElementInfo(ExpSubQueryParam params);
+
+    void UpdateElement(ExpSubQueryParam params);
+
+    void DeleteElement(ExpSubQueryParam params);
 }

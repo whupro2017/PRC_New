@@ -25,4 +25,30 @@ public class ExpSubQueryImpl implements ExpSubQueryService {
         ArrayList<ExpSubQueryResult> list = esqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<ExpSubQueryResult> selectAllElement(ExpSubQueryParam params) {
+        ArrayList<ExpSubQueryResult> list = esqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<ExpSubQueryResult> GetElementInfo(ExpSubQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<ExpSubQueryResult> list = esqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(ExpSubQueryParam params) {
+        // TODO Auto-generated method stub
+        esqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(ExpSubQueryParam params) {
+        esqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

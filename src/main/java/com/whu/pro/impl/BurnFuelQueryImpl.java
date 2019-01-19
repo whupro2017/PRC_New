@@ -25,4 +25,30 @@ public class BurnFuelQueryImpl implements BurnFuelQueryService {
         ArrayList<BurnFuelQueryResult> list = bfqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<BurnFuelQueryResult> selectAllElement(BurnFuelQueryParam params) {
+        ArrayList<BurnFuelQueryResult> list = bfqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<BurnFuelQueryResult> GetElementInfo(BurnFuelQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<BurnFuelQueryResult> list = bfqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(BurnFuelQueryParam params) {
+        // TODO Auto-generated method stub
+        bfqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(BurnFuelQueryParam params) {
+        bfqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

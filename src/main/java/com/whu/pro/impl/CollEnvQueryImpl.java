@@ -25,4 +25,30 @@ public class CollEnvQueryImpl implements CollEnvQueryService {
         ArrayList<CollEnvQueryResult> list = ceqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<CollEnvQueryResult> selectAllElement(CollEnvQueryParam params) {
+        ArrayList<CollEnvQueryResult> list = ceqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<CollEnvQueryResult> GetElementInfo(CollEnvQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<CollEnvQueryResult> list = ceqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(CollEnvQueryParam params) {
+        // TODO Auto-generated method stub
+        ceqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(CollEnvQueryParam params) {
+        ceqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

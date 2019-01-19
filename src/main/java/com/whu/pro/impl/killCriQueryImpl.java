@@ -25,4 +25,30 @@ public class killCriQueryImpl implements KillCriQueryService {
         ArrayList<KillCriQueryResult> list = kcqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<KillCriQueryResult> selectAllElement(KillCriQueryParam params) {
+        ArrayList<KillCriQueryResult> list = kcqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<KillCriQueryResult> GetElementInfo(KillCriQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<KillCriQueryResult> list = kcqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(KillCriQueryParam params) {
+        // TODO Auto-generated method stub
+        kcqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(KillCriQueryParam params) {
+        kcqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

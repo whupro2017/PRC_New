@@ -25,4 +25,30 @@ public class BurnSubQueryImpl implements BurnSubQueryService {
         ArrayList<BurnSubQueryResult> list = bsqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<BurnSubQueryResult> selectAllElement(BurnSubQueryParam params) {
+        ArrayList<BurnSubQueryResult> list = bsqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<BurnSubQueryResult> GetElementInfo(BurnSubQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<BurnSubQueryResult> list = bsqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(BurnSubQueryParam params) {
+        // TODO Auto-generated method stub
+        bsqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(BurnSubQueryParam params) {
+        bsqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

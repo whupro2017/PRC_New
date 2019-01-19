@@ -25,4 +25,30 @@ public class BurnResQueryImpl implements BurnResQueryService {
         ArrayList<BurnResQueryResult> list = brqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<BurnResQueryResult> selectAllElement(BurnResQueryParam params) {
+        ArrayList<BurnResQueryResult> list = brqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<BurnResQueryResult> GetElementInfo(BurnResQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<BurnResQueryResult> list = brqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(BurnResQueryParam params) {
+        // TODO Auto-generated method stub
+        brqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(BurnResQueryParam params) {
+        brqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

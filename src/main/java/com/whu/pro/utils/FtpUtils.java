@@ -29,6 +29,7 @@ public class FtpUtils {
         ftpClient = new FTPClient();
         try {
             ftpClient.connect(this.hostname, this.port);// 连接FTP服务器
+            System.out.println("到32行");
             ftpClient.login(this.username, this.password);// 登陆FTP服务器
             if (!FTPReply.isPositiveCompletion(ftpClient.getReplyCode())) {
                 System.out.println("未连接到FTP，用户名或密码错误。");

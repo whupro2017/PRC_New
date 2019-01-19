@@ -54,6 +54,7 @@
 <script src="../zTree/js/jquery.ztree.core.js" type="text/javascript"></script>
 <script src="../zTree/js/jquery.ztree.excheck.js" type="text/javascript"></script>
 <script src="../js/queryjs/ztree.js" type="text/javascript"></script>
+<script src="../js/element_type/element_type_picker.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 	jQuery(function($) {
@@ -206,6 +207,10 @@
 								<li><a href="#material" data-toggle="tab">过程反演</a></li>
 							</ul>
 
+                            <input id="type_id"  style="display:none"></input>  
+							<input id="button_name"  style="display:none"></input>      <!--  按钮名，用于删除操作后刷新grid表 -->
+							<input id="rowdata"  style="display:none"></input>    <!--  选中行数据，用于更新页面传值 -->
+							<input id="check_id"  style="display:none"></input>
 							<div id="myTabContent" class="tab-content">
 								<div class="tab-pane fade in active" id="home">
 									<div style="background-color: transparent; float: top;">
@@ -251,43 +256,119 @@
 								</div>
 
 								<div class="tab-pane fade" id="dynamite">
-									<button id="trail_load" style="height: 25px; width: 65px"
-										onClick="load_t()">Load</button>
-									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
-										onclick="dynamite()">录入</button>
-									<p>
-										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
-									</p>
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="key_word" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="dynamite()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="begin_date" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="end_date" class="date" placeholder="结束时间">
+													        <button id="ExpDynBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									   <div style="padding-top: 3px">
+										<table id="table_explosion_dynamite"></table>
+									</div>
 								</div>
 								
 								<div class="tab-pane fade" id="source">
-									<button id="trail_load" style="height: 25px; width: 65px"
-										onClick="load_t()">Load</button>
-									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
-									    onclick="source()">录入</button>
-									<p>
-										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
-									</p>
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="key_word" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="source()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="begin_date" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="end_date" class="date" placeholder="结束时间">
+													        <button id="ExpSourBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									   <div style="padding-top: 3px">
+										<table id="table_explosion_source"></table>
+									</div>
 								</div>
 								
 								<div class="tab-pane fade" id="subject">
-									<<button id="trail_load" style="height: 25px; width: 65px"
-										onClick="load_t()">Load</button>
-									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
-									    onclick="subject()">录入</button>
-									<p>
-										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
-									</p>
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="key_word" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="subject()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="begin_date" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="end_date" class="date" placeholder="结束时间">
+													        <button id="ExpSubBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									   <div style="padding-top: 3px">
+										<table id="table_explosion_subject"></table>
+									</div>
 								</div>
 								
 								<div class="tab-pane fade" id="fragment">
-									<<button id="trail_load" style="height: 25px; width: 65px"
-										onClick="load_t()">Load</button>
-									<button id="AddCase"style="height: 30px; width: 60px; background-color: #0099ff"
-									    onclick="fragment()">录入</button>
-									<p>
-										<textarea id="trail_show_all" rows="10" cols="40">此处显示</textarea>
-									</p>
+									<div style="background-color: transparent; float: top;">
+										<table style="background-color: transparent;">
+											<tr>
+												<td style="padding-left: 5px">查询关键字：</td>
+												<td style="padding-left: 4px">
+												     <textarea id="key_word" rows="1" cols="37"></textarea>
+												</td>
+												<td class="tdTwo" rowspan="2" style="padding-left: 15px;">
+													<button id="AddCase"
+														style="height: 30px; width: 60px; background-color: #0099ff"
+														onclick="fragment()">录入</button>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-left: 5px">查询时间：</td>
+												<td style="padding-left: 4px">
+															<input type="text" 	style="height: 25px; width: 105px;" id="begin_date" class="date" placeholder="开始时间">
+														    <input type="text"    style="height: 25px; width: 105px;" id="end_date" class="date" placeholder="结束时间">
+													        <button id="ExpFragBotton" style="height: 25px; width: 65px">查询</button>
+												</td>
+											</tr>
+										</table>
+									   </div>
+									   <div style="padding-top: 3px">
+										<table id="table_explosion_fragment"></table>
+									</div>
 								</div>
 							</div>
 
@@ -351,6 +432,8 @@
 			class="btn-scroll-up btn btn-sm btn-inverse"> <i
 			class="icon-double-angle-up icon-only bigger-110"></i>
 		</a>
+		
+		<img id="element_image"  src= ""    hidden="true"  width="220px" title="案件图片"  />
 	</div>
 	<!-- /.main-container -->
 <script>

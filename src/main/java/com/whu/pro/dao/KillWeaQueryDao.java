@@ -10,4 +10,12 @@ public interface KillWeaQueryDao {
     void InsertElement(KillWeaQueryParam params);
 
     ArrayList<KillWeaQueryResult> selectMaxId();
+
+    ArrayList<KillWeaQueryResult> selectAllElement(KillWeaQueryParam params);
+
+    ArrayList<KillWeaQueryResult> GetElementInfo(KillWeaQueryParam params);
+
+    void UpdateElement(KillWeaQueryParam params);
+
+    void DeleteElement(KillWeaQueryParam params);
 }

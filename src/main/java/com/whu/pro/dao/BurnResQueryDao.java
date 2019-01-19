@@ -10,4 +10,12 @@ public interface BurnResQueryDao {
     void InsertElement(BurnResQueryParam params);
 
     ArrayList<BurnResQueryResult> selectMaxId();
+
+    ArrayList<BurnResQueryResult> selectAllElement(BurnResQueryParam params);
+
+    ArrayList<BurnResQueryResult> GetElementInfo(BurnResQueryParam params);
+
+    void UpdateElement(BurnResQueryParam params);
+
+    void DeleteElement(BurnResQueryParam params);
 }

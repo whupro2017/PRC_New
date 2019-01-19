@@ -25,4 +25,30 @@ public class killEnvQueryImpl implements KillEnvQueryService {
         ArrayList<KillEnvQueryResult> list = keqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<KillEnvQueryResult> selectAllElement(KillEnvQueryParam params) {
+        ArrayList<KillEnvQueryResult> list = keqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<KillEnvQueryResult> GetElementInfo(KillEnvQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<KillEnvQueryResult> list = keqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(KillEnvQueryParam params) {
+        // TODO Auto-generated method stub
+        keqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(KillEnvQueryParam params) {
+        keqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

@@ -25,4 +25,30 @@ public class CollObjQueryImpl implements CollObjQueryService {
         ArrayList<CollObjQueryResult> list = coqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<CollObjQueryResult> selectAllElement(CollObjQueryParam params) {
+        ArrayList<CollObjQueryResult> list = coqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<CollObjQueryResult> GetElementInfo(CollObjQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<CollObjQueryResult> list = coqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(CollObjQueryParam params) {
+        // TODO Auto-generated method stub
+        coqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(CollObjQueryParam params) {
+        coqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

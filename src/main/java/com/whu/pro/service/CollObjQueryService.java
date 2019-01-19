@@ -10,4 +10,12 @@ public interface CollObjQueryService {
     void InsertElement(CollObjQueryParam params);
 
     ArrayList<CollObjQueryResult> selectMaxId();
+
+    ArrayList<CollObjQueryResult> selectAllElement(CollObjQueryParam params);
+
+    ArrayList<CollObjQueryResult> GetElementInfo(CollObjQueryParam params);
+
+    void UpdateElement(CollObjQueryParam params);
+
+    void DeleteElement(CollObjQueryParam params);
 }

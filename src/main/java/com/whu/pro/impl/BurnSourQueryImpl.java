@@ -25,4 +25,30 @@ public class BurnSourQueryImpl implements BurnSourQueryService {
         ArrayList<BurnSourQueryResult> list = bsqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<BurnSourQueryResult> selectAllElement(BurnSourQueryParam params) {
+        ArrayList<BurnSourQueryResult> list = bsqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<BurnSourQueryResult> GetElementInfo(BurnSourQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<BurnSourQueryResult> list = bsqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(BurnSourQueryParam params) {
+        // TODO Auto-generated method stub
+        bsqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(BurnSourQueryParam params) {
+        bsqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

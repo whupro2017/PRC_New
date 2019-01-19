@@ -10,4 +10,12 @@ public interface BurnDiffQueryService {
     void InsertElement(BurnDiffQueryParam params);
 
     ArrayList<BurnDiffQueryResult> selectMaxId();
+
+    ArrayList<BurnDiffQueryResult> selectAllElement(BurnDiffQueryParam params);
+
+    ArrayList<BurnDiffQueryResult> GetElementInfo(BurnDiffQueryParam params);
+
+    void UpdateElement(BurnDiffQueryParam params);
+
+    void DeleteElement(BurnDiffQueryParam params);
 }

@@ -25,4 +25,30 @@ public class BurnDiffQueryImpl implements BurnDiffQueryService {
         ArrayList<BurnDiffQueryResult> list = bdqd.selectMaxId();
         return list;
     }
+
+    @Override
+    public ArrayList<BurnDiffQueryResult> selectAllElement(BurnDiffQueryParam params) {
+        ArrayList<BurnDiffQueryResult> list = bdqd.selectAllElement(params);
+        return list;
+    }
+
+    @Override
+    public ArrayList<BurnDiffQueryResult> GetElementInfo(BurnDiffQueryParam params) {
+        // TODO Auto-generated method stub
+        ArrayList<BurnDiffQueryResult> list = bdqd.GetElementInfo(params);
+        return list;
+    }
+
+    @Override
+    public void UpdateElement(BurnDiffQueryParam params) {
+        // TODO Auto-generated method stub
+        bdqd.UpdateElement(params);
+    }
+
+    @Override
+    public void DeleteElement(BurnDiffQueryParam params) {
+        bdqd.DeleteElement(params);
+        // TODO Auto-generated method stub
+
+    }
 }

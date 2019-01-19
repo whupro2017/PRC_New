@@ -334,6 +334,31 @@
 						  {name:"足迹信息",node_type:"upon_leaf",type_id:"3005000",controller_name:"MatFootQueryController",isparent:true}, 
 						  {name:"DNA信息",node_type:"upon_leaf",type_id:"3006000",controller_name:"MatDnaQueryController",isparent:true}, 
 					  ]},
+					  {name:"燃烧案件",open:true,isparent:true,children:[
+						  {name:"燃烧源信息",node_type:"upon_leaf",type_id:"4001000",controller_name:"BurnSourQueryController",isparent:true}, 
+						  {name:"燃质信息",node_type:"upon_leaf",type_id:"4002000",controller_name:"BurnSourQueryController",isparent:true}, 
+						  {name:"主体信息",node_type:"upon_leaf",type_id:"4003000",controller_name:"BurnSourQueryController",isparent:true}, 
+						  {name:"扩散信息",node_type:"upon_leaf",type_id:"4004000",controller_name:"BurnSourQueryController",isparent:true}, 
+						  {name:"燃烧结果",node_type:"upon_leaf",type_id:"4005000",controller_name:"BurnSourQueryController",isparent:true}, 
+					  ]},
+					  {name:"爆炸信息",open:true,isparent:true,children:[
+						  {name:"炸药信息",node_type:"upon_leaf",type_id:"5001000",controller_name:"ExpDynQueryController",isparent:true}, 
+						  {name:"爆炸源信息",node_type:"upon_leaf",type_id:"5002000",controller_name:"ExpSourQueryController",isparent:true}, 
+						  {name:"主体信息",node_type:"upon_leaf",type_id:"5003000",controller_name:"ExpSubQueryController",isparent:true}, 
+						  {name:"碎片信息",node_type:"upon_leaf",type_id:"5004000",controller_name:"ExpFragQueryController",isparent:true}, 
+					  ]},
+					  {name:"砍杀信息",open:true,isparent:true,children:[
+						  {name:"被害人信息",node_type:"upon_leaf",type_id:"6001000",controller_name:"KillVicQueryController",isparent:true}, 
+						  {name:"施罪主体",node_type:"upon_leaf",type_id:"6002000",controller_name:"KillCriQueryController",isparent:true}, 
+						  {name:"凶器信息",node_type:"upon_leaf",type_id:"6003000",controller_name:"KillWeaQueryController",isparent:true}, 
+						  {name:"环境要素",node_type:"upon_leaf",type_id:"6004000",controller_name:"KillEnvQueryController",isparent:true}, 
+					  ]},
+					  {name:"碰撞案件",open:true,isparent:true,children:[
+						  {name:"碰撞主体",node_type:"upon_leaf",type_id:"7001000",controller_name:"CollSubQueryController",isparent:true}, 
+						  {name:"碰撞客体",node_type:"upon_leaf",type_id:"7002000",controller_name:"CollObjQueryController",isparent:true}, 
+						  {name:"碎片信息",node_type:"upon_leaf",type_id:"7003000",controller_name:"CollFragQueryController",isparent:true}, 
+						  {name:"环境要素",node_type:"upon_leaf",type_id:"7004000",controller_name:"CollEnvQueryController",isparent:true}, 
+					  ]},
 				  ]
 			  }
 		];
